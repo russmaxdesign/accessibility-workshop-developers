@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 01 - Keyboard and Screen reader demo page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/keyboard.css">
+</head>
+<body>
+  <header class="header" role="banner">
+    Exercise 01 - Keyboard and Screen reader demo page
+  </header>
+  <nav class="nav" role="navigation">
+    <ul>
+      <li><a href="#link-one">What are mammals?</a></li>
+      <li><a href="#link-two">Classification</a></li>
+      <li><a href="#link-three">Definitions</a></li>
+      <li><a href="#link-four">McKenna/Bell</a></li>
+      <li><a href="#link-five">Molecular</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <main class="main" role="main" aria-labelledby="link-one">
+      <h1 id="link-one">What are mammals?</h1>
+      <p>Mammals are the vertebrates within the class <i>Mammalia</i>, a clade of <i>endothermic amniotes</i> distinguished from reptiles (including birds) by the possession of a neocortex (a region of the brain), hair, three middle ear bones, and mammary glands. Females of all mammal species nurse their young with milk, secreted from the mammary glands.</p>
+      <p><a href="#" aria-label="Find out more about mammals">Find out more</a> (1)</p>
+
+      <h2 id="link-two">Classification</h2>
+      <p>Mammal classification has been through several iterations since Carl Linnaeus initially defined the class. No classification system is universally accepted; McKenna &amp; Bell (1997) and Wilson &amp; Reader (2005) provide useful recent compendiums.[1] George Gaylord Simpson's "Principles of Classification and a Classification of Mammals" (AMNH Bulletin v. 85, 1945) provides systematics of mammal origins and relationships</p>
+      <p><a href="#">Find out more about classifications</a> (2)</p>
+
+      <h3 id="link-three">Definitions</h3>
+      <p>If Mammalia is considered as the crown group, its origin can be roughly dated as the first known appearance of animals more closely related to some extant mammals than to others. <i>Ambondro</i> is more closely related to monotremes than to therian mammals while <i>Amphilestes</i> and <i>Amphitherium</i> are more closely related to the therians; as fossils of all three genera are dated about 167 million years ago in the Middle Jurassic, this is a reasonable estimate for the appearance of the crown group.</p>
+      <p><a href="#">Find out more</a> (3)</p>
+
+      <h4 id="link-four">McKenna/Bell classification</h4>
+      <p>In 1997, the mammals were comprehensively revised by Malcolm C. McKenna and Susan K. Bell, which has resulted in the McKenna/Bell classification. Their 1997 book, <i>Classification of Mammals above the Species Level</i>, is a comprehensive work on the systematics, relationships and occurrences of all mammal taxa, living and extinct, down through the rank of genus, though molecular genetic data challenge several of the higher level groupings.</p>
+
+      <h2>Types of mammals</h2>
+      <table class="table">
+        <caption>Land mammals</caption>
+        <thead>
+          <tr>
+            <th>Australia</th>
+            <th>Asia</th>
+            <th>America</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gould's Bat</td>
+            <td>Hairless bat</td>
+            <td>Canyon bat</td>
+          </tr>
+          <tr>
+            <td>Dromedary camel</td>
+            <td>Bactrian camel</td>
+            <td>Cama camel</td>
+          </tr>
+          <tr>
+            <td>Labrador</td>
+            <td>Rottweiler</td>
+            <td>Beagle</td>
+          </tr>
+          <tr>
+            <td>Siamese</td>
+            <td>Persian</td>
+            <td>Ragdoll</td>
+          </tr>
+          <tr>
+            <td>Panda bear</td>
+            <td>Brown bear</td>
+            <td>Polar bear</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <caption>Aquatic mammals</caption>
+        <thead>
+          <tr>
+            <th>Large</th>
+            <th>Medium</th>
+            <th>Small</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>manatee</td>
+            <td>dolphin</td>
+            <td>otter</td>
+          </tr>
+          <tr>
+            <td>seal</td>
+            <td>capybara</td>
+            <td>beaver</td>
+          </tr>
+          <tr>
+            <td>muskrat</td>
+            <td>platypus</td>
+            <td>yapok</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Userful links</h2>
+      <ul>
+        <li><a href="#link-one">What are mammals?</a></li>
+        <li><a href="#link-two">Classification</a></li>
+        <li><a href="#link-three">Definitions</a></li>
+        <li><a href="#link-four">McKenna/Bell</a></li>
+        <li><a href="#link-five">Molecular</a></li>
+      </ul>
+
+    </main>
+    <aside class="aside" role="complementary">
+      <h3>Mammal news signup</h3>
+      <form action="#">
+        <div class="form-container">
+          <label class="label" for="form-name">Full name</label>
+          <input class="input" id="form-name" type="text">
+        </div>
+        <div class="form-container">
+          <label class="label" for="form-email">Email</label>
+          <input class="input" id="form-email" type="email" required>
+        </div>
+        <div class="form-container">
+          <label class="label" for="form-address">Address</label>
+          <span class="help-text" id="form-address-help">Include full street address</span>
+          <input class="input" id="form-address" type="text" aria-describedby="form-address-help">
+        </div>
+        <div class="form-container">
+          <label class="label" for="one">Phone</label>
+          <span class="help-text" id="form-phone-help">Include area code</span>
+          <input class="input" id="one" type="text" aria-describedby="form-phone-help form-phone-error">
+          <span class="error-message" id="form-phone-error">Error: Number must include all 8 digits</span>
+        </div>
+
+        <div class="form-container">
+          <label class="label" for="three">Favourite mammal</label>
+          <select class="input" id="three">
+            <option>Choose a mammal</option>
+            <option>Aardvark</option>
+            <option>African Elephant</option>
+            <option>African Wild Dog</option>
+            <option>African Lion</option>
+            <option>Arctic Fox</option>
+            <option>Arctic Hare</option>
+            <option>Armadillo</option>
+            <option>Asian Elephant</option>
+            <option>Asian Lion</option>
+            <option>Aye-Aye</option>
+          </select>
+        </div>
+        <fieldset class="fieldset">
+          <legend>Subscribe to newsletter</legend>
+          <ul class="radio-list">
+            <li>
+              <input class="input-radio" id="yes" type="checkbox" name="subscribe">
+              <label for="yes">Yes</label>
+            </li>
+            <li>
+              <input class="input-radio" id="no" type="checkbox" name="subscribe">
+              <label for="no">No</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend>Subscription method</legend>
+          <ul class="radio-list">
+            <li>
+              <input class="input-radio" id="weekly" type="radio" name="fruit">
+              <label for="weekly">Weekly</label>
+            </li>
+            <li>
+              <input class="input-radio" id="quarterly" type="radio" name="fruit">
+              <label for="quarterly">Quarterly</label>
+            </li>
+            <li>
+              <input class="input-radio" id="yearly" type="radio" name="fruit">
+              <label for="yearly">Yearly</label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="form-container">
+          <button class="button">Submit</button>
+        </div>
+      </form>
+    </aside>
+  </div>
+  <footer class="footer" role="contentinfo">
+    <a href="#">&copy; 2018 Someone</a>
+  </footer>
+</body>
+</html>

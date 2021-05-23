@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 04: Making a radio group accessible - finished</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/examples.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Exercise 04: Making a radio group accessible - finished</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are:</h2>
+  <ol>
+    <li>Wrap the radio group and heading in a <code>&lt;fieldset&gt;</code></li>
+    <li>Convert heading to a <code>&lt;legend&gt;</code></li>
+    <li>Wrap <code>&lt;label&gt;</code> around “Yes” and “No”.</li>
+    <li>Add unique <code>for</code> and <code>id</code> values for both radio options.</li>
+  </ol>
+  <h2>Example</h2>
+
+  <!-- EXAMPLE STARTS HERE -->
+  <form action="#">
+    <fieldset>
+      <legend>Do you like boats?</legend>
+      <div>
+        <input type="radio" id="yes" name="boats">
+        <label for="yes">Yes</label>
+      </div>
+      <div>
+        <input type="radio" id="no" name="boats">
+        <label for="no">No</label>
+      </div>
+    </fieldset>
+  </form>
+  <!-- EXAMPLE ENDS HERE -->
+
+  <p><a href="index.html">List of all exercises</a></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 05: Adding required features - finished</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/examples.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Exercise 05: Adding required features - finished</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are to:</h2>
+  <ol>
+    <li>Add  <code>&lt;span class="required"&gt; (Required)&lt;/span&gt;</code> for sighted users.</li>
+    <li>Add <code>aria-hidden="true"</code> to <code>&lt;span&gt;</code> to hide from screen readers.</li>
+    <li>Add the <code>required</code> attribute to the <code>&lt;input&gt;</code> for screen reader users.</li>
+  </ol>
+  <h2>Example</h2>
+
+  <!-- EXAMPLE STARTS HERE -->
+  <form action="#">
+    <div class="form-group">
+      <label class="label" for="name">
+        Full name
+        <span class="required" aria-hidden="true">
+          (Required)
+        </span>
+      </label>
+      <input id="name" class="input" type="text" required>
+    </div>
+  </form>
+  <!-- EXAMPLE ENDS HERE -->
+
+  <p><a href="index.html">List of all exercises</a></p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 17: Using  aria-invalid - finished</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/examples.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Exercise 17: Using  aria-invalid - finished</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are:</h2>
+  <ol>
+    <li>Set the first <code>&lt;input&gt;</code> with <code>aria-invalid="false"</code>.</li>
+    <li>Set the second <code>&lt;input&gt;</code> with <code>aria-invalid="true"</code>.</li>
+    <li>Set the third <code>&lt;input&gt;</code> with <code>aria-invalid="grammar"</code>.</li>
+    <li>Set the fourth <code>&lt;input&gt;</code> with <code>aria-invalid="spelling"</code>.</li>
+    <li>Listen to each <code>&lt;input&gt;</code> using a screen reader.</li>
+  </ol>
+  <h2>Example</h2>
+
+  <!-- EXAMPLE STARTS HERE -->
+  <form action="#">
+    <div class="form-group-spaced">
+      <label class="label" for="firstname">First name</label>
+      <input class="input" type="text" id="firstname" aria-invalid="false">
+    </div>
+    <div class="form-group-spaced">
+      <label class="label" for="surname">Surname</label>
+      <input class="input" type="text" id="surname" aria-invalid="true">
+    </div>
+    <div class="form-group-spaced">
+      <label class="label" for="email">Email</label>
+      <input class="input" type="email" id="email" aria-invalid="grammar">
+    </div>
+    <div class="form-group">
+      <label class="label" for="address">Address</label>
+      <input class="input" type="text" id="address" aria-invalid="spelling">
+    </div>
+  </form>
+  <!-- EXAMPLE ENDS HERE -->
+
+  <p><a href="index.html">List of all exercises</a></p>
+</body>
+</html>

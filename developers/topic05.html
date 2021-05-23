@@ -1,0 +1,1847 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Topic 05: Non-native widgets and testing</title>
+    <meta name="description" content="Using VoiceOver">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/iag.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>Topic 05:</h5>
+          <h1>Non-native widgets and testing</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>The aim for today:</h4>
+              <ul>
+                <li>An understanding of native vs non-native widgets</li>
+                <li>The criteria for making non-native widgets accessible</li>
+                <li>Steps for unit testing and auditing</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>5.1<br>What are non-native widgets?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>“Widgets”</b> can be anything from a checkbox to a drop-down, a progress loader or a date picker - any self-contained UI component.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>“Non-native”</b> means that the widget has been built using one or more elements in a different way than the intended purpose.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Let’s look at a native vs non-native example and <b>see some of the differences in their accessibility</b>.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>5.2<br>A native example</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If we use a simple drop-down menu as an example, a <b>native solution</b> would involve using the <code>&lt;label&gt;</code>, <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;label for="fruit"&gt;Favourite fruit&lt;/label&gt;
+&lt;select id="fruit"&gt;
+  &lt;option&gt;Choose an option&lt;/option&gt;
+  &lt;option&gt;Apple&lt;/option&gt;
+  &lt;option&gt;Apricot&lt;/option&gt;
+  &lt;option&gt;Avocado&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic05-001.png" alt="Label">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic05-002.png" alt="Dropdown">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>1. Role</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;label&gt;</code>, <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> elements each have a specific semantic meaning that is <b>understood by accessibility APIs</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;label&gt;</code> element represents a caption for an item in a user interface.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;label for="fruit"&gt;Favourite fruit&lt;/label&gt;</span>
+&lt;select id="fruit"&gt;
+  &lt;option&gt;Choose an option&lt;/option&gt;
+  &lt;option&gt;Apple&lt;/option&gt;
+  &lt;option&gt;Apricot&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;select&gt;</code> element represents a control that provides a menu of options. The element is announced to screen readers as “combobox”.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;label for="fruit"&gt;Favourite fruit&lt;/label&gt;
+<span class="codeHighlight">&lt;select id="fruit"&gt;</span>
+  &lt;option&gt;Choose an option&lt;/option&gt;
+  &lt;option&gt;Apple&lt;/option&gt;
+  &lt;option&gt;Apricot&lt;/option&gt;
+<span class="codeHighlight">&lt;/select&gt;</span></code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;option&gt;</code> element is used to define menu items or options, contained in a dropdown menu.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;label for="fruit"&gt;Favourite fruit&lt;/label&gt;
+&lt;select id="fruit"&gt;
+  <span class="codeHighlight">&lt;option&gt;</span>Choose an option<span class="codeHighlight">&lt;/option&gt;</span>
+  <span class="codeHighlight">&lt;option&gt;</span>Apple<span class="codeHighlight">&lt;/option&gt;</span>
+  <span class="codeHighlight">&lt;option&gt;</span>Apricot<span class="codeHighlight">&lt;/option&gt;</span>
+&lt;/select&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>2. Name</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;label&gt;</code> and <code>&lt;select&gt;</code> elements can be set with matching <code>for</code> and <code>id</code> values, <b>to give the widget an accessible name</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;label <span class="codeHighlight">for="fruit"</span>&gt;Favourite fruit&lt;/label&gt;
+&lt;select <span class="codeHighlight">id="fruit"</span>&gt;
+  &lt;option&gt;Choose an option&lt;/option&gt;
+  &lt;option&gt;Apple&lt;/option&gt;
+  &lt;option&gt;Apricot&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>3. Current state</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The current state of the <code>&lt;select&gt;</code> element will be announced <b>as either “Expanded” or “Collapsed”</b> for screen reader users.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>4. Current value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In the case of the <code>&lt;select&gt;</code> element, the currently selected item from the dropdown <b>will also be announced as a value</b> - i.e. “Apple”.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>5. Keyboard accessible</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>There are also a range of <b>pre-defined keystrokes that can be used to interact with</b> the <code>&lt;select&gt;</code> element.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Scorecard?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <ul>
+                <li><b>Role</b>: “Combobox”</li>
+                <li><b>Name</b>: “Favourite fruit”</li>
+                <li><b>State</b>: “Collapsed”</li>
+                <li><b>Current Value</b>: “Apple”</li>
+                <li><b>Keyboard accessible</b>: Yes</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>5.3<br>A non-native example</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>An example of <b>a non-native widget</b> would be to use the <code>&lt;button&gt;</code> and <code>&lt;ul&gt;</code> elements to create a dropdown.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic05-003.png" alt="Button">
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic05-004.png" alt="List">
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button&gt;Favourite fruit&lt;/button&gt;
+&lt;ul&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>1. Role</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;button&gt;</code> element <b>will be announced as “button”</b> which is incorrect in this case.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>2. Name</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This widget <b>will be announced as “Favourite fruit”</b>, which is an acceptable name.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>3. Current state</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>There is <b>no native way</b> to inform users about the dropdown’s current state.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>4. Current value</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>There is <b>no native way</b> to inform users of the currently selected value.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>5. Keyboard accessible</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The widget <b>will have no keystrokes defined</b>. So, it is not keyboard accessible.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Scorecard?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <ul>
+                <li><b>Role</b>: <span class="red">“Button” (Incorrect)</span></li>
+                <li><b>Name</b>: “Favourite fruit”</li>
+                <li><b>State</b>: <span class="red">Not available</span></li>
+                <li><b>Current Value</b>: <span class="red">Not available</span></li>
+                <li><b>Keyboard accessible</b>: <span class="red">No</span></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>All of these problems can fixed using ARIA and JavaScript. <b>But it takes work</b>. Where possible, try to use native HTML widgets.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>So, what are the criteria needed in order <b>to make this and other non-native widgets accessible</b>?</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>5.4<br>Criteria for accessible widgets</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>1. Does the widget have all relevant roles defined?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If an element is being used in a different way to its intended purpose, <b>it should be assigned with an explicit ARIA role</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;button&gt;</code> <b>could be set with</b> <code>role="combobox"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><code>role="combobox"</code> <b>defines an input that controls a listbox</b>, that can dynamically pop up to help the user set the value of the input.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button <span class="codeHighlight">role="combobox"</span>&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;ul&gt;</code> <b>could be set with</b> <code>role="listbox"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><code>role="listbox"</code> <b>defines a widget that allows the user to select one or more item</b>s from a list of choices.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button role="combobox"&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul <span class="codeHighlight">role="listbox"</span>&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;li&gt;</code> elements <b>could be set with</b> <code>role="option"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><code>role="option"</code> <b>defines for a selectable item</b> in a listbox.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button role="combobox"&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox"&gt;
+  &lt;li <span class="codeHighlight">role="option"</span>&gt;Apple&lt;/li&gt;
+  &lt;li <span class="codeHighlight">role="option"</span>&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>2. Does the widget have an accessible name?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In the case of the <code>&lt;button&gt;</code>, there is <b>already an accessible name</b> - “Favourite fruit”.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>However, <b>additional information could be provided</b> as part of the accessible name using <code>aria-labelledby</code> or <code>aria-label</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="combobox"
+  <span class="codeHighlight">aria-label="Choose your favourite fruit"</span>
+&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox"&gt;
+  &lt;li role="option"&gt;Apple&lt;/li&gt;
+  &lt;li role="option"&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>3. Can the widget receive focus?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If the widget is built using elements that don’t natively accept focus, some of these elements <b>will need to have focus defined</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In the case of the <code>&lt;button&gt;</code> dropdown, the <code>&lt;ul&gt;</code> <b>may need to be set with</b> <code>tabindex="-1"</code> by default.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="combobox"
+  aria-label="Choose your favourite fruit"
+&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox" <span class="codeHighlight">tabindex="-1"</span>&gt;
+  &lt;li role="option"&gt;Apple&lt;/li&gt;
+  &lt;li role="option"&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This state will need to dynamically change to <code>tabindex="0"</code> <b>when the element becomes visible</b> so that it can receive focus</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="combobox"
+  aria-label="Choose your favourite fruit"
+&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox" <span class="codeHighlight">tabindex="0"</span>&gt;
+  &lt;li role="option"&gt;Apple&lt;/li&gt;
+  &lt;li role="option"&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>4. Is the widget keyboard-only accessible?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If the non-native widget does not have native keystrokes in place, like the <code>&lt;button&gt;</code> dropdown, these <b>will need to be defined using JavaScript</b>.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>5. Are all visible states defined?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;button&gt;</code> element and each list item <b>will need to have each state defined</b>, including: <i>static, hover, focus, active, selected, selected/focussed</i></p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>6. Are all functional states defined?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In cases where non-native widgets have different functional states, <b>these will need to be defined using ARIA</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In this case, the <code>&lt;button&gt;</code> element will <b>need to be defined as “collapsed”</b> when it is in the static state, using <code>aria-expanded="false"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="combobox"
+  aria-label="Choose your favourite fruit"
+  <span class="codeHighlight">aria-expanded="false"</span>
+&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox" tabindex="0"&gt;
+  &lt;li role="option"&gt;Apple&lt;/li&gt;
+  &lt;li role="option"&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>It will <b>need to be defined as “expanded”</b> when it has been triggered using <code>aria-expanded="true"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="combobox"
+  aria-label="Choose your favourite fruit"
+  <span class="codeHighlight">aria-expanded="true"</span>
+&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox" tabindex="0"&gt;
+  &lt;li role="option"&gt;Apple&lt;/li&gt;
+  &lt;li role="option"&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Each of the list items <b>needs to be initially set with</b> <code>aria-selected="false"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="combobox"
+  aria-label="Choose your favourite fruit"
+  aria-expanded="true"
+&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox" tabindex="0"&gt;
+  &lt;li role="option" <span class="codeHighlight">aria-expanded="false"</span>&gt;Apple&lt;/li&gt;
+  &lt;li role="option" <span class="codeHighlight">aria-expanded="false"</span>&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>And when users choose one of the dropdown list items, this item <b>needs to be set with</b> <code>aria-selected="true"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="combobox"
+  aria-label="Choose your favourite fruit"
+  aria-expanded="true"
+&gt;
+  Favourite fruit
+&lt;/button&gt;
+&lt;ul role="listbox" tabindex="0"&gt;
+  &lt;li role="option" <span class="codeHighlight">aria-expanded="true"</span>&gt;Apple&lt;/li&gt;
+  &lt;li role="option" aria-expanded="false"&gt;Apricot&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>7. Does the widget have dynamically updating content?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In the case of the <code>&lt;button&gt;</code> dropdown, <b>there is no dynamically added content</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>However, in cases where widgets do have dynamically added content, the <code>aria-live</code> attribute <b>may need to be used</b>.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>A recap</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>So, if you have to build any non-native widget, <b>you should keep these seven criteria in mind</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <ol>
+                <li>Does the widget have a <b>role</b>?</li>
+                <li>Does the widget have an <b>accessible name</b>?</li>
+                <li>Can the widget receive <b>focus</b>?</li>
+                <li>Is the widget <b>keyboard-only</b> accessible?</li>
+                <li>Are all <b>visible states</b> defined?</li>
+                <li>Are all <b>functional states</b> defined?</li>
+                <li>Any <b>dynamically updated content</b>?</li>
+              </ol>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>5.5<br>Exercise: Making an accessible autocomplete</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Files:</h4>
+              <ul>
+                <li>Open <a href="exercises/exercise21-start.html" target="_blank">exercises/exercise21-start.html</a> in a text editor and browser.</li>
+                <li>View <a href="exercises/exercise21-finished.html" target="_blank">exercises/exercise21-finished.html</a> to check your results.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Our aims (part 1):</h4>
+              <ol>
+                <li>Add <code>role="searchbox"</code></li>
+                <li>Add <code>aria-describedby="instructions"</code></li>
+                <li>Add <code>aria-owns="results"</code></li>
+                <li>Add <code>aria-expanded="false"</code></li>
+                <li>Add <code>aria-autocomplete="both"</code></li>
+                <li>Add <code>id="results"</code></li>
+                <li>Add <code>role="listbox"</code></li>
+              </ol>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Our aims (part 2):</h4>
+              <ol start="8">
+                <li>Add <code>tabindex="-1"</code></li>
+                <li>Add <code>role="option"</code></li>
+                <li>Add <code>aria-selected="false"</code></li>
+                <li>Add <code>class="sr-only"</code></li>
+                <li>Add <code>aria-live="assertive"</code></li>
+                <li>Add <code>class="sr-only"</code></li>
+              </ol>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>We’re now going to <b>add accessible markup to an autocomplete widget</b> - keeping in mind the “seven non-native widget criteria”.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Also note that <b>this example is not “operational”</b>, we are just focusing on the markup.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic05-005.png" alt="List">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Review of elements used for the widget</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>First off, <b>let’s look at the basic markup</b> already in place.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The widget is <b>placed inside</b> a <code>&lt;form&gt;</code> component.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;form action="#"&gt;</span>
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+<span class="codeHighlight">&lt;/form&gt;</span></code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>There is a <code>&lt;label&gt;</code> to <b>provide an accessible name</b> for the <code>&lt;input&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  <span class="codeHighlight">&lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;</span>
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;input&gt;</code> is <b>programatically associated with the</b> <code>&lt;label&gt;</code> via matching <code>for</code> and <code>id</code> values.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  <span class="codeHighlight">&lt;input type="text" id="search"&gt;</span>
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The first <code>&lt;button&gt;</code> is <b>used to clear the</b> <code>&lt;input&gt;</code> field.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  <span class="codeHighlight">&lt;button type="button"&gt;Clear&lt;/button&gt;</span>
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The second <code>&lt;button&gt;</code> is <b>used to clear submit</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  <span class="codeHighlight">&lt;button type="submit"&gt;Search&lt;/button&gt;</span>
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;ul&gt;</code> <b>displays possible results</b> when triggered.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  <span class="codeHighlight">&lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;</span>
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The first <code>&lt;div&gt;</code> is <b>used to provide instructions in using the widget</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  <span class="codeHighlight">&lt;div id="instructions"&gt;&lt;/div&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The second <code>&lt;div&gt;</code> is <b>used to provide live updates</b> associated with how many results are displayed in the dropdown at any given time.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;div&gt;&lt;/div&gt;</span>
+&lt;/form&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Adding accessibility</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 1:</b> Add <code>role="searchbox"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will change the input element's <code>role</code> from <code>textbox</code> to <code>searchbox</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  <span class="codeHighlight">role="searchbox"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 2:</b> Add <code>aria-describedby="instructions"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will be used to link up with the instructions content to provide an accessible description for the <code>&lt;input&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  <span class="codeHighlight">aria-describedby="instructions"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 3:</b> Add <code>aria-owns="results"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will be used to provide a relationship between the <code>&lt;input&gt;</code> and <code>&lt;ul&gt;</code> element.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  aria-describedby="instructions"
+  <span class="codeHighlight">aria-owns="results"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 4:</b> Add <code>aria-expanded="false"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will change to <code>aria-expanded="true"</code> when the <code>&lt;ul&gt;</code> is triggered and becomes visible.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  aria-describedby="instructions"
+  aria-owns="results"
+  <span class="codeHighlight">aria-expanded="false"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 5:</b> Add <code>aria-autocomplete="both"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>The <code>"both"</code> value means that resulting values may be displayed either as a dropdown list or inline (within the <code>&lt;input&gt;</code>).</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  aria-describedby="instructions"
+  aria-owns="results"
+  aria-expanded="false"
+  <span class="codeHighlight">aria-autocomplete="both"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 6:</b> Add <code>id="results"</code> to <code>&lt;ul&gt;</code>.</p>
+              <p>This will relate to the <code>aria-owns</code> value associated with the <code>&lt;input&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  <span class="codeHighlight">id="results"</span>
+&gt;
+  &lt;li&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 7:</b> Add <code>role="listbox"</code> to <code>&lt;ul&gt;</code>.</p>
+              <p>This will define the element as a parent for a list of options.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  <span class="codeHighlight">role="listbox"</span>
+&gt;
+  &lt;li&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 8:</b> Add <code>tabindex="-1"</code> to <code>&lt;ul&gt;</code>.</p>
+              <p>This element will initially be hidden, and should not receive focus until it becomes visible.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  role="listbox"
+  <span class="codeHighlight">tabindex="-1"</span>
+&gt;
+  &lt;li&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 9:</b> Add <code>role="option"</code> to each <code>&lt;li&gt;</code>.</p>
+              <p>This will define the elements as options.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  role="listbox"
+  tabindex="-1"
+&gt;
+  &lt;li <span class="codeHighlight">role="option"</span>&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 10:</b> Add <code>aria-selected="false"</code> to each <code>&lt;li&gt;</code>.</p>
+              <p>This will need to change to <code>aria-selected="true"</code> when an individual option is selected.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  role="listbox"
+  tabindex="-1"
+&gt;
+  &lt;li role="option" <span class="codeHighlight">aria-selected="false"</span>&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 11:</b> Add <code>class="sr-only"</code> to the first <code>&lt;div&gt;</code> element.</p>
+              <p>This will hide the element off-screen but still make it available to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div id="instructions" <span class="codeHighlight">class="sr-only"</span>&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 12:</b> Add <code>aria-live="assertive"</code> to the second <code>&lt;div&gt;</code> element.</p>
+              <p>This will allow dynamic changes to be announced to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">aria-live="assertive"</span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 13:</b> Add <code>class="sr-only"</code> to the second <code>&lt;div&gt;</code> element.</p>
+              <p>This will hide the element off-screen but still make it available to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div aria-live="assertive" <span class="codeHighlight">class="sr-only"</span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <b>dynamically announced information</b> could be something like:</p>
+              <p><i>6 options available. Use up and down arrows to review and ENTER to select.</i></p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>5.6<br>A basic accessibility  testing process</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Accessibility testing falls into <b>two categories</b>:</p>
+              <ul>
+                <li>Unit testing individual widget</li>
+                <li>Auditing a screen or a series of screens</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Unit testing</h4>
+              <ul>
+                <li>What: Rigorous testing of individual widgets, especially complex non-native widgets.</li>
+                <li>When: Before the widget is used in any application.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Auditing</h4>
+              <ul>
+                <li>What: WCAG compliance review on one or more screens within a website or application.</li>
+                <li>When: Before going into production, or after the product is live.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The following is a simple auditing process that can be used to <b>conduct a basic audit</b> of any website or web application.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Each step in the process includes:</h4>
+              <ul>
+                <li>What to test</li>
+                <li>How to test</li>
+                <li>Who should test</li>
+                <li>Relevant WCAG criteria</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 1: Valid markup</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Check that all HTML markup is valid HTML5 markup as defined by the W3C.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Markup validity can re checked via <a href="https://validator.w3.org/" target="_blank">W3C Validator tool</a>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>Developers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#parsing" target="_blank">4.1.1 Parsing (Level A)</a></p>
+              <p class="accessibility">In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 2: Text resize</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Check that the text can increase to 200% without loss of functionality.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p><a href="https://chrome.google.com/webstore/detail/zoom-page-we/bcdjhkphgmiapajkphennjfgoehpodpk" target="_blank">Zoom Page WE</a> provides functionality to zoom a web page using full-page zoom or text-only zoom to a range of different percentages.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers</li>
+                <li>Developers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#resize-text" target="_blank">1.4.4 Resize text (Level AA)</a></p>
+              <p class="accessibility">Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 3: Keyboard access</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test - part 1:</h4>
+              <p>Check that all functionality within the site or app is operable through a keyboard interface, without the need for a mouse or touchpad.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test - part 2:</h4>
+              <p>Check that focus can be moved away from any component using only a keyboard interface (i.e focus does not get trapped within a component).</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes. Test all actions using <kbd>ENTER</kbd>, <kbd>RETURN</kbd>, <kbd>SPACEBAR</kbd> and <kbd>ESC</kbd> keys as needed. Make sure focus does not get trapped inside a component.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>Developers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria - part 1:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#keyboard" target="_blank">2.1.1 Keyboard (Level A)</a></p>
+              <p class="accessibility">All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria - part 2:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#no-keyboard-trap" target="_blank">2.1.2 No Keyboard Trap (Level A)</a></p>
+              <p class="accessibility">If keyboard focus can be moved to a component of the page using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 4: Focus state visibility</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Check that focus states are clearly visible for all focusable elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes. Review focus states for all focusable elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UI Designers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#focus-visible" target="_blank">2.4.7 Focus Visible (Level AA)</a></p>
+              <p class="accessibility">Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 5: Focus order</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Check that focus order is intuitive and consistent across all screens.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes. Review focus order for all focusable elements. Make sure focus order does not jump to different areas of the layout non-sequentially.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers</li>
+                <li>Developers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#focus-order" target="_blank">2.4.3 Focus Order (Level A)</a></p>
+              <p class="accessibility">If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 6: WAVE testing</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Basic accessibility review of each screen:</p>
+              <ul>
+                <li>WCAG Errors and warnings.</li>
+                <li>WCAG Colour contrast issues.</li>
+                <li>Use of headings.</li>
+                <li>Use of <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>.</li>
+                <li>Use of landmarks.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Using the <a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="_blank">WAVE browser plugin</a>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers</li>
+                <li>Developers</li>
+                <li>Testers</li>
+                <li>Iteration Managers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p>The WAVE testing tool can be used to pick up a wide range of errors across multiple WCAG Success Criteria.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 7: Screen reader testing</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Basic screen reader review of each screen.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test - part 1:</h4>
+              <p>Check each screen to make sure all components of the layout are clearly described and meaningful to screen reader users. Using one or both:</p>
+              <ul>
+                <li>Voiceover: Chrome</li>
+                <li>NVDA: Chrome</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test - part 2:</h4>
+              <p>For complex or non-native widgets, more detailed testing may be required.</p>
+              <ul>
+                <li>Is there an accessible name, description, role?</li>
+                <li>Are states clearly announced?</li>
+                <li>Are all features of the widget announced?</li>
+                <li>Is dynamically added content announced?</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test - part 2 (continued):</h4>
+              <p>This more complex testing may include a wider range of screen reader and browser combinations.</p>
+              <ul>
+                <li>Windows/JAWS: Chrome, Firefox, Edge</li>
+                <li>Windows/NVDA: Chrome, Firefox, Edge</li>
+                <li>OSX/VoiceOver: Chrome, Firefox, Safari</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers</li>
+                <li>Developers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#info-and-relationships" target="_blank">1.3.1 Info and Relationships (Level A)</a></p>
+              <p class="accessibility">Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 8: Mobile text size</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>This test should also be conducted using mobile devices to determine how increasing the text size affects the layout.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Use the phone's settings to increase text size to at least 200% to determine if any functionality is lost.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers</li>
+                <li>Developers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#resize-text" target="_blank">1.4.4 Resize text (Level AA)</a></p>
+              <p class="accessibility">Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Step 9: Mobile screen reader testing</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Basic screen reader review of each screen. Make sure all components of the layout are clearly described and meaningful to screen reader users.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Check each screen with either or both:</p>
+              <ul>
+                <li>iPhone: Voiceover</li>
+                <li>Android: Talkback</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers</li>
+                <li>Developers</li>
+                <li>Testers</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#info-and-relationships" target="_blank">1.3.1 Info and Relationships (Level A)</a></p>
+              <p class="accessibility">Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>A recap</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <ul>
+                <li>Step 1: Valid markup</li>
+                <li>Step 2: Text resize</li>
+                <li>Step 3: Keyboard access</li>
+                <li>Step 4: Focus state visibility</li>
+                <li>Step 5: Focus order</li>
+                <li>Step 6: WAVE testing</li>
+                <li>Step 7: Screen reader testing</li>
+                <li>Step 8: Mobile text size</li>
+                <li>Step 9: Mobile screen reader testing</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>5.7<br>Exercise: Conducting some testing</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Go to either the <a href="https://www.nrma.com.au/" target="_blank">NRMA website</a> or the <a href="https://www.ami.co.nz/" target="_blank">AMI website</a>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Our aims are to conduct some quick tests:</h4>
+              <ol>
+                <li>Valid markup</li>
+                <li>Text resize</li>
+                <li>WAVE testing</li>
+              </ol>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>1. Validation</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Checked the <b>validity of markup</b> via <a href="https://validator.w3.org/" target="_blank">W3C Validator tool</a>.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>2. Text resize</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Check the <b>text resize</b> via <a href="https://chrome.google.com/webstore/detail/zoom-page-we/bcdjhkphgmiapajkphennjfgoehpodpk" target="_blank">Zoom Page WE</a> tool.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>3. WAVE test</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Check the <b>page's accessibility</b> using the <a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="_blank">WAVE browser plugin</a>.</p>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

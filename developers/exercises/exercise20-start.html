@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Exercise20 - start</title>
+  <link href="assets/css/examples.css" rel="stylesheet">
+  <link href="assets/css/tabs.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Exercise20 - start</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are to:</h2>
+  <ol>
+    <li>The <code>tablist</code> element needs to be given an accessible name.</li>
+    <li>Set <code>aria-selected="true"</code> on the first <code>&lt;button&gt;</code>.</li>
+    <li>Set <code>aria-selected="false"</code> on other <code>&lt;button&gt;</code> elements.</li>
+    <li>Set <code>aria-controls</code> on all <code>&lt;button&gt;</code> elements.</li>
+    <li>Set matching <code>id</code> values on all <code>tabpanel</code> elements.</li>
+    <li>Set all <code>tabpanel</code> elements with <code>tabindex="0"</code>.</li>
+    <li>Set <code>hidden</code> on the second and third <code>tabpanel</code> elements.</li>
+    <li>Set <code>aria-labelledby</code> on all <code>tabpanel</code> elements. </li>
+    <li>Set matching <code>id</code> valuues on the all <code>tab</code> elements.</li>
+    <li>Set <code>tabindex="-1"</code> on the second and third <code>tab</code> elements.</li>
+  </ol>
+  <h2>Example</h2>
+
+  <!-- EXAMPLE STARTS HERE -->
+  <div class="tabs">
+    <div role="tablist">
+      <button
+        role="tab"
+      >
+        Mammals
+      </button>
+      <button
+        role="tab"
+      >
+        Birds
+      </button>
+      <button
+        role="tab"
+      >
+        Fish
+      </button>
+    </div>
+    <div
+      role="tabpanel"
+    >
+      <h2>Mammal types</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, tenetur commodi vero itaque, accusantium suscipit porro pariatur nobis sequi perspiciatis reiciendis quam, deserunt ut odit nulla. Maiores sint ut, corporis.</p>
+    </div>
+    <div
+      role="tabpanel"
+    >
+     <h2>Bird types</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, tenetur commodi vero itaque, accusantium suscipit porro pariatur nobis sequi perspiciatis reiciendis quam, deserunt ut odit nulla. Maiores sint ut, corporis.</p>
+    </div>
+    <div
+      role="tabpanel"
+    >
+      <h2>Fish types</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, tenetur commodi vero itaque, accusantium suscipit porro pariatur nobis sequi perspiciatis reiciendis quam, deserunt ut odit nulla. Maiores sint ut, corporis.</p>
+    </div>
+  </div>
+  <!-- EXAMPLE ENDS HERE -->
+
+  <p><a href="index.html">List of all exercises</a></p>
+<script src="assets/js/tabs.js"></script>
+</body>
+</html>

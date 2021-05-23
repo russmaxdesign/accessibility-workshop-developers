@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 11: Setting up a modal - start</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/examples.css" rel="stylesheet">
+  <link href="assets/css/modal.css" rel="stylesheet">
+<script>
+"use strict"
+var checkshift; //Used to check whether shift-tab pressed in the modal
+function modalOn()
+{ //Called to activate the modal dialog
+   document.getElementById('myDialog').style.display = "block";
+   //Switches the modal from display none to visible
+  document.getElementById("mainContent").setAttribute("aria-hidden","true");
+  //Hides main content from screen readers
+  document.getElementById("neverMind").focus();
+  //Puts focus on the close button in the modal
+}
+function modalOff()
+{ //Called when the Cancel button is activated
+  document.getElementById('myDialog').style.display = "none";
+  //Hides the modal from everyone
+  document.getElementById("mainContent").setAttribute("aria-hidden","false");
+  //Makes main content available to screen readers
+    document.getElementById("button1").focus();
+    //Puts focus on the button
+}
+function checklast(event)
+{ //Called when a key is pressed when the Cancel button has focus
+  if (event.shiftKey)
+  {
+    checkshift = "yes"; //The shift key was pressed
+  }
+  var retrieve = event.which || event.keyCode;
+  //retrieve gets the code of the key that was pressed (done like this to suit both FF and IE)
+  if(retrieve == "9") //The tab key was pressed
+  {
+    if(checkshift == "yes") //Dealing with press of shift-tab
+    {
+      document.getElementById("neverMind").focus(); //Keeps focus on the button
+      event.preventDefault() //Stops the shift-tab from doing its thing
+      checkshift = ""; //Resets the variable
+    }
+    else //The shift key was not pressed
+    {
+      document.getElementById("neverMind").focus();
+      //Keeps focus on the button
+      event.preventDefault()
+      //Stops the tab key from doing its thing
+    }
+  }
+}
+function escapeMe(event)
+{
+  var retrieve = event.which || event.keyCode;
+  //retrieve gets the code of the key that was pressed (done like this to suit both FF and IE)
+  if(retrieve == "27") //The Escape  key was pressed
+  {
+    modalOff();
+  }
+}
+</script>
+</head>
+<body>
+<div id="mainContent">
+  <h1>Exercise 11: Setting up a modal - start</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are:</h2>
+  <ol>
+    <li>Set the modal with a role so it is announced correctly to assistive technologies when triggered.</li>
+    <li>Provide the modal with an accessible name and description, so that these are also announced when the modal is triggered.</li>
+    <li>Listen to the modal using a screen reader.</li>
+  </ol>
+
+  <p><button class="button" type="button" id="button1" onclick="modalOn()">Open modal</button></p>
+</div>
+
+<!-- EXAMPLE STARTS HERE -->
+<div id="myDialog" tabindex="0" onkeydown="escapeMe(event)">
+  <div id="modal-content">
+    <div>
+      <h2>Contact details</h2>
+    </div>
+    <p>Make sure to read the following information.</p>
+    <button class="button" id="neverMind" type="button"  onkeydown="checklast(event)" onclick="modalOff()">Close</button>
+  </div>
+</div>
+<!-- EXAMPLE ENDS HERE -->
+</body>
+</html>

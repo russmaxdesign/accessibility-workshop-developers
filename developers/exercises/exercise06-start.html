@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 06: Accessible error messages - start</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/examples.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Exercise 06: Accessible error messages - start</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are to:</h2>
+  <ol>
+    <li>Add <code>aria-describedby</code> using a value of “error-message” to <code>&lt;input&gt;</code></li>
+    <li>Add a matching <code>id</code> value to <code>&lt;span&gt;</code>.</li>
+    <li>Add <code>aria-invalid="true"</code> to <code>&lt;input&gt;</code></li>
+  </ol>
+  <h2>Example</h2>
+
+  <!-- EXAMPLE STARTS HERE -->
+  <form action="#">
+    <div class="form-group">
+      <label class="label" for="name">Name</label>
+      <input class="input" type="text" id="name">
+      <span class="error-message">Error: Make sure to include full name</span>
+    </div>
+  </form>
+  <!-- EXAMPLE ENDS HERE -->
+
+  <p><a href="index.html">List of all exercises</a></p>
+</body>
+</html>

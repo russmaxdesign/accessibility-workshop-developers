@@ -1,0 +1,40 @@
+#message > p {
+  overflow: hidden;
+  padding: .8em 1em;
+}
+
+#message > p::before {
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin: -.05em 12px -.2em 0;
+  content: '';
+  background: url(../img/icons.png) no-repeat;
+}
+
+#message.info > p {
+  color: #004;
+  background: #e5f2ff;
+}
+
+#message.info > p::before {
+  background-position: 0 0;
+}
+
+#message.warning > p {
+  color: #420;
+  background: #ffeddb;
+}
+
+#message.warning > p::before {
+  background-position: 0 -26px;
+}
+
+#message.error > p {
+  color: #400;
+  background: #ffebea;
+}
+
+#message.error > p::before {
+  background-position: 0 -52px;
+}

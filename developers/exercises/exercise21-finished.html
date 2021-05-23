@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 21: Making an accessible autocomplete - finished</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/examples.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Exercise 21: Making an accessible autocomplete - finished</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are:</h2>
+  <ol>
+    <li>Add <code>role="searchbox"</code></li>
+    <li>Add <code>aria-describedby="instructions"</code></li>
+    <li>Add <code>aria-owns="results"</code></li>
+    <li>Add <code>aria-expanded="false"</code></li>
+    <li>Add <code>aria-autocomplete="both"</code></li>
+    <li>Add <code>id="results"</code></li>
+    <li>Add <code>role="listbox"</code></li>
+    <li>Add <code>tabindex="-1"</code></li>
+    <li>Add <code>role="option"</code></li>
+    <li>Add <code>aria-selected="false"</code></li>
+    <li>Add <code>class="sr-only"</code></li>
+    <li>Add <code>aria-live="assertive"</code></li>
+    <li>Add <code>class="sr-only"</code></li>
+  </ol>
+  <h2>Example</h2>
+
+  <!-- EXAMPLE STARTS HERE -->
+  <form action="#">
+    <label for="search">Search towns in Australia:</label>
+    <input
+      type="text"
+      id="search"
+      role="searchbox"
+      aria-describedby="instructions"
+      aria-owns="results"
+      aria-expanded="false"
+      aria-autocomplete="both"
+    >
+    <button type="button">clear</button>
+    <button type="submit">Search</button>
+    <ul
+      id="results"
+      role="listbox"
+      tabindex="-1"
+    >
+      <li role="option" aria-selected="false">Aarons Pass</li>
+    </ul>
+    <div id="instructions" class="sr-only">When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.</div>
+    <div aria-live="assertive" class="sr-only"></div>
+  </form>
+  <!-- EXAMPLE ENDS HERE -->
+
+  <p><a href="index.html">List of all exercises</a></p>
+</body>
+</html>

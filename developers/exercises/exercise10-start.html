@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Exercise 10: Using aria-describedby - start</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/examples.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Exercise 10: Using aria-describedby - start</h1>
+  <p><a href="index.html">List of all exercises</a></p>
+  <h2>Our aims are to:</h2>
+  <ol>
+    <li>Add <code>id="hint"</code> to the  <code>&lt;span&gt;</code> element with a class of <code>help-text</code>.</li>
+    <li>Add <code>id="error"</code> to the <code>&lt;span&gt;</code> element with a class of <code>error-message</code>.</li>
+    <li>Add <code>aria-describedby="hint error"</code> to the <code>&lt;input&gt;</code> element.</li>
+    <li>View the accessible name in the accessibility tree.</li>
+  </ol>
+  <h2>Example</h2>
+
+  <!-- EXAMPLE STARTS HERE -->
+  <form action="#">
+    <div class="form-group">
+      <label class="label" for="b">Phone</label>
+      <span class="help-text">Include area code</span>
+      <input class="input" id="b" type="text">
+      <span class="error-message">Error: Include area code</span>
+    </div>
+  </form>
+  <!-- EXAMPLE ENDS HERE -->
+
+  <p><a href="index.html">List of all exercises</a></p>
+</body>
+</html>
