@@ -1,6 +1,7 @@
 # accessibility-workshop-developers
 
-A detailed accessibility training workshop for developers
+A detailed accessibility training workshop for developers:
+https://russmaxdesign.github.io/accessibility-workshop-developers/
 
 ## Topic 1: Assistive technologies
 
