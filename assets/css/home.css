@@ -91,6 +91,17 @@ code {
   font-family: consolas, courier, monospace;
 }
 
+kbd {
+  border: .03em solid #ccc;
+  border-radius: .2em;
+  padding: .2em .2em .1em;
+  color: #555;
+  background-image: linear-gradient(#fff, #eee);
+  box-shadow: .05em .05em .1em #aaa;
+  font-family: consolas, courier, monospace;
+}
+
+
 /* ---------------------
 links
 -----------------------*/
