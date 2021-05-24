@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Accessibility for Developers Introduction</title>
+    <meta name="description" content="Using VoiceOver">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/iag.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h5>Accessibility for Developers</h5>
+          <h1>Introduction</h1>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>What you need in order to attend the workshop</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>1. For those attended any session</h4>
+              <p>Please make sure to read the following short slide deck, as it covers of some basic information on:</p>
+              <ul>
+                <li>Why should we care about accessibility?</li>
+                <li>What are our legal responsibilities?</li>
+                <li>What is WCAG?</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>2. For those attending the “Topic 1” session</h4>
+              <p>You will need a screen reader in order to take part in some of the exercises:</p>
+              <ul>
+                <li>OSX: Use the inbuilt VoiceOver</li>
+                <li>Windows: <a href="https://www.nvaccess.org/download/" target="_blank">Download the free NVDA Screen reader</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>3. For those attending “Topic 2, 3, 4 or 5” sessions</h4>
+              <p>You will need some sort of text editor in order to take part in some of the exercises:</p>
+              <ul>
+                <li>OSX:
+                  <a href="https://www.sublimetext.com/3" target="_blank">Sublime</a>,
+                  <a href="https://atom.io/" target="_blank">Atom</a>,
+                  <a href="https://macromates.com/" target="_blank">TextMate</a>
+                </li>
+                <li>Windows:
+                  <a href="https://atom.io/" target="_blank">Atom</a>,
+                  <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>,
+                  <a href="https://notepad-plus-plus.org/" target="_blank">NotePad++</a>
+                </li>
+              </ul>
+
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>4. For those attending the “Topic 5” session</h4>
+              <p>You will need to install the following browser extensions/plugins in order to take part in some of the exercises:</p>
+              <ul>
+                <li><a href="https://chrome.google.com/webstore/detail/zoom-page-we/bcdjhkphgmiapajkphennjfgoehpodpk" target="_blank">Zoom Page WE plugin</a></li>
+                <li><a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="_blank">WAVE browser plugin</a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Why should we care about accessibility?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>We have <b>ethical, commercial and legal responsibilities</b> to make sure we are inclusive in all areas of our business - including our digital products.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In 2018, a <a href="https://www.and.org.au/pages/disability-statistics.html" target="_blank">Australian Bureau of Statistics Survey</a> estimated that there were <b>4.4 million (17.7%)</b> Australians with disability.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The 2013, a <a href="https://www.stats.govt.nz/information-releases/labour-market-statistics-disability-june-2020-quarter" target="_blank">New Zealand Disability Survey</a> estimated that there were <b>1.1 million (24%)</b> New Zealanders with disability.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>What are our legal responsibilities?</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Australia</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4><a href="http://www.comlaw.gov.au/Series/C2004A04426" target="_blank">Disability Discrimination Act 1992:</a></h4>
+              <p><i>“Companies must ensure that people with disabilities have the same fundamental rights to access information and services as others in the community.”</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4><a href="http://www.humanrights.gov.au/world-wide-web-access-disability-discrimination-act-advisory-notes-ver-41-2014" target="_blank">Australian Human Rights Commission:</a></h4>
+              <p><i>“All websites and web resources must comply with WCAG 2.0 to a minimum of AA-Level conformance.”</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In Australia, all public-facing digital products are:</p>
+              <ul>
+                <li>Required to comply with the <b>DDA 1992</b></li>
+                <li>Expected to conform to <b>WCAG 2.0 AA</b></li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>New Zealand</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In New Zealand, all public-facing digital products are required to comply with The Human Rights Act 1993, and The Human Rights Amendment Act 2001, and <b><a href="https://www.hrc.co.nz/your-rights/human-rights-legislation-new-zealand/" target="_blank">cannot discriminate on basis of disability</a></b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4><a href="https://www.hrc.co.nz/your-rights/your-rights/" target="_blank">Human Rights Commission</a></h4>
+              <p><i>“Human rights are what people need to live with dignity and enjoy freedom. All people have human rights, including all people with disabilities.”</i></p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Have there been any legal cases?</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>There have been <b>numerous complaints filed with the Australian Human Rights Commission</b> over the years. In some cases, these have gone through legal processes to be resolved.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The first successful legal challenge in the world was in Australia - <b><a href="https://www.humanrights.gov.au/our-work/disability-rights/maguire-v-socog" target="_blank">“Maguire v SOCOG”</a></b> in 1999.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The most recent, high profile case was <b><a href="https://mediaaccess.org.au/latest_news/news/coles-web-accessibilitycase-settled" target="_blank">“Gisele Mesnage vs Coles”</a></b>, which was settled in 2015.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>What is WCAG</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <b><a href="https://www.w3.org/TR/WCAG21/" target="_blank">Web Content Accessibility Guidelines</a></b> (WCAG), is a world-wide standard for web accessibility. The guidelines define how to make web content more accessible to people with disabilities. </p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Within the guidelines, there are 78 Success Criteria that can be used to test websites and applications to <b>determine their level of accessibility</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Each criteria is defined as either:</p>
+              <ul>
+                <li><b>Level “A”</b>: have the greatest impact on a broad range of user populations.</li>
+                <li><b>Level “AA”</b>: have a high impact for some groups. </li>
+                <li><b>Level “AAA”</b>: have an impact for very specific groups.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In order for websites and applications to conform to WCAG 2.1 AA, they must meet <b>all “A” and “AA” Success Criteria</b>, which means 50 criteria in total.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Our aim is to ensure that <b>all IAG public-facing digital products</b>:</p>
+              <ul>
+                <li>Are accessible to the widest possible audiences.</li>
+                <li>Conform to WCAG 2.1 AA.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <b>aim of this series of workshops</b> it to demonstrate:</p>
+              <ul>
+                <li>The importance of meeting these success criteria.</li>
+                <li>How to build accessible websites.</li>
+                <li>How to test the accessibility of websites.</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
