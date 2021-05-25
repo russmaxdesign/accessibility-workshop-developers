@@ -74,6 +74,11 @@ p {
   line-height: 1.5;
 }
 
+ul {
+  margin: 1em 0;
+  padding: 0 0 0 20px;
+}
+
 ul li {
   margin-bottom: .4em;
 }
