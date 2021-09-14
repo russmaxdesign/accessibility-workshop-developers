@@ -62,6 +62,7 @@ h4 {
   color: #592C82;
   font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
   font-size: 1em;
+  line-height: 1.2;
 }
 
 h5 {
@@ -288,13 +289,13 @@ selection
 
 ::selection {
   color: #fff;
-  background: #592C82;
+  background: #000;
   text-shadow: none;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #592C82;
+  background: #000;
   text-shadow: none;
 }
 
