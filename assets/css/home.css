@@ -41,27 +41,19 @@ h6 {
   word-wrap: break-word;
 }
 
-h1 {
-  margin: 0;
-  padding: 110px 0 0;
-  color: #fff;
-  font-size: 2em;
-  font-weight: 900;
-  text-align: center;
-}
 
-h2 {
+h1 {
   margin: 0 0 1em;
   font-size: 2.4em;
   font-weight: 900;
 }
 
-h3 {
+h2 {
   font-weight: 700;
   font-size: 1.6em;
 }
 
-h4 {
+h3 {
   font-size: 1em;
 }
 
@@ -139,34 +131,8 @@ content
 .main {
   max-width: 45em;
   margin: 0 auto;
-  padding: 20px;
-  background: #fff;
-}
-
-/* ---------------------
-banner
------------------------*/
-
-.banner {
-  padding: 5px;
-  background: url(../img/banner.jpg) no-repeat left center;
-  background-size: cover;
-}
-
-.banner-inner {
-  margin: 0 auto;
-  height: 300px;
-  width: 300px;
-  background: #592C82;
-  border-radius: 300px;
-}
-
-/* ---------------------
-content
------------------------*/
-
-.content {
   padding: 2em;
+  background: #fff;
 }
 
 /* ---------------------
