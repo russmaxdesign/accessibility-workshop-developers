@@ -21,8 +21,7 @@ headings
 -----------------------*/
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
 }
 
@@ -44,17 +43,19 @@ h6 {
 
 h1 {
   margin: 0 0 1em;
-  font-size: 2.4em;
+  font-size: 3em;
   font-weight: 900;
 }
 
 h2 {
   font-weight: 700;
-  font-size: 1.6em;
+  font-size: 1.8em;
+  margin: 1em 0 .5em;
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1.1em;
+  margin: 1.2em 0 .3em;
 }
 
 
