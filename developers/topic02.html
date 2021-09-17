@@ -431,13 +431,13 @@ SUB-SECTION
           <section data-background="#fff">
             <div class="accessibility">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
-                <title>Diagram showing content model categories overlapping</title>
+                <title>Diagram showing A element as part of Flow, Interaction and Phrasing categories</title>
                 <style type="text/css">
                   .st1{opacity:0.2;fill:#AF9831;}
                   .st2{opacity:0.2;fill:#3A78B4;}
                   .st3{opacity:0.2;fill:#50893E;}
                   .st4{opacity:0.2;fill:#B06A28;}
-                  .st5{opacity:1;fill:#dd0000;}
+                  .st11{opacity:1;fill:#dd0000;}
                   .st6{font-family:'HelveticaNeue-Bold';}
                   .st7{font-size:24px;}
                   .st8{opacity:0.2;fill:#8C5060;}
@@ -449,7 +449,7 @@ SUB-SECTION
                 <ellipse class="st2" cx="325" cy="208" rx="120" ry="125"></ellipse>
                 <ellipse class="st9" cx="192" cy="165" rx="150" ry="75"></ellipse>
                 <ellipse class="st9" cx="325" cy="208" rx="120" ry="125"></ellipse>
-                <ellipse class="st5" cx="265" cy="190" rx="20" ry="20"></ellipse>
+                <ellipse class="st11" cx="265" cy="190" rx="20" ry="20"></ellipse>
                 <text transform="matrix(1 0 0 1 372 58)" class="st6 st7">Flow</text>
                 <text transform="matrix(1 0 0 1 258 197)" class="st6 st7 st10">a</text>
                 <text transform="matrix(1 0 0 1 57 172)" class="st6 st7">Interactive</text>
@@ -771,18 +771,23 @@ SUB-SECTION
             </div>
           </section>
 
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>These logical regions are important <b>from a visual perspective as well as a markup perspective</b>.</p>
+            </div>
+          </section>
+
 <!--  –––––––––––––––––––––––––
 SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Why are landmarks important?</h3>
+            <h3>The importance of visual regions</h3>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <h4>For designers</h4>
-              <p>Creating clearly defined visual page regions help two different groups of people.</p>
+              <p>Creating <b>clearly defined visual page regions</b> help two different groups of people.</p>
             </div>
           </section>
 
@@ -800,10 +805,17 @@ SUB-SECTION
             </div>
           </section>
 
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>The importance of marked up regions</h3>
+          </section>
+
           <section data-background="#fff">
             <div class="accessibility">
-              <h4>For developers</h4>
-              <p>Using HTML landmarks as part of the markup can be helpful for two different groups of people.</p>
+              <p>Using <b>well-structured HTML landmarks</b> can be helpful for two different groups of people.</p>
             </div>
           </section>
 
@@ -859,9 +871,9 @@ SUB-SECTION
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Complementary</td>
-                    <td><code>&lt;aside&gt;</code></td>
-                    <td><code>role="complementary"</code></td>
+                    <td>Banner</td>
+                    <td><code>&lt;header&gt;</code></td>
+                    <td><code>role="banner"</code></td>
                   </tr>
                   <tr>
                     <td>Footer</td>
@@ -869,9 +881,9 @@ SUB-SECTION
                     <td><code>role="contentinfo"</code></td>
                   </tr>
                   <tr>
-                    <td>Header</td>
-                    <td><code>&lt;header&gt;</code></td>
-                    <td><code>role="banner"</code></td>
+                    <td>Navigation</td>
+                    <td><code>&lt;nav&gt;</code></td>
+                    <td><code>role="navigation"</code></td>
                   </tr>
                   <tr>
                     <td>Main</td>
@@ -879,9 +891,9 @@ SUB-SECTION
                     <td><code>role="main"</code></td>
                   </tr>
                   <tr>
-                    <td>Navigation</td>
-                    <td><code>&lt;nav&gt;</code></td>
-                    <td><code>role="navigation"</code></td>
+                    <td>Complementary</td>
+                    <td><code>&lt;aside&gt;</code></td>
+                    <td><code>role="complementary"</code></td>
                   </tr>
                   <tr>
                     <td>Section</td>
@@ -899,34 +911,258 @@ SUB-SECTION
             </div>
           </section>
 
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In order to <b>look at the different landmarks in action</b>, we will start with a very simple wireframe.</p>
+            </div>
+          </section>
+
 <!--  –––––––––––––––––––––––––
 SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>The &lt;main&gt; element</h3>
+            <h3>The &lt;header&gt; element </h3>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Use the <code>&lt;main&gt;</code> elements to <b>identify the main landmark</b>, which is the primary content for the page.</p>
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing banner landmark</title>
+                <style type="text/css">
+                  .st12{fill:#ded5e6;}
+                  .st13{fill:#bdabcd;}
+                  .st14{font-family:'HelveticaNeue';}
+                  .st15{font-size:18px;}
+                  .st16{fill:red;}
+                  .st17{fill:white;}
+                  .st17{font-family:'HelveticaNeue-Bold';}
+                </style>
+                <rect class="st16" x="0" y="0" width="750" height="80"></rect>
+                <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+                <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+                <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+                <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+                <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+                <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+                <text transform="matrix(1 0 0 1 20 35)" class="st14 st15 st17">Header</text>
+                <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+                <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+                <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+                <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+                <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+                <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+              </svg>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The HTML5 <code>&lt;header&gt;</code> element represents<b> a group of introductory or navigational aids</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;header&gt;
+&lt;/header&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;header&gt;</code> element <b>can be used multiple times</b> within a single layout.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>It could be a header as the <b>overall site header</b>:</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;body&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+    <span class="codeComment">Site information</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
+  &lt;main&gt;
+    <span class="codeComment">Main content</span>
+  &lt;/main&gt;
+  &lt;aside&gt;
+    <span class="codeComment">Complementary information</span>
+  &lt;/aside&gt;
+  &lt;footer&gt;
+    <span class="codeComment">Footer information</span>
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>It could be a header as a <b>header for the</b> <code>&lt;main&gt;</code> <b>content</b>:</p>
             </div>
           </section>
 
           <section data-background="#222">
 <pre><code contenteditable="true">&lt;main&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+    <span class="codeComment">Header for main content</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
 &lt;/main&gt;</code></pre>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Each page must have <b>only one</b> <code>&lt;main&gt;</code> element.</p>
+              <p>Or a header for a <code>&lt;section&gt;</code> <b>of content</b>:</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;section&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+    <span class="codeComment">Header for section content</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
+&lt;/section&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Or even as a header for <code>&lt;aside&gt;</code> <b>content</b>:</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;aside&gt;
+  <span class="codeHighlight">&lt;header&gt;</span>
+    <span class="codeComment">Header for aside content</span>
+  <span class="codeHighlight">&lt;/header&gt;</span>
+&lt;/aside&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If only one <code>&lt;header&gt;</code> element sits outside any other landmark elements, it <b>will be defined as the banner landmark</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;body&gt;
+  <span class="codeHighlight">&lt;header&gt;
+    Banner landmark
+  &lt;/header&gt;</span>
+  &lt;main&gt;
+    <span class="codeComment">Main content</span>
+  &lt;/main&gt;
+  &lt;aside&gt;
+    <span class="codeComment">Complementary information</span>
+  &lt;/aside&gt;
+  &lt;footer&gt;
+    <span class="codeComment">Footer information</span>
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This means it will be <b>exposed to assistive technologies</b>.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>The &lt;footer&gt; element </h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing footer landmark</title>
+                <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+                <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+                <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+                <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+                <rect class="st16" x="0" y="350" width="750" height="80"></rect>
+                <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+                <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+                <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+                <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+                <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+                <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+                <text transform="matrix(1 0 0 1 20 385)" class="st14 st15 st17">Footer</text>
+                <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+                <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+              </svg>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;main&gt;</code> element <b>should not be contained inside other landmark elements</b> or roles.</p>
+              <p>The HTML5 <code>&lt;footer&gt;</code> element represents <b>a footer for its nearest ancestor</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>A footer typically contains <b>information about its section</b> such as who wrote it, links to related documents, copyright data, and the like.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;footer&gt;
+&lt;/footer&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;footer&gt;</code> element can be used multiple times within a single layout. It is mainly used as the <b>overall site footer</b>:</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;body&gt;
+  &lt;header&gt;
+    <span class="codeComment">Site information</span>
+  &lt;/header&gt;
+  &lt;main&gt;
+    <span class="codeComment">Main content</span>
+  &lt;/main&gt;
+  &lt;aside&gt;
+    <span class="codeComment">Complementary information</span>
+  &lt;/aside&gt;
+  <span class="codeHighlight">&lt;footer&gt;</span>
+    <span class="codeComment">Footer information</span>
+  <span class="codeHighlight">&lt;/footer&gt;</span>
+&lt;/body&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If only one <code>&lt;footer&gt;</code> element sits outside any other landmark elements, it <b>will be defined as the footer landmark</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;body&gt;
+  &lt;header&gt;
+    <span class="codeComment">Header content</span>
+  &lt;/header&gt;
+  &lt;main&gt;
+    <span class="codeComment">Main content</span>
+  &lt;/main&gt;
+  &lt;aside&gt;
+    <span class="codeComment">Complementary information</span>
+  &lt;/aside&gt;
+  <span class="codeHighlight">&lt;footer&gt;
+    Footer landmark
+  &lt;/footer&gt;</span>
+&lt;/body&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This means it will be <b>exposed to assistive technologies</b>.</p>
             </div>
           </section>
 
@@ -940,18 +1176,40 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing nav landmark</title>
+                <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+                <rect class="st16" x="0" y="90" width="750" height="40"></rect>
+                <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+                <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+                <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+                <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+                <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+                <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+                <text transform="matrix(1 0 0 1 20 115)" class="st14 st15 st17">Navigation</text>
+                <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+                <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+                <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+                <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+                <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+              </svg>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
               <p>Use the <code>&lt;nav&gt;</code> element to <b>identify the navigation landmark</b>, which contain groups of links used for site or page navigation. </p>
             </div>
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;nav&gt;
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;nav&gt;</span>
   &lt;ul&gt;
     &lt;li&gt;&lt;a href="#"&gt;Link1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;Link2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;Link3&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-&lt;/nav&gt;</code></pre>
+<span class="codeHighlight">&lt;/nav&gt;</span></code></pre>
           </section>
 
           <section data-background="#fff">
@@ -987,60 +1245,51 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>The &lt;header&gt; element </h3>
+            <h3>The &lt;main&gt; element</h3>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Use the <code>&lt;header&gt;</code> element to <b>identify the header landmark</b>, which is site-oriented content at the beginning of each page within a website.</p>
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing main landmark</title>
+                <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+                <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+                <rect class="st16" x="0" y="140" width="500" height="200"></rect>
+                <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+                <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+                <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+                <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+                <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+                <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+                <text transform="matrix(1 0 0 1 20 175)" class="st14 st15 st17">Main</text>
+                <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+                <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+                <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+                <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+              </svg>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Use the <code>&lt;main&gt;</code> elements to <b>identify the main landmark</b>, which is the primary content for the page.</p>
             </div>
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;header&gt;
-&lt;/header&gt;</code></pre>
+<pre><code contenteditable="true">&lt;main&gt;
+&lt;/main&gt;</code></pre>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>While there can be multiple <code>&lt;header&gt;</code> elements within a page, there <b>should only be one header landmark</b>.</p>
+              <p>Each page must have <b>only one</b> <code>&lt;main&gt;</code> element.</p>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>If you use the <code>&lt;header&gt;</code> element inside another landmark element, <b>it will not be recognised as a header landmark</b>.</p>
-            </div>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>The &lt;footer&gt; element </h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Use the <code>&lt;footer&gt;</code> element to <b>identify the footer landmark</b>, which is site-oriented content at the end of each page within a website.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;footer&gt;
-&lt;/footer&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>While there can be multiple <code>&lt;footer&gt;</code> elements within a page, there <b>should only be one footer landmark</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>If you use the <code>&lt;footer&gt;</code> element inside another landmark element, <b>it will not be recognised as a footer landmark</b>.</p>
+              <p>The <code>&lt;main&gt;</code> element <b>should not be contained inside other landmark elements</b> or roles.</p>
             </div>
           </section>
 
@@ -1054,13 +1303,29 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Use the <code>&lt;aside&gt;</code> element to <b>identify the complementary landmark</b>, which is a page region that is complementary to the main content.</p>
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing main landmark</title>
+                <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+                <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+                <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+                <rect class="st16" x="510" y="140" width="240" height="200"></rect>
+                <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+                <rect class="st13" x="20" y="200" width="460" height="120"></rect>
+                <rect class="st13" x="530" y="200" width="200" height="120"></rect>
+                <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+                <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+                <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+                <text transform="matrix(1 0 0 1 530 175)" class="st14 st15 st17">Aside</text>
+                <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+                <text transform="matrix(1 0 0 1 40 235)" class="st14 st15">Section</text>
+                <text transform="matrix(1 0 0 1 550 235)" class="st14 st15">Section</text>
+              </svg>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>This page region should <b>still be meaningful when separated from the main content</b>.</p>
+              <p>The <code>&lt;aside&gt;</code> element represents a <b>section of a page that could be considered separate</b> from that content.</p>
             </div>
           </section>
 
@@ -1071,7 +1336,25 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;aside&gt;</code> element <b>should not be contained inside other landmark elements</b> or roles.</p>
+              <p>The <code>&lt;aside&gt;</code> element should <b>not be contained inside other landmark elements</b> or roles.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If a page includes more than one <code>&lt;aside&gt;</code> element, <b>each should have a unique label</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This is achieved using either <code>aria-labelledby</code> if a heading is present, or <code>aria-label</code> if no heading is present.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>These two attributes will be <b>covered in a later topic</b>.</p>
             </div>
           </section>
 
@@ -1081,6 +1364,28 @@ SUB-SECTION
 
           <section data-background="#000">
             <h3>The &lt;section&gt; element </h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing main landmark</title>
+                <rect class="st12" x="0" y="0" width="750" height="80"></rect>
+                <rect class="st12" x="0" y="90" width="750" height="40"></rect>
+                <rect class="st12" x="0" y="140" width="500" height="200"></rect>
+                <rect class="st12" x="510" y="140" width="240" height="200"></rect>
+                <rect class="st12" x="0" y="350" width="750" height="80"></rect>
+                <rect class="st16" x="20" y="200" width="460" height="120"></rect>
+                <rect class="st16" x="530" y="200" width="200" height="120"></rect>
+                <text transform="matrix(1 0 0 1 20 35)" class="st14 st15">Header</text>
+                <text transform="matrix(1 0 0 1 20 115)" class="st14 st15">Navigation</text>
+                <text transform="matrix(1 0 0 1 20 175)" class="st14 st15">Main</text>
+                <text transform="matrix(1 0 0 1 530 175)" class="st14 st15">Aside</text>
+                <text transform="matrix(1 0 0 1 20 385)" class="st14 st15">Footer</text>
+                <text transform="matrix(1 0 0 1 40 235)" class="st14 st15 st17">Section</text>
+                <text transform="matrix(1 0 0 1 550 235)" class="st14 st15 st17">Section</text>
+              </svg>
+            </div>
           </section>
 
           <section data-background="#fff">
@@ -1101,6 +1406,18 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
+<pre><code contenteditable="true">&lt;section&gt;
+  <span class="codeHighlight">&lt;h3&gt;Section heading&lt;/h3&gt;</span>
+&lt;/section&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>These headings could be <b>programmatically associated with their parent elements</b> using the <code>aria-describedby</code> attribute.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
 <pre><code contenteditable="true">&lt;section <span class="codeHighlight">aria-labelledby="sec01"</span>&gt;
   &lt;h3 <span class="codeHighlight">id="sec01"</span>&gt;Section heading&lt;/h3&gt;
 &lt;/section&gt;</code></pre>
@@ -1109,12 +1426,6 @@ SUB-SECTION
           <section data-background="#fff">
             <div class="accessibility">
               <p>This attribute will be <b>covered in a later topic</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>If there is no heading that is a direct child of the region, then a <code>&lt;div&gt;</code> element <b>would be preferable</b> to a <code>&lt;section&gt;</code> element.</p>
             </div>
           </section>
         </section>
@@ -1142,11 +1453,11 @@ SUB-SECTION
             <div class="accessibility">
               <h4>Look for the following</h4>
               <ol>
-                <li>Complementary / <code>&lt;aside&gt;</code></li>
+                <li>Banner / <code>&lt;header&gt;</code></li>
                 <li>Footer / <code>&lt;footer&gt;</code></li>
-                <li>Header / <code>&lt;header&gt;</code></li>
-                <li>Main / <code>&lt;main&gt;</code></li>
                 <li>Navigation / <code>&lt;nav&gt;</code></li>
+                <li>Main / <code>&lt;main&gt;</code></li>
+                <li>Complementary / <code>&lt;aside&gt;</code></li>
                 <li>Section / <code>&lt;section&gt;</code></li>
               </ol>
             </div>
@@ -1413,7 +1724,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>While buttons and links can be styled as needed, <b>they should always be used for their correct semantic purpose</b>.</p>
+              <p>So, buttons and links should <b>always be used for their correct semantic purpose</b>.</p>
             </div>
           </section>
         </section>
