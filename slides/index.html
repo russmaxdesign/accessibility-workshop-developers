@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Digital Accessibility at IAG</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reveal.css">
+    <link rel="stylesheet" href="../assets/css/iag.css">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '../assets/css/print/pdf.css' : '../assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h1>Digital Accessibility</h1>
+          <h5>At IAG</h5>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Some definitions</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Before diving into digital accessibility, an overview of <b>some common terms</b>:</p>
+              <ul>
+                <li>Inclusion</li>
+                <li>Diversity</li>
+                <li>Equity</li>
+                <li>Accessibility</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing A element as part of Flow, Interaction and Phrasing categories</title>
+                <style type="text/css">
+                  .st1{fill:#B36AE2;}
+                  .st2{fill:#51A7F9;}
+                  .st3{fill:#70BF41;}
+                  .st4{fill:#034FB5;}
+                  .st5{fill:#592C82;}
+                  .st6{fill:#00722B;}
+                  .st7{opacity:0.2;}
+                  .st8{font-family:'HelveticaNeue-Bold';font-size:20px;}
+                  .st9{font-family:'HelveticaNeue';font-size:16px;}
+                  .st10{fill:#dd0000;opacity:0.4;}
+                </style>
+                <ellipse class="st1 st7" cx="140" cy="280" rx="140" ry="140"></ellipse>
+                <text transform="matrix(1 0 0 1 90 300)" class="st5 st8">Equity</text>
+              </svg>  
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Equity</h4>
+              <p>Ensuring fair treatment, equality of opportunity, and fairness in access to information and resources for all.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing A element as part of Flow, Interaction and Phrasing categories</title>
+                <ellipse class="st1 st7" cx="140" cy="280" rx="140" ry="140"></ellipse>
+                <ellipse class="st3 st7" cx="320" cy="280" rx="140" ry="140"></ellipse>
+
+                <text transform="matrix(1 0 0 1 90 300)" class="st5 st8">Equity</text>
+                <text transform="matrix(1 0 0 1 300 300)" class="st6 st8">Diversity</text>
+              </svg>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Diversity</h4>
+              <p>The representation of all possible identities and differences, collectively and as individuals. </p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Diversity can include:</h4>
+              <ul class="font-xs">
+                <li>Age</li>
+                <li>Location</li>
+                <li>Morphology</li>
+                <li>Language / Dialect</li>
+                <li>Ability / Disability</li>
+                <li>Education / Training</li>
+                <li>Income / Social class</li>
+                <li>Culture / Beliefs / Ethnicity</li>
+                <li>Sexuality / Gender identity / Gender expression</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing A element as part of Flow, Interaction and Phrasing categories</title>
+                <ellipse class="st1 st7" cx="140" cy="280" rx="140" ry="140"></ellipse>
+                <ellipse class="st2 st7" cx="230" cy="140" rx="140" ry="140"></ellipse>
+                <ellipse class="st3 st7" cx="320" cy="280" rx="140" ry="140"></ellipse>
+
+                <text transform="matrix(1 0 0 1 185 120)" class="st4 st8">Inclusion</text>
+                <text transform="matrix(1 0 0 1 90 300)" class="st5 st8">Equity</text>
+                <text transform="matrix(1 0 0 1 300 300)" class="st6 st8">Diversity</text>
+              </svg>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Inclusion</h4>
+              <p>Welcoming and valuing the input of people with diverse identities.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Accessibility</h4>
+              <p>The practice of ensuring that all products and services meet the needs of everyone, including those with disabilities.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Accessibility is a subset of <b>equity, diversity and inclusion</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 770 420" style="enable-background:new 0 0 770 420;" xml:space="preserve">
+                <title>Diagram showing A element as part of Flow, Interaction and Phrasing categories</title>
+                <ellipse class="st1 st7" cx="140" cy="280" rx="140" ry="140"></ellipse>
+                <ellipse class="st2 st7" cx="230" cy="140" rx="140" ry="140"></ellipse>
+                <ellipse class="st3 st7" cx="320" cy="280" rx="140" ry="140"></ellipse>
+
+                <ellipse class="st10" cx="230" cy="50" rx="30" ry="30"></ellipse>
+                <ellipse class="st10" cx="90" cy="360" rx="30" ry="30"></ellipse>
+                <ellipse class="st10" cx="360" cy="360" rx="30" ry="30"></ellipse>
+
+                <text transform="matrix(1 0 0 1 185 120)" class="st4 st8">Inclusion</text>
+                <text transform="matrix(1 0 0 1 90 300)" class="st5 st8">Equity</text>
+                <text transform="matrix(1 0 0 1 300 300)" class="st6 st8">Diversity</text>
+
+                <text transform="matrix(1 0 0 1 400 365)" class="st9">Accessibility</text>
+                <text transform="matrix(1 0 0 1 130 365)" class="st9">Accessibility</text>
+                <text transform="matrix(1 0 0 1 270 55)" class="st9">Accessibility</text>
+              </svg>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>An example in action</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Imagine you were designing and building a <b>children’s playground</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Accessibility</b> would mean considering the needs of children with disabilities - such a including ramps, braille tactile displays, clear iconography etc.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Diversity</b> would mean considering all types of children - not only those with disabilities, but also different ages, cultures, genders, languages etc.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Equity</b> would mean ensuring that all of these types of children had the same access to activities within the playground.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Inclusion</b> would mean ensuring that a diverse range of audiences would be involved and engaged at every stage of the design and development process.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>At the minimum, inclusion means <b>asking these diverse groups of people for their opinion</b> at focus groups, interviews or user testing sessions.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Ideally, <b>inclusion involves co-creation</b> - the collaborative development of concepts and solutions with experts and these key audiences.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>What is digital accessibility?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>A focus on ensuring the <b>accessibility of digital products and services</b>:</p>
+              <ul>
+                <li>Websites and web applications.</li>
+                <li>Native mobile applications.</li>
+                <li>Digital documents (such as PDFs).</li>
+                <li>Email.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What’s the aim of Digital Accessibility?</h4>
+              <p>To ensure that all IAG digital products are accessible to the widest possible audience - including individuals with disabilities.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What does the Accessibility Principal do?</h4>
+              <ul>
+                <li>Accessibility awareness sessions.</li>
+                <li>Accessibility training workshops.</li>
+                <li>Rollout of accessibility testing tool.</li>
+                <li>Ongoing accessibility compliance audits.</li>
+                <li>Advice and support.</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Why should we care about accessibility?</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Legal imperatives</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>In Australia</b>, all of IAG’s public-facing digital products:</p>
+              <ul>
+                <li>Are required to comply with the Disability Discrimination Act 1992.</li>
+                <li>Must conform to WCAG 2.1 AA.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>In New Zealand</b>, all of IAG’s public-facing digital products:</p>
+              <ul>
+                <li>Are required to comply with the The Human Rights Act 1993.</li>
+                <li>Are required to comply with the Human Rights Amendment Act 2001.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Commercial incentives</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How many people have some form of disability?</h4>
+              <ul>
+                <li>Around 17.7% Australians.</li>
+                <li>Around 24% New Zealanders.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>However, it is well-known that these estimates are low, as <b>many people do not identify themselves as having some form of disability</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Regardless of the exact percentages, <b>can we afford to alienate any number of potential or existing customers</b> by not providing accessible products and services?</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Reputation incentives</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In 2015, the legal case “<b><a href="https://mediaaccess.org.au/latest_news/news/coles-web-accessibilitycase-settled">Gisele Mesnage vs Coles</a></b>” was settled out of court.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>While there is a financial risk associated with legal actions like this, <b>the possible damage to organisation’s reputation is a far greater risk</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“It takes many good deeds to build a good reputation, and <b>only one bad one to lose it</b>.”</i></p>
+              <p class="font-xs">Benjamin Franklin</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>What is WCAG?</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>As we saw before, all of IAG’s public-facing digital products <i>“must conform to WCAG 2.1 AA”</i>. <b>But what does this mean?</b></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <b>Web Content Accessibility Guidelines</b> (WCAG), is the world-wide standard for web accessibility.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>WCAG is the <b>standard for web content accessibility</b>. It explains how to make web content more accessible to people with disabilities.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The latest version of the Web Content Accessibility Guidelines is <b><a href="https://www.w3.org/TR/WCAG21/">Version 2.1</a></b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Within the WCAG guidelines, <b>all key criteria are categorised</b> as either:</p>
+              <ul>
+                <li>20 level “A” - broadest audiences</li>
+                <li>30 level “AA”</li>
+                <li>28 level “AAA” - niche audiences</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>To be “AA” compliant, sites <b>must meet all “A” and “AA”</b> Success Criteria.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This means that websites and web apps <b>must comply with all 50 of these Success Criteria</b>.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Auditing digital products</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>All websites, web apps and native apps need to be <b>regularly audited</b> to determine whether they conform to “WCAG 2.1 AA”.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This can be done by either <b>in-house or external accessibility experts</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Accessibility audits can be <b>conducted on</b>:</p>
+              <ul>
+                <li>Entire applications.</li>
+                <li>Specific customer processes.</li>
+                <li>Single screens.</li>
+                <li>Individual components.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Audits can be conducted at <b>any stage in the process</b>:</p>
+              <ul>
+                <li>Design wireframes or prototypes.</li>
+                <li>Apps in the early stages of development.</li>
+                <li>Apps that are ready for deployment.</li>
+                <li>Apps that are already live.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The general rule regarding accessibility reviews and audits is <b>“the earlier the better”</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The aim is to try to identify potential issues before code is written, or <b>at least before a site is deployed</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Accessibility audits <b>should provide</b>:</p>
+              <ul>
+                <li>A list of all identified errors</li>
+                <li>An indication as to how to fix the error. </li>
+                <li>An indication of the impact of each error.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Each error should include one of <b>four levels of impact</b>.</p>
+              <ul>
+                <li>Critical.</li>
+                <li>High.</li>
+                <li>Medium.</li>
+                <li>Low.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Critical impact</h4>
+              <p>These errors can significantly interfere with a person’s use of the page. In most cases, they cannot proceed with a task.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Critical impact errors must be addressed <b>before</b> any website or application goes live.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>High impact</h4>
+              <p>These errors mean that there will be some groups of people with disabilities who are not able to use the site or a section of the site at all.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>High impact errors should be addressed as <b>soon as possible with the next release</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Medium impact</h4>
+              <p>These errors may increase the amount of time a person with a disability takes to complete a task, or cause the user frustration/confusion.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Low impact</h4>
+              <p>These errors could affect users and should be addressed to fully conform with WCAG 2.1 AA.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Types of disabilities</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>From a digital accessibility perspective, are <b>four main types of disability</b>:</p>
+              <ul>
+                <li>Visual</li>
+                <li>Auditory</li>
+                <li>Motor Skill</li>
+                <li>Cognitive</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>1. Visual</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>A. Low Vision:</h4>
+              <ul class="font-sm">
+                <li>Macular degeneration</li>
+                <li>Glaucoma</li>
+                <li>Diabetic retinopathy</li>
+                <li>Cataract</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>B. Colour Vision Deficiencies:</h4>
+              <ul class="font-sm">
+                <li><i>Protanopia</i> (red deficiencies)</li>
+                <li><i>Deuteranopia</i> (green deficiencies)</li>
+                <li><i>Tritanopia</i> (blue deficiencies)</li>
+                <li>Rod monochromacy (no colour)</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Side note:</h4>
+              <p>Although “colour blindness’’ is a commonly used term, it is actually inaccurate. “Colour blindness” means the absence of the ability to detect or distinguish any colour.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>C. Blindness</h4>
+              <ul class="font-sm">
+                <li>Includes very little to no vision.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Side note:</h4>
+              <p>A person is considered legally blind if either:</p>
+              <ul>
+                <li>They cannot see at 6m what someone with normal vision can see at 60m.</li>
+                <li>Their field of vision is less than 20 degrees in diameter.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>2. Auditory</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Auditory disabilities:</h4>
+              <ul class="font-sm">
+                <li>Hearing loss</li>
+                <li>Hearing impaired</li>
+                <li>Deafness</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Side note:</h4>
+              <p>A small percentage of the deaf community that cannot read, and rely on sign language alone.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>3. Motor skill</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>A. Traumatic Injuries</h4>
+              <ul class="font-sm">
+                <li>Spinal cord injuries that affect upper body</li>
+                <li>Loss or damage to limb(s)</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>B. Full-body Diseases & Conditions</h4>
+              <ul class="font-sm">
+                <li>Arthritis</li>
+                <li>Spina Bifida</li>
+                <li>Cerebral Palsy</li>
+                <li>Muscular Dystrophy</li>
+                <li>Multiple Sclerosis</li>
+                <li>Parkinson’s Disease</li>
+                <li>Amyotrophic Lateral Sclerosis (ALS)</li>
+                <li>Locked in syndrome (Cerebromedullospinal disconnection)</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>C. Transient Conditions</h4>
+              <ul class="font-sm">
+                <li>Stereotypic Movement Disorder (SMD)</li>
+                <li>Functional Neurological Disorder (FND)</li>
+                <li>Chronic Motor Tick Disorder</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>D. Arm, Hand and Finger Disorders</h4>
+              <ul class="font-sm">
+                <li>Osteoarthritis</li>
+                <li>Lymphedema</li>
+                <li>Trigger Finger</li>
+                <li>Buerger's Disease</li>
+                <li>Liebenberg Dyndrome</li>
+                <li>Theumatoid Arthritis</li>
+                <li>Boutonnière Deformity</li>
+                <li>Dupuytren Contracture</li>
+                <li>Chronic Exertional Compartment Syndrome</li>
+              </ul>
+            </div>
+          </section>
+
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>4. Cognitive</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>A. Intellectual disabilities</h4>
+              <ul class="font-sm">
+                <li>Fragile X Syndrome</li>
+                <li>Down Syndrome</li>
+                <li>Autism</li>
+                <li>Fetal Alcohol Spectrum Disorder (FASD)</li>
+                <li>Apert Syndrome</li>
+                <li>Williams Syndrome</li>
+                <li>Prader-Willi Syndrome (PWS)</li>
+                <li>Phenylketonuria (PKU)</li>
+                <li>Cerebral Palsy</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>B. Learning disabilities</h4>
+              <ul class="font-sm">
+                <li>Dyscalculia (maths)</li>
+                <li>Dysgraphia (writing)</li>
+                <li>Dyslexia (reading)</li>
+                <li>Dyspraxia (movement / coordination)</li>
+                <li>Dysphasia (understanding language)</li>
+                <li>Attention Deficit Hyperactivity Disorder (ADHD)</li>
+                <li>Executive Dysfunction Disorder</li>
+                <li>Non-Verbal Learning Disabilities</li>
+                <li>Oral / Written Language Disorders</li>
+                <li>Auditory and visual processing disorders</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Disabilities are varied and complex</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Many disabilities are <b>spectrums</b>, so people may exhibit mild to extreme symptoms associated with that disability.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Some people have <b>multiple disabilities or conditions</b> such as:</p>
+              <ul>
+                <li>A person who is blind and also has hearing loss.</li>
+                <li>A person with Tourettes with Coprolalia, who also has Absence seizures and Functional Neurological Disorder (FND).</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Many disabilities <b>change over time</b> such as:</p>
+              <ul>
+                <li>Deteriorating eye sight or hearing.</li>
+                <li>Improved functionality after a stroke.</li>
+                <li>Changes due to different treatment or medication.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Making digital products accessible for people with disabilities also <b>benefits others</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>For example, some people may experience <b>temporary or situational barriers</b> that are similar to the symptoms of disabilities.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Examples of temporary barriers:</h4>
+              <ul>
+                <li>A broken finger or an arm in a sling.</li>
+                <li>Temp heading loss.</li>
+                <li>Blurred vision.</li>
+                <li>Concussion.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Examples of situational barriers:</h4>
+              <ul>
+                <li>Unable to see a screen due to sunlight.</li>
+                <li>Unable to hear video or audio material due to a local noise.</li>
+                <li>Unable to use a mouse while holding a baby.</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Assistive technologies</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Are people with disabilities likely to access our digital products?</h4>
+              <p>Maybe not all of our products. For example, people with vision disabilities are unlikely to purchase car insurance. However, in general, yes. Everyone needs insurance!</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How do these people access our digital products?</h4>
+              <p>With assistive technologies: software and hardware designed to help people with disabilities interact with websites and web applications.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Hardware for vision impaired:</h4>
+              <ul>
+                <li>Refreshable braille display<br>(eg. <a href="https://www.youtube.com/watch?v=SlxIEPEC_Qc">Chameleon</a>).</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Software for vision impaired:</h4>
+              <ul>
+                <li>Screen reader software<br>(eg. JAWS, NVDA, VoiceOver).</li>
+                <li>Screen magnifier software<br>(eg. <a href="https://www.youtube.com/watch?v=EEN79RRvKqE">ZoomText</a>).</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Hardware for motor skill impaired:</h4>
+              <ul>
+                <li><a href="https://www.youtube.com/watch?v=bWI1oI_f_rg" target="_blank">Head wand</a>.</li>
+                <li><a href="https://www.youtube.com/watch?v=ZMvikz2cA-8" target="_blank">Quadstick - Sip and Puff</a>.</li>
+                <li><a href="https://www.youtube.com/watch?v=7Cly3vDZYqs" target="_blank">Head switches</a>.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Software for motor skill impaired:</h4>
+              <ul>
+                <li><a href="https://www.youtube.com/watch?v=kJKQmTumFP0" target="_blank">Dragon Naturally Speaking</a></li>
+                <li><a href="https://www.youtube.com/watch?v=DnGSbVx4ef0" target="_blank">Dynavox - Mouse emulation</a></li>
+                <li><a href="https://www.youtube.com/watch?v=04Rhnt4J2b4" target="_blank">Steve's Story</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>These are just some examples of a <b>broad range of Assistive Technologies</b> in use today.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Inclusive language</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Person-first language</b> is the most widely accepted terminology in Australia:</p>
+              <ul>
+                <li><i>“Person/people with disability”</i></li>
+                <li><i>“Person who is blind”</i></li>
+                <li><i>“People who have low vision”</i></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Person-first language is important as the phrase <b>“Blind person”</b> implies that being blind is the entirety of that person.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>People should <b>never be defined just by their disability</b>. And, many people with disabilities have more than one disability, so these phrases are often misleading.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>However, some groups of people prefer different phraseology. For example, some people from the Autism community <b>prefer to be referred to as “Autistic” rather than “Person with autism”</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“Don’t be so afraid of saying the wrong thing that you don’t say anything at all. Relax, be willing to communicate, and listen.”</i></p>
+              <p><a href="https://www.and.org.au/pages/inclusive-language.html">AND Inclusive language</a></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Avoid language that implies a person with disability is <b>inspirational</b> simply because they experience disability.</p>
+              <ul>
+                <li><i>“They are so brave...”</i></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Avoid terms that <b>imply a person is a victim</b> or should be an object of pity:</p>
+              <ul>
+                <li><i>“Suffering from…”.</i></li>
+                <li><i>“Struck down by…”</i></li>
+                <li><i>“Bound by…”</i></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Don’t accuse people of <b>faking their disability</b>. Each disability is a spectrum, so someone’s condition may not match your understanding or past experience.</p>
+              <ul>
+                <li><i>“My boyfriend has Tourettes and he doesn’t act like you.”</i></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Avoid <b>offering solutions or advice</b> to people regarding their disabilities.</p>
+              <ul>
+                <li><i>"Have you tried weed to help with your ticks and tremors?”</i></li>
+                <li><i>“Have you tried “x” therapy?”</i></li>
+                <li><i>“Have you tried praying?”</i></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>Accessibility persona examples</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Even though there are a wide range of disabilities and barriers, they can be broken down into <b>six basic Accessibility personas</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <ul class="font-sm">
+                <li><b><a href="#/9/3">Andrew</a></b>: a person who is blind.</li>
+                <li><b><a href="#/9/7">Judith</a></b>: a person with Cerebral Palsy.</li>
+                <li><b><a href="#/9/11">Sophia</a></b>: a person who has extremely low vision.</li>
+                <li><b><a href="#/9/14">Will</a></b>: a person who is colour vision deficient.</li>
+                <li><b><a href="#/9/17">Yên</a></b>: a person who suffered a traumatic brain injury.</li>
+                <li><b><a href="#/9/20">Eliana</a></b>: a person who is deaf.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Andrew</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Some info about Andrew:</h4>
+              <ul class="font-sm">
+                <li>A person who is blind.</li>
+                <li>Screen reader user (NVDA, JAWS, VoiceOver).</li>
+                <li>Keyboard-only user.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Keyboard-only pain points:</h4>
+              <ul class="font-sm">
+                <li><i>Lack of keyboard-only access</i>:<br>Cannot access key functionality.</li>
+                <li><i>Inability to bypass blocks</i>:<br>Cannot quickly navigate to locations in web pages.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Screen reader pain points:</h4>
+              <ul class="font-sm">
+                <li><i>Lack of semantic markup</i>:<br>Cannot navigate via headings, landmarks.</li>
+                <li><i>Lack of accessible form markup</i>:<br>Cannot complete forms without effort.</li>
+                <li><i>Lack of accessibility widgets</i>:<br>Cannot understand due to lack of labels, purpose, states.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Judith</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Some info about Judith:</h4>
+              <ul class="font-sm">
+                <li>A person who with Cerebral Palsy (no control over limb or head movement).</li>
+                <li>Head Pointer with sticky keys.</li>
+                <li>Keyboard-only user.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Keyboard-only pain points:</h4>
+              <ul class="font-sm">
+                <li><i>Lack of keyboard-only access</i>:<br>Cannot access key functionality.</li>
+                <li><i>Lacks of clear focus states</i>:<br>Cannot see which element is in focus</li>
+                <li><i>Lack of focus consistency</i>:<br>Has to learn which elements are in focus.</li>
+                <li><i>Lack of intuitive focus order</i>:<br>May miss where focus order is on page</li>
+                <li><i>Inability to bypass blocks</i>:<br>Cannot quickly navigate to locations in web pages.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Head pointer pain points:</h4>
+              <ul class="font-sm">
+                <li><i>Long scrolling pages</i>:<br>Very hard with head pointer.</li>
+                <li><i>Excessive need for tabbing</i>:<br>Lots of head actions.</li>
+                <li><i>Small target size for actionable items</i>:<br>Hard to navigate using sticky keys.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Sophia</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Some info about Sophia:</h4>
+              <ul class="font-sm">
+                <li>A person who has extremely low vision.</li>
+                <li>Screen magnification user (ZoomText).</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Magnification pain points:</h4>
+              <ul class="font-sm">
+                <li><i>Layout issues when text size increased</i>:<br>Can cause layouts to break.</li>
+                <li><i>Actions are not in close proximity to triggers</i>:<br>Content can appear off-screen.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Will</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Some info about Will:</h4>
+              <ul class="font-sm">
+                <li>A person who is colour vision deficient.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Colour vision deficiency pain points:</h4>
+              <ul class="font-sm">
+                <li><i>When colour-alone is used to indicate important information</i>:<br>Not able to register some colours.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Yên</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Some info about Yên:</h4>
+              <ul class="font-sm">
+                <li>Cognitive impairment due to traumatic brain injury.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Cognitive pain points:</h4>
+              <ul class="font-sm">
+                <li><i>Inability to adjust or stop timed functions</i>:<br>Needs more time to complete tasks.</li>
+                <li><i>Excessive flashing or moving content</i>:<br>Can cause seizures.</li>
+                <li><i>Complex UI, especially multi-columns</i>:<br>Complexity makes processing more difficult.</li>
+                <li><i>Complex language, technical/legal phrases</i>:<br>Complexity makes processing more difficult.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Eliana</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Some info about Eliana:</h4>
+              <ul class="font-sm">
+                <li>A person who is deaf.</li>
+                <li>Prefers Auslan to captions where possible.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Hearing loss painpoints:</h4>
+              <ul class="font-sm">
+                <li><i>Lack of audio/video captions</i>:<br>Cannot access audio or video.</li>
+                <li><i>Lack of sign language options associated with audio or video</i>:<br>May be harder to access audio or video.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Examples</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>These personas can become a <b>powerful tool</b> to be able to discuss issues in shorthand.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“Andrew won’t be able to access that date picker as it only works with a mouse.”</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“Judith might find the lack of focus state confusing on those buttons.”</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“Sophia may not be able see that action as it could appear off-screen when using ZoomText.”</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“Will won't see those red error colours. We will need to provide some other form of indication.”</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“Yên may need more time to complete that task. We need to allow him to extend the time limitation.”</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i>“Eliana will need subtitles to be able to understand what is being said on that video.”</i></p>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
