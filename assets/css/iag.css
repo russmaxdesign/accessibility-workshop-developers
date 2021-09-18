@@ -487,3 +487,15 @@ classes
 .red {
   color: red;
 }
+
+.intro-instructions {
+  margin: 2.5em 0 0;
+  font-size: 50%;
+}
+
+.intro-instructions kbd {
+  display: inline-block;
+  margin: 0 .3em;
+}
+
+
