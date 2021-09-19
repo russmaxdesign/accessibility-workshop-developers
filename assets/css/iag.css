@@ -65,7 +65,8 @@ h4 {
   line-height: 1.2;
 }
 
-h5 {
+h5,
+.h5 {
   margin: 0;
   color: #ddd;
   font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
@@ -498,4 +499,35 @@ classes
   margin: 0 .3em;
 }
 
+.credit-links {
+  font-size: 60%;
+  margin: 2em 0 .5em;
+}
 
+.credit-links a:link {
+  color: #fff;
+}
+
+.credit-links a:visited {
+  color: #fff;
+}
+
+.credit-links a:focus {
+  color: #000;
+  background: #fff;
+  outline: none;
+}
+
+.credit-links a:hover {
+  color: #fff;
+  background: #000;
+}
+
+.credit-links a:active {
+  color: #fff;
+  background: #a00;
+}
+
+.credit-copyright {
+  font-size: 60%;
+}
