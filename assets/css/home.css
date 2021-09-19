@@ -50,7 +50,7 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: 1.8em;
-  margin: 1em 0 .5em;
+  margin: 0 0 .5em;
 }
 
 h3 {
@@ -132,152 +132,41 @@ content
 .main {
   max-width: 45em;
   margin: 0 auto;
+}
+
+.card {
   padding: 2em;
+  margin: 0 0 2em;
   background: #fff;
 }
 
-/* ---------------------
-button
------------------------*/
-
-.button {
-  display: inline-block;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  margin-bottom: 0;
-  padding: .7em 1em;
-  cursor: pointer;
-  color: #fff;
-  background-color: #759a3e;
-  background-image: none;
-  font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
-  font-size: .8em;
-  line-height: 1;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-decoration: none;
+details {
+  margin: 0;
 }
 
-.button:focus,
-.button:active {
-  color: #fff;
-  background-color: #000;
-}
-
-.button:hover {
-  color: #fff;
-  background-color: #568312;
-}
-
-
-
-/* ---------------------
-slides
------------------------*/
-
-.slide-container {
-  border-radius: .1em;
-  margin: 1.5em 0;
-  padding: 1.2em;
-  background: #fff;
-}
-
-.slide-container-link {
-  display: block;
-  text-decoration: none;
-}
-
-.slide-container-link:focus .slide-container,
-.slide-container-link:active .slide-container {
-  background: #ddd;
-}
-
-.slide-container-link:hover .slide-container {
-  background: #eaeaea;
-}
-
-.slide-heading {
-  color: #333;
+summary {
+  padding: .3em 0;
+  font-size: 1.1em;
   font-weight: bold;
+  color: #592C82;
 }
 
-.slide-number {
-  color: #759a3e;
-  font-family: 'Helvetica Neue', Helvetica, Arial, Tahoma, Geneva, sans-serif;
-  font-size: 90%;
-  font-weight: normal;
-}
-
-.slide-details {
-  margin: .6em 0;
-  color: #999;
-  font-size: 90%;
-}
-
-.slide-content {
-  color: #333;
-}
-
-.highlight {
-  color: #759a3e;
-}
-
-/* ---------------------
-filter
------------------------*/
-
-.filter {
-  margin: 20px 0;
-  font-size: .8em;
-}
-
-.filter-button {
-  position: relative;
-  top: -2px;
-  margin: 0 0 0 .5em;
-  padding: .4em .6em;
-  color: #444;
-  background: #ddd;
-  font-size: 1em;
-}
-
-.filter-button:focus,
-.filter-button:active {
+summary:focus {
   color: #fff;
-  background-color: #000;
+  background: #000;
+  outline: 0;
 }
 
-.filter-button:hover {
-  color: #000;
-  background-color: #ccc;
+summary:hover {
+  color: #333;
+  background: #fff;
+  cursor: pointer;
 }
 
-
-/* ---------------------
-filters on containers
------------------------*/
-
-div.container.all a {
-  display: block;
+summary:active {
+  color: red;
+  background: #fff;
 }
-
-div.container.beginner a.beginner {
-  display: block;
-}
-
-div.container.intermediate a.intermediate {
-  display: block;
-}
-
-div.container.advanced a.advanced {
-  display: block;
-}
-
-div.container a {
-  display: none;
-}
-
 
 /* ---------------------
 small screen
