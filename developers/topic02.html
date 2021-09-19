@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -31,7 +30,7 @@
         </div>
 
         <section data-background="#222">
-          <h5>Topic 02:</h5>
+          <span class="h5">Topic 02:</span>
           <h1>Semantic markup</h1>
         </section>
 
@@ -85,13 +84,18 @@
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Semantic markup is is about <b>using the appropriate HTML elements to convey meaning</b>.</p>
+              <p>Semantic markup is about <b>using the appropriate HTML elements to convey meaning</b>.</p>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>All HTML elements have <b>semantic meaning</b>. For example:</p>
+              <p>All HTML elements have <b>a specific meaning and purpose</b>. For example:</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
               <table>
                 <thead>
                   <tr>
@@ -124,6 +128,11 @@
           <section data-background="#fff">
             <div class="accessibility">
               <p>Even the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements have meaning. Their purpose is to be <b>generic elements</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
               <table>
                 <thead>
                   <tr>
@@ -153,7 +162,7 @@
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>For example, as part of handover, <b>designers should specify</b>:</p>
+              <p>Designers should specify the following <b>as part of handover</b>:</p>
               <ul>
                 <li>Desired heading levels for all headings.</li>
                 <li>Desired sections, possible landmarks and even how these sections should be labelled.</li>
@@ -220,8 +229,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- Some Block-level examples --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Some Block-level examples --&gt;</span>
 &lt;h1&gt;&lt;/h1&gt;
 &lt;div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;/p&gt;
@@ -235,7 +243,8 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;div&gt;
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Nested Block-level elements --&gt;</span>
+&lt;div&gt;
   &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </section>
@@ -247,8 +256,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- Terminal block level elements --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Terminal block level elements --&gt;</span>
 &lt;h1&gt;&lt;/h1&gt;
 &lt;h2&gt;&lt;/h2&gt;
 &lt;h3&gt;&lt;/h3&gt;
@@ -259,7 +267,8 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;h1&gt;
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Not allowed --&gt;</span>
+&lt;h1&gt;
   <s>&lt;div&gt;&lt;/div&gt;</s>
 &lt;/h1&gt;</code></pre>
           </section>
@@ -272,8 +281,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- Some inline examples --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Some inline examples --&gt;</span>
 &lt;span&gt;&lt;/span&gt;
 &lt;b&gt;&lt;/b&gt;
 &lt;i&gt;&lt;/i&gt;</code></pre>
@@ -286,7 +294,8 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;span&gt;
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Nested inline elements --&gt;</span>
+&lt;span&gt;
   &lt;i&gt;&lt;/i&gt;
 &lt;/span&gt;</code></pre>
           </section>
@@ -298,8 +307,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- Example of invalid nesting --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Not allowed --&gt;</span>
 &lt;span&gt;
   <s>&lt;div&gt;&lt;/div&gt;</s>
 &lt;/span&gt;</code></pre>
@@ -312,14 +320,15 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;a&gt;
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- A element wrapped around block --&gt;</span>
+&lt;a href="#"&gt;
   &lt;div&gt;&lt;/div&gt;
 &lt;/a&gt;</code></pre>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>This was to allow developers to make <b>entire components "clickable"</b> without the need for JavaScript.</p>
+              <p>This was to allow developers to make <b>entire components &ldquo;clickable&rdquo;</b> without the need for JavaScript.</p>
             </div>
           </section>
 
@@ -356,7 +365,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>HTML5 introduced a much more comprehensive set of categories, called <b>"HTML Content Model Categories"</b>.</p>
+              <p>HTML5 introduced a much more comprehensive set of categories, called <b>&ldquo;HTML Content Model Categories&rdquo;</b>.</p>
             </div>
           </section>
 
@@ -460,7 +469,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>We'll look at some of these categories now. For those interested, I've created <b><a href="https://russmaxdesign.github.io/html5-content-types/">a page with the full details of each category</a></b>.</p>
+              <p>We'll look at some of these categories now. For those interested, I've created <b><a href="https://russmaxdesign.github.io/html5-content-types/" target="_blank">a page with the full details of each category</a></b>.</p>
             </div>
           </section>
 
@@ -475,8 +484,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- Some Metadata content examples --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Some Metadata content examples --&gt;</span>
 &lt;title&gt;
 &lt;link&gt;
 &lt;meta&gt;
@@ -489,14 +497,13 @@ SUB-SECTION
               <h4>Flow content</h4>
               <ul>
                 <li>Most elements that are used in the body of documents are categorised as flow content.</li>
-                <li>The older "block-level" category roughly corresponds to this category.</li>
+                <li>The older &ldquo;block-level&rdquo; category roughly corresponds to this category.</li>
               </ul>
             </div>
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- Some Flow content examples --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Some Flow content examples --&gt;</span>
 &lt;a&gt;
 &lt;article&gt;
 &lt;blockquote&gt;
@@ -512,14 +519,13 @@ SUB-SECTION
               <h4>Phrasing content</h4>
               <ul>
                 <li>Text of the document and elements that mark up that text within paragraphs.</li>
-                <li>The older "inline" category corresponds to this category.</li>
+                <li>The older &ldquo;inline&rdquo; category corresponds to this category.</li>
               </ul>
             </div>
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- Some Phrasing content examples --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Some Phrasing content examples --&gt;</span>
 &lt;a&gt;
 &lt;abbr&gt;
 &lt;b&gt;
@@ -540,8 +546,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- All sectioning content elements --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- All sectioning content elements --&gt;</span>
 &lt;article&gt;
 &lt;aside&gt;
 &lt;nav&gt;
@@ -558,8 +563,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- All heading content elements --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- All heading content elements --&gt;</span>
 &lt;h1&gt;
 &lt;h2&gt;
 &lt;h3&gt;
@@ -578,8 +582,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- All Embedded content elements --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- All Embedded content elements --&gt;</span>
 &lt;audio&gt;
 &lt;canvas&gt;
 &lt;embed&gt;
@@ -602,8 +605,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#222">
-<pre><code contenteditable="true">&lt;!-- All interactive content elements --&gt;
-
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- All interactive content elements --&gt;</span>
 &lt;a&gt;
 &lt;audio&gt;
 &lt;button&gt;
@@ -627,7 +629,15 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Understanding the rules around HTML elements <b>allows you to write valid, well formed HTML markup</b>.</p>
+              <h4>For designers</h4>
+              <p>Learning about HTML elements work allows you to understand how UI components operate, and communcate information more effectively to developers.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>For developers</h4>
+              <p>Understanding how to write valid, well formed HTML markup allows you to write more effective, accessible sites and apps.</p>
             </div>
           </section>
         </section>
@@ -704,11 +714,26 @@ SUB-SECTION
             </div>
           </section>
 
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Duplicate IDs in one document --&gt;</span>
+&lt;div <span class="codeHighlight">id="one"</span>&gt;&lt;/div&gt;
+
+&lt;label <span class="codeHighlight">for="one"</span>&gt;Name&lt;/label&gt;
+&lt;input id="one"&gt;
+</code></pre>
+          </section>
+
           <section data-background="#fff">
             <div class="accessibility">
               <h4>2. Lack of alt attributes</h4>
               <p>This can cause issues for assistive technologies trying to announce text alternatives.</p>
             </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- No ALT attribute --&gt;</span>
+&lt;img src="one.jpg"&gt;
+</code></pre>
           </section>
         </section>
 
@@ -911,12 +936,6 @@ SUB-SECTION
             </div>
           </section>
 
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>In order to <b>look at the different landmarks in action</b>, we will start with a very simple wireframe.</p>
-            </div>
-          </section>
-
 <!--  –––––––––––––––––––––––––
 SUB-SECTION
 ––––––––––––––––––––––––––  -->
@@ -1040,7 +1059,11 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>If only one <code>&lt;header&gt;</code> element sits outside any other landmark elements, it <b>will be defined as the banner landmark</b>.</p>
+              <p>In order for a <code>&lt;header&gt;</code> to be defined as a banner landmark:</p>
+              <ol>
+                <li>It <b>must not be</b> placed inside any other landmark elements.</li>
+                <li>It <b>must be</b> the only <code>&lt;header&gt;</code> outside of any other landmarks.</li>
+              </ol>
             </div>
           </section>
 
@@ -1139,7 +1162,11 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>If only one <code>&lt;footer&gt;</code> element sits outside any other landmark elements, it <b>will be defined as the footer landmark</b>.</p>
+              <p>In order for a <code>&lt;footer&gt;</code> to be defined as a footer landmark:</p>
+              <ol>
+                <li>It <b>must not be</b> placed inside any other landmark elements.</li>
+                <li>It <b>must be</b> the only <code>&lt;footer&gt;</code> outside of any other landmarks.</li>
+              </ol>
             </div>
           </section>
 
@@ -1214,7 +1241,13 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>You can have <b>more than one</b> navigation landmark on the page. If a page includes more than one navigation landmark, each should have a unique label.</p>
+              <p>The <code>&lt;nav&gt;</code> element can be used <b>multiple times within a single layout</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If a page includes more than one navigation landmark, <b>each should have a unique label</b>.</p>
             </div>
           </section>
 
@@ -1428,6 +1461,18 @@ SUB-SECTION
               <p>This attribute will be <b>covered in a later topic</b>.</p>
             </div>
           </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The W3C Validator will <b>present a warning message</b> for any section that does not contain a heading as a direct child element.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><i><b>Warning</b>: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.</i></p>
+            </div>
+          </section>
         </section>
 
 
@@ -1600,7 +1645,7 @@ SUB-SECTION
     &lt;h3&gt;<span class="codeComment">Subsection 1</span>&lt;/h3&gt;
     &lt;h3&gt;<span class="codeComment">Subsection 2</span>&lt;/h3&gt;
 
-&lt;!-- Sidebar content across multiple pages --&gt;
+<span class="codeComment">&lt;!-- Sidebar content across multiple pages --&gt;</span>
 <span class="codeHighlight">&lt;h4&gt;Sidebar heading&lt;/h4&gt;</span></code></pre>
           </section>
 
@@ -1699,8 +1744,8 @@ SUB-SECTION
             <div class="accessibility">
               <h4>Links and assistive technologies</h4>
               <ul>
-                <li>Screen readers announce links as: <i>“Link [Link text]”</i>.</li>
-                <li>In the case of VoiceOver's Rotator, all links will be listed in the “Links” window.</li>
+                <li>Screen readers announce links as: <i>&ldquo;Link [Link text]&rdquo;</i>.</li>
+                <li>In the case of VoiceOver's Rotator, all links will be listed in the &ldquo;Links&rdquo; window.</li>
               </ul>
             </div>
           </section>
@@ -1709,8 +1754,8 @@ SUB-SECTION
             <div class="accessibility">
               <h4>Buttons and assistive technologies</h4>
               <ul>
-                <li>Screen readers announce buttons as: <i>“Button [Button text]”</i>.</li>
-                <li>In the case of VoiceOver's Rotator, all buttons will be listed in the “Form controls” window.</li>
+                <li>Screen readers announce buttons as: <i>&ldquo;Button [Button text]&rdquo;</i>.</li>
+                <li>In the case of VoiceOver's Rotator, all buttons will be listed in the &ldquo;Form controls&rdquo; window.</li>
                 <li>When a button comes into focus, most screen readers will switch into forms mode.</li>
               </ul>
             </div>
