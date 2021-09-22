@@ -299,7 +299,7 @@
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;label&gt;</code> element <b>should never be applied</b> to other non-form related HTML elements.</p>
+              <p>1. The <code>&lt;label&gt;</code> element <b>should never be applied</b> to other non-form related HTML elements.</p>
             </div>
           </section>
 
@@ -317,7 +317,13 @@
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;label&gt;</code> element <b>should never be placed inside other elements</b>, such as the <code>&lt;legend&gt;</code> element.</p>
+              <p>2. The <code>&lt;label&gt;</code> element <b>should never be placed inside other elements</b>, such as the <code>&lt;legend&gt;</code> element.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In the following example, the <code>&lt;label&gt;</code> inside the <code>&lt;legend&gt;</code> <b>would be considered invalid</b> and could be extremely confusing for assistive technologies.</p>
             </div>
           </section>
 
@@ -328,6 +334,34 @@
     <s>&lt;label&gt;Label content&lt;/label&gt;</s>
   &lt;/legend&gt;
 &lt;/fieldset&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>3. The <code>&lt;label&gt;</code> element <b>should never be used as a replacement</b> for a <code>&lt;legend&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In the following example, the <code>&lt;label&gt;</code> is <b>not associated with any forn control</b> and would not be announced.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Do not do this --&gt;</span>
+<s>&lt;label&gt;Overall question&lt;/label&gt;</s>
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;input type="radio" id="one" name="yesno"&gt;
+    &lt;label for="one"&gt;Yes&lt;/label&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;input type="radio" id="two" name="yesno"&gt;
+    &lt;label for="two"&gt;No&lt;/label&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
           </section>
 
           <section data-background="#fff">
@@ -619,7 +653,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>For all other ssss form controls, the <code>&lt;label&gt;</code> <b>content must be positioned before</b> the form control.</p>
+              <p>For all other form controls, the <code>&lt;label&gt;</code> <b>content must be positioned before</b> the form control.</p>
             </div>
           </section>
 
@@ -655,32 +689,6 @@ SUB-SECTION
 <pre><code contenteditable="true">&lt;label for="file"&gt;
   <span class="codeHighlight">File progress</span>
   &lt;progress id="file" max="100" value="70"&gt;70%&lt;/progress&gt;
-&lt;/label&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>In the case of radio and checkboxes, wrapping the <code>&lt;label&gt;</code> around everything <b>makes the clickable area greater</b> as both the radio and label content are &ldquo;clickable&rdquo;.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic02-001.png" alt="Clickable area">
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;label for="name"&gt;
-  &lt;span class="label-content"&gt;Name&lt;/span&gt;
-  <span class="codeHighlight">&lt;span class="help"&gt;Include surname&lt;/span&gt;</span>
-  &lt;input type="text" id="name"&gt;
-&lt;/label&gt;</code></pre>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;label for="name"&gt;
-  &lt;span class="label-content"&gt;Name&lt;/span&gt;
-  &lt;input type="text" id="name"&gt;
-  <span class="codeHighlight">&lt;span class="error"&gt;Name required&lt;/span&gt;</span>
 &lt;/label&gt;</code></pre>
           </section>
 
