@@ -96,6 +96,73 @@
 
           <section data-background="#fff">
             <div class="accessibility">
+              <p>There have been many Accessibility APIs released over the years, all <b>building on and improving previous versions</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <table class="font-xs">
+                <thead>
+                  <tr>
+                    <th>Year</th>
+                    <th>API</th>
+                    <th>Who</th>
+                    <th>For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1997</td>
+                    <td><a href="https://docs.microsoft.com/en-gb/windows/win32/winauto/microsoft-active-accessibility?redirectedfrom=MSDN
+" target="_blank">Microsoft Active Accessibility (MSAA)</a></td>
+                    <td>Microsoft</td>
+                    <td>Windows 95</td>
+                  </tr>
+                  <tr>
+                    <td>1998</td>
+                    <td><a href="https://docs.microsoft.com/en-us/dotnet/api/accessibility.iaccessible?view=net-5.0" target="_blank">IAccessible</a></td>
+                    <td>IBM/Sun</td>
+                    <td>Cross platform</td>
+                  </tr>
+                  <tr>
+                    <td>2001</td>
+                    <td><a href="https://en.wikipedia.org/wiki/Assistive_Technology_Service_Provider_Interface" target="_blank">Assistive Technology Service Provider Interface (AT-SPI)</a></td>
+                    <td>Linux</td>
+                    <td>Linux OS</td>
+                  </tr>
+                  <tr>
+                    <td>2002</td>
+                    <td><a href="https://developer.apple.com/documentation/appkit/nsaccessibility" target="_blank">NSAccessibility</a></td>
+                    <td>Apple</td>
+                    <td>Mac OS 10.2</td>
+                  </tr>
+                  <tr>
+                    <td>2007</td>
+                    <td><a href="https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-msaa" target="_blank">User Interface Automation (UIA)</a></td>
+                    <td>Microsoft</td>
+                    <td>Windows 7</td>
+                  </tr>
+                  <tr>
+                    <td>2007</td>
+                    <td><a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/overview" target="_blank">IAccessible2</a></td>
+                    <td>IBM</td>
+                    <td>Windows and Linux</td>
+                  </tr>
+                  <tr>
+                    <td>2009</td>
+                    <td><a href="https://developer.apple.com/documentation/objectivec/nsobject/uiaccessibility" target="_blank">UI Accessibility API</a></td>
+                    <td>Apple</td>
+                    <td>iOS 3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+
+          <section data-background="#fff">
+            <div class="accessibility">
               <p>Browsers generally support one or more of the available accessibility APIs <b>for the platform they’re running on</b>.</p>
             </div>
           </section>
@@ -143,18 +210,34 @@
           </section>
 
           <section data-background="#fff">
-            <div class="accessibility">
-              <p>Browsers use the DOM tree to create a second tree, called the <b>Accessibility Tree</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
             <img src="../assets/img/topic03-002.png" alt="Accessibility Tree diagram">
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
+              <p>The browser uses the DOM, along with further information derived from CSS, to generate an <b>Accessibility Tree</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This information is <b>passed to the relevant accessibility APIs</b> associated with the browser / operating system.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
               <p>This Accessibility Tree exposes <b>information on specific elements</b> to Assistive Technologies via the Accessibility API.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Information incudes:</p>
+              <ul>
+                <li>The <b>role, name and state</b> of each object in the content.</li>
+                <li>How each object <b>relates to other objects</b> in the content.</li>
+              </ul>
             </div>
           </section>
 
