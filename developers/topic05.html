@@ -63,10 +63,11 @@
             <div class="accessibility">
               <h4>The aim for today:</h4>
               <ul>
-                <li>An understanding of live regions.</li>
-                <li>An understanding of key <code>aria-</code> attributes.</li>
-                <li>How to build an accessible modal.</li>
-                <li>How to build an accessible in-page tab.</li>
+                <li>How to build accessible modals</li>
+                <li>An understanding of live regions</li>
+                <li>An understanding of key <code>aria-</code> attributes</li>
+                <li>Aria attributes that are no longer needed</li>
+                <li>How to build accessible in-page tabs</li>
               </ul>
             </div>
           </section>
@@ -99,7 +100,7 @@
             <div class="accessibility">
               <h4>Our aims are to:</h4>
               <ol>
-                <li>Set the modal with a role so it is announced correctly to assistive technologies when triggered.</li>
+                <li>Set the modal with a <code>role</code> so it is announced correctly to assistive technologies when triggered.</li>
                 <li>Provide the modal with an accessible name and description, so that these are also announced when the modal is triggered.</li>
                 <li>Listen to the modal using a screen reader.</li>
               </ol>
@@ -992,83 +993,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.8<br>Aria values that are no longer needed</h2>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>aria-disabled</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>aria-disabled</code> attribute <b>sets the disabled state on an element</b> in the accessibility tree only. This information is then available to assistive technologies.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button <span class="codeHighlight">aria-disabled="true"</span>&gt;&lt;/button&gt;
-&lt;button <span class="codeHighlight">aria-disabled="false"</span>&gt;&lt;/button&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>However, as the HTML <code>disabled</code> attribute is so well supported across assistive technologies, <b>there is no longer any need to use</b> the <code>aria-disabled</code> attribute.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button <span class="codeHighlight">disabled</span>&gt;&lt;/button&gt;</code></pre>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>aria-required</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>aria-required</code> attribute <b>sets the required state on an element</b> in the accessibility tree only. This information is then available to assistive technologies.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;input type="text" <span class="codeHighlight">aria-required="true"</span>&gt;
-&lt;input type="text" <span class="codeHighlight">aria-required="false"</span>&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>However, as the HTML <code>required</code> attribute is so well supported across assistive technologies, <b>there is no longer any need to use</b> the <code>aria-required</code> attribute.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;input type="text" <span class="codeHighlight">required</span>&gt;</code></pre>
-          </section>
-
-          <section data-background="#7F1001">
-            <h3>Any questions or comments?</h3>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#592C82">
-            <h2>5.9<br>hidden vs aria-hidden</h2>
+            <h2>5.8<br>hidden vs aria-hidden</h2>
           </section>
 
           <section data-background="#fff">
@@ -1124,7 +1049,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.10<br>Exercise: Using aria-hidden</h2>
+            <h2>5.9<br>Exercise: Using aria-hidden</h2>
           </section>
 
           <section data-background="#fff">
@@ -1172,7 +1097,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.11<br>presentation and none</h2>
+            <h2>5.10<br>presentation and none</h2>
           </section>
 
           <section data-background="#fff">
@@ -1244,7 +1169,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.12<br>Exercise: Using the presentation role</h2>
+            <h2>5.11<br>Exercise: Using the presentation role</h2>
           </section>
 
           <section data-background="#fff">
@@ -1277,6 +1202,82 @@ SUB-SECTION
   &lt;li&gt;Two&lt;/li&gt;
   &lt;li&gt;Three&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>5.12<br>Aria attributes that are no longer needed</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>aria-disabled</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>aria-disabled</code> attribute <b>sets the disabled state on an element</b> in the accessibility tree only. This information is then available to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button <span class="codeHighlight">aria-disabled="true"</span>&gt;&lt;/button&gt;
+&lt;button <span class="codeHighlight">aria-disabled="false"</span>&gt;&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>However, as the HTML <code>disabled</code> attribute is so well supported across assistive technologies, <b>there is no longer any need to use</b> the <code>aria-disabled</code> attribute.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button <span class="codeHighlight">disabled</span>&gt;&lt;/button&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>aria-required</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>aria-required</code> attribute <b>sets the required state on an element</b> in the accessibility tree only. This information is then available to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input type="text" <span class="codeHighlight">aria-required="true"</span>&gt;
+&lt;input type="text" <span class="codeHighlight">aria-required="false"</span>&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>However, as the HTML <code>required</code> attribute is so well supported across assistive technologies, <b>there is no longer any need to use</b> the <code>aria-required</code> attribute.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input type="text" <span class="codeHighlight">required</span>&gt;</code></pre>
+          </section>
+
+          <section data-background="#7F1001">
+            <h3>Any questions or comments?</h3>
           </section>
         </section>
 
