@@ -100,8 +100,8 @@
             <div class="accessibility">
               <h4>Our aims are to:</h4>
               <ol>
-                <li>Set the modal with a <code>role</code> so it is announced correctly to assistive technologies when triggered.</li>
-                <li>Provide the modal with an accessible name and description, so that these are also announced when the modal is triggered.</li>
+                <li>Set the modal with <code>role="dialog"</code> so it is announced when the modal is triggered.</li>
+                <li>Provide the modal with an accessible name (via <code>aria-labelledby</code>) and description (<code>aria-describedby</code>), so that these are announced when the modal is triggered.</li>
                 <li>Listen to the modal using a screen reader.</li>
               </ol>
             </div>
