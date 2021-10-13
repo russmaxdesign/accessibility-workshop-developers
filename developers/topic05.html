@@ -82,8 +82,133 @@
 
 
         <section>
+          <section data-background="#592C82">
+            <h2>5.1<br>What makes an accessible modal?</h2>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Trigger element</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Modals should be triggered using the <code>&lt;button&gt;</code> element rather than the <code>&lt;a&gt;</code> element, as <b>users are performing an action</b>, not going to a new page. </p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Focus</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>When the modal is triggered, <b>focus should shift to either</b>:</p>
+              <ul>
+                <li>The modal container. OR</li>
+                <li>The first focusable element inside the modal.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In the old days, we used to send focus <b>to the modal container</b> as it was better supported.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>More recently, it is recommended to send users <b>to the first focusable element</b> inside the modal.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>When the modal is closed, <b>focus should shift to either</b>:</p>
+              <ul>
+                <li>The element that triggered the modal. OR</li>
+                <li>Content that has changed after actions within the modal.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Keyboard</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Users should <b>not be able to</b> <kbd>TAB</kbd> or <kbd>SHIFT</kbd> + <kbd>TAB</kbd> outside the modal. So, these keystrokes should be trapped inside the modal.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Users should be able to use the <kbd>ESC</kbd> key to <b>close the modal and return to the page below</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Users must have the ability to <b>close the modal</b> using a <code>&lt;button&gt;</code> element.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Ideally, this should be the <b>first focusable element inside the modal</b>, even if there is a close function at the bottom of a form.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Screen readers</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>When the modal is triggered, <b>three things should happen</b>:</p>
+              <ol>
+                <li>The <code>role</code> is announced.</li>
+                <li>An accessible name is announced.</li>
+                <li>An accessible description is announced (optional).</li>
+              </ol>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Let's look at how to solve these three <b>in the next exercise</b>.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
           <section data-background="#7F1001">
-            <h2>5.1<br>Exercise: Setting up a modal</h2>
+            <h2>5.2<br>Exercise: Setting up a modal</h2>
           </section>
 
           <section data-background="#fff">
@@ -248,6 +373,12 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Now <b>trigger the modal and listen to how it is announced</b> using a screen reader.</p>
+            </div>
+          </section>
         </section>
 
 
@@ -260,7 +391,7 @@
 
         <section>
           <section data-background="#592C82">
-            <h2>5.2<br>Live region states and properties</h2>
+            <h2>5.3<br>Live region states and properties</h2>
           </section>
 
           <section data-background="#fff">
@@ -581,7 +712,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.3<br>Exercise: Using aria-live</h2>
+            <h2>5.4<br>Exercise: Using aria-live</h2>
           </section>
 
           <section data-background="#fff">
@@ -650,7 +781,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.4<br>Live region roles</h2>
+            <h2>5.5<br>Live region roles</h2>
           </section>
 
           <section data-background="#fff">
@@ -776,7 +907,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.5<br>Exercise: Using status and alert</h2>
+            <h2>5.6<br>Exercise: Using status and alert</h2>
           </section>
 
           <section data-background="#fff">
@@ -834,7 +965,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.6<br>aria-invalid</h2>
+            <h2>5.7<br>aria-invalid</h2>
           </section>
 
           <section data-background="#fff">
@@ -908,7 +1039,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.7<br>Exercise: Using aria-invalid</h2>
+            <h2>5.8<br>Exercise: Using aria-invalid</h2>
           </section>
 
           <section data-background="#fff">
@@ -993,7 +1124,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.8<br>hidden vs aria-hidden</h2>
+            <h2>5.9<br>hidden vs aria-hidden</h2>
           </section>
 
           <section data-background="#fff">
@@ -1049,7 +1180,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.9<br>Exercise: Using aria-hidden</h2>
+            <h2>5.10<br>Exercise: Using aria-hidden</h2>
           </section>
 
           <section data-background="#fff">
@@ -1097,7 +1228,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.10<br>presentation and none</h2>
+            <h2>5.11<br>presentation and none</h2>
           </section>
 
           <section data-background="#fff">
@@ -1169,7 +1300,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.11<br>Exercise: Using the presentation role</h2>
+            <h2>5.12<br>Exercise: Using the presentation role</h2>
           </section>
 
           <section data-background="#fff">
@@ -1215,7 +1346,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.12<br>Aria attributes that are no longer needed</h2>
+            <h2>5.13<br>Aria attributes that are no longer needed</h2>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -1291,7 +1422,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>5.13<br>In-page tabs</h2>
+            <h2>5.14<br>In-page tabs</h2>
           </section>
 
           <section data-background="#fff">
@@ -1442,7 +1573,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>5.14<br>Exercise: Making accessible in-page tabs</h2>
+            <h2>5.15<br>Exercise: Making accessible in-page tabs</h2>
           </section>
 
           <section data-background="#fff">
