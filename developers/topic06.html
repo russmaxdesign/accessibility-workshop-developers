@@ -56,7 +56,7 @@
 
         <section>
           <section data-background="#592C82">
-            <h2>6.0 Introduction</h2>
+            <h2>6.5 Introduction</h2>
           </section>
 
           <section data-background="#fff">
@@ -65,8 +65,8 @@
               <ul>
                 <li>An understanding of native vs non-native widgets.</li>
                 <li>The criteria for making non-native widgets accessible.</li>
-                <li>How to build an accessible autocomplete.</li>
                 <li>Steps for unit testing and auditing.</li>
+                <li>If time: How to build an accessible autocomplete.</li>
               </ul>
             </div>
           </section>
@@ -82,7 +82,7 @@
 
         <section>
           <section data-background="#592C82">
-            <h2>6.1<br>What are non-native widgets?</h2>
+            <h2>6.5<br>What are non-native widgets?</h2>
           </section>
 
           <section data-background="#fff">
@@ -114,7 +114,7 @@
 
         <section>
           <section data-background="#592C82">
-            <h2>6.2<br>A native example</h2>
+            <h2>6.5<br>A native example</h2>
           </section>
 
           <section data-background="#fff">
@@ -300,7 +300,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>6.3<br>A non-native example</h2>
+            <h2>6.5<br>A non-native example</h2>
           </section>
 
           <section data-background="#fff">
@@ -442,7 +442,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>6.4<br>Criteria for accessible widgets</h2>
+            <h2>6.5<br>Criteria for accessible widgets</h2>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -782,469 +782,6 @@ SUB-SECTION
 
           <section data-background="#7F1001">
             <h3>Any questions or comments?</h3>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#7F1001">
-            <h2>6.5<br>Exercise: Making an accessible autocomplete</h2>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <h4>Files:</h4>
-              <ul>
-                <li>Open <a href="exercises/exercise21-start.html" target="_blank">exercises/exercise21-start.html</a> in a text editor and browser.</li>
-                <li>View <a href="exercises/exercise21-finished.html" target="_blank">exercises/exercise21-finished.html</a> to check your results.</li>
-              </ul>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <h4>Our aims (part 1):</h4>
-              <ol>
-                <li>Add <code>role="searchbox"</code>.</li>
-                <li>Add <code>aria-describedby="instructions"</code>.</li>
-                <li>Add <code>aria-owns="results"</code>.</li>
-                <li>Add <code>aria-expanded="false"</code>.</li>
-                <li>Add <code>aria-autocomplete="both"</code>.</li>
-                <li>Add <code>id="results"</code>.</li>
-                <li>Add <code>role="listbox"</code>.</li>
-              </ol>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <h4>Our aims (part 2):</h4>
-              <ol start="8">
-                <li>Add <code>tabindex="-1"</code>.</li>
-                <li>Add <code>role="option"</code>.</li>
-                <li>Add <code>aria-selected="false"</code>.</li>
-                <li>Add <code>class="sr-only"</code>.</li>
-                <li>Add <code>aria-live="assertive"</code>.</li>
-                <li>Add <code>class="sr-only"</code>.</li>
-              </ol>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>We’re now going to <b>add accessible markup to an autocomplete widget</b> - keeping in mind the &ldquo;seven non-native widget criteria&rdquo;.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Also note that <b>this example is not &ldquo;operational&rdquo;</b>, we are just focusing on the markup.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic05-005.png" alt="List">
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>Review of elements used for the widget</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>First off, <b>let’s look at the basic markup</b> already in place.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The widget is <b>placed inside</b> a <code>&lt;form&gt;</code> component.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeHighlight">&lt;form action="#"&gt;</span>
-  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
-  &lt;input type="text" id="search"&gt;
-  &lt;button type="button"&gt;Clear&lt;/button&gt;
-  &lt;button type="submit"&gt;Search&lt;/button&gt;
-  &lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div id="instructions"&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;/div&gt;
-<span class="codeHighlight">&lt;/form&gt;</span></code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>There is a <code>&lt;label&gt;</code> to <b>provide an accessible name</b> for the <code>&lt;input&gt;</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;form action="#"&gt;
-  <span class="codeHighlight">&lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;</span>
-  &lt;input type="text" id="search"&gt;
-  &lt;button type="button"&gt;Clear&lt;/button&gt;
-  &lt;button type="submit"&gt;Search&lt;/button&gt;
-  &lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div id="instructions"&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>&lt;input&gt;</code> is <b>programatically associated with the</b> <code>&lt;label&gt;</code> via matching <code>for</code> and <code>id</code> values.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;form action="#"&gt;
-  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
-  <span class="codeHighlight">&lt;input type="text" id="search"&gt;</span>
-  &lt;button type="button"&gt;Clear&lt;/button&gt;
-  &lt;button type="submit"&gt;Search&lt;/button&gt;
-  &lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div id="instructions"&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The first <code>&lt;button&gt;</code> is <b>used to clear the</b> <code>&lt;input&gt;</code> field.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;form action="#"&gt;
-  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
-  &lt;input type="text" id="search"&gt;
-  <span class="codeHighlight">&lt;button type="button"&gt;Clear&lt;/button&gt;</span>
-  &lt;button type="submit"&gt;Search&lt;/button&gt;
-  &lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div id="instructions"&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The second <code>&lt;button&gt;</code> is <b>used to clear submit</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;form action="#"&gt;
-  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
-  &lt;input type="text" id="search"&gt;
-  &lt;button type="button"&gt;Clear&lt;/button&gt;
-  <span class="codeHighlight">&lt;button type="submit"&gt;Search&lt;/button&gt;</span>
-  &lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div id="instructions"&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>&lt;ul&gt;</code> <b>displays possible results</b> when triggered.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;form action="#"&gt;
-  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
-  &lt;input type="text" id="search"&gt;
-  &lt;button type="button"&gt;Clear&lt;/button&gt;
-  &lt;button type="submit"&gt;Search&lt;/button&gt;
-  <span class="codeHighlight">&lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;</span>
-  &lt;div id="instructions"&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The first <code>&lt;div&gt;</code> is <b>used to provide instructions in using the widget</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;form action="#"&gt;
-  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
-  &lt;input type="text" id="search"&gt;
-  &lt;button type="button"&gt;Clear&lt;/button&gt;
-  &lt;button type="submit"&gt;Search&lt;/button&gt;
-  &lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;
-  <span class="codeHighlight">&lt;div id="instructions"&gt;&lt;/div&gt;</span>
-  &lt;div&gt;&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The second <code>&lt;div&gt;</code> is <b>used to provide live updates</b> associated with how many results are displayed in the dropdown at any given time.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;form action="#"&gt;
-  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
-  &lt;input type="text" id="search"&gt;
-  &lt;button type="button"&gt;Clear&lt;/button&gt;
-  &lt;button type="submit"&gt;Search&lt;/button&gt;
-  &lt;ul id="results"&gt;
-    &lt;li&gt;Aarons Pass&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div id="instructions"&gt;&lt;/div&gt;
-  <span class="codeHighlight">&lt;div&gt;&lt;/div&gt;</span>
-&lt;/form&gt;</code></pre>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>Adding accessibility</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 1:</b> Add <code>role="searchbox"</code> to <code>&lt;input&gt;</code>.</p>
-              <p>This will change the input element's <code>role</code> from <code>textbox</code> to <code>searchbox</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;input
-  type="text"
-  id="search"
-  <span class="codeHighlight">role="searchbox"</span>
-&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 2:</b> Add <code>aria-describedby="instructions"</code> to <code>&lt;input&gt;</code>.</p>
-              <p>This will be used to link up with the instructions content to provide an accessible description for the <code>&lt;input&gt;</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;input
-  type="text"
-  id="search"
-  role="searchbox"
-  <span class="codeHighlight">aria-describedby="instructions"</span>
-&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 3:</b> Add <code>aria-owns="results"</code> to <code>&lt;input&gt;</code>.</p>
-              <p>This will be used to provide a relationship between the <code>&lt;input&gt;</code> and <code>&lt;ul&gt;</code> element.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;input
-  type="text"
-  id="search"
-  role="searchbox"
-  aria-describedby="instructions"
-  <span class="codeHighlight">aria-owns="results"</span>
-&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 4:</b> Add <code>aria-expanded="false"</code> to <code>&lt;input&gt;</code>.</p>
-              <p>This will change to <code>aria-expanded="true"</code> when the <code>&lt;ul&gt;</code> is triggered and becomes visible.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;input
-  type="text"
-  id="search"
-  role="searchbox"
-  aria-describedby="instructions"
-  aria-owns="results"
-  <span class="codeHighlight">aria-expanded="false"</span>
-&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 5:</b> Add <code>aria-autocomplete="both"</code> to <code>&lt;input&gt;</code>.</p>
-              <p>The <code>"both"</code> value means that resulting values may be displayed either as a dropdown list or inline (within the <code>&lt;input&gt;</code>).</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;input
-  type="text"
-  id="search"
-  role="searchbox"
-  aria-describedby="instructions"
-  aria-owns="results"
-  aria-expanded="false"
-  <span class="codeHighlight">aria-autocomplete="both"</span>
-&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 6:</b> Add <code>id="results"</code> to <code>&lt;ul&gt;</code>.</p>
-              <p>This will relate to the <code>aria-owns</code> value associated with the <code>&lt;input&gt;</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;ul
-  <span class="codeHighlight">id="results"</span>
-&gt;
-  &lt;li&gt;Aarons Pass&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 7:</b> Add <code>role="listbox"</code> to <code>&lt;ul&gt;</code>.</p>
-              <p>This will define the element as a parent for a list of options.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;ul
-  id="results"
-  <span class="codeHighlight">role="listbox"</span>
-&gt;
-  &lt;li&gt;Aarons Pass&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 8:</b> Add <code>tabindex="-1"</code> to <code>&lt;ul&gt;</code>.</p>
-              <p>This element will initially be hidden, and should not receive focus until it becomes visible.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;ul
-  id="results"
-  role="listbox"
-  <span class="codeHighlight">tabindex="-1"</span>
-&gt;
-  &lt;li&gt;Aarons Pass&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 9:</b> Add <code>role="option"</code> to each <code>&lt;li&gt;</code>.</p>
-              <p>This will define the elements as options.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;ul
-  id="results"
-  role="listbox"
-  tabindex="-1"
-&gt;
-  &lt;li <span class="codeHighlight">role="option"</span>&gt;Aarons Pass&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 10:</b> Add <code>aria-selected="false"</code> to each <code>&lt;li&gt;</code>.</p>
-              <p>This will need to change to <code>aria-selected="true"</code> when an individual option is selected.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;ul
-  id="results"
-  role="listbox"
-  tabindex="-1"
-&gt;
-  &lt;li role="option" <span class="codeHighlight">aria-selected="false"</span>&gt;Aarons Pass&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 11:</b> Add <code>class="sr-only"</code> to the first <code>&lt;div&gt;</code> element.</p>
-              <p>This will hide the element off-screen but still make it available to assistive technologies.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;div id="instructions" <span class="codeHighlight">class="sr-only"</span>&gt;
-&lt;/div&gt;
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 12:</b> Add <code>aria-live="assertive"</code> to the second <code>&lt;div&gt;</code> element.</p>
-              <p>This will allow dynamic changes to be announced to assistive technologies.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;div <span class="codeHighlight">aria-live="assertive"</span>&gt;&lt;/div&gt;
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><b>Step 13:</b> Add <code>class="sr-only"</code> to the second <code>&lt;div&gt;</code> element.</p>
-              <p>This will hide the element off-screen but still make it available to assistive technologies.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;div aria-live="assertive" <span class="codeHighlight">class="sr-only"</span>&gt;&lt;/div&gt;
-</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <b>dynamically announced information</b> could be something like:</p>
-              <p><i>6 options available. Use up and down arrows to review and ENTER to select.</i></p>
-            </div>
           </section>
         </section>
 
@@ -1826,6 +1363,469 @@ SUB-SECTION
           <section data-background="#fff">
             <div class="accessibility">
               <p>Check the <b>page's accessibility</b> using the <a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="_blank">WAVE browser plugin</a>.</p>
+            </div>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>6.7<br>Exercise: Making an accessible autocomplete</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Files:</h4>
+              <ul>
+                <li>Open <a href="exercises/exercise21-start.html" target="_blank">exercises/exercise21-start.html</a> in a text editor and browser.</li>
+                <li>View <a href="exercises/exercise21-finished.html" target="_blank">exercises/exercise21-finished.html</a> to check your results.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Our aims (part 1):</h4>
+              <ol>
+                <li>Add <code>role="searchbox"</code>.</li>
+                <li>Add <code>aria-describedby="instructions"</code>.</li>
+                <li>Add <code>aria-owns="results"</code>.</li>
+                <li>Add <code>aria-expanded="false"</code>.</li>
+                <li>Add <code>aria-autocomplete="both"</code>.</li>
+                <li>Add <code>id="results"</code>.</li>
+                <li>Add <code>role="listbox"</code>.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Our aims (part 2):</h4>
+              <ol start="8">
+                <li>Add <code>tabindex="-1"</code>.</li>
+                <li>Add <code>role="option"</code>.</li>
+                <li>Add <code>aria-selected="false"</code>.</li>
+                <li>Add <code>class="sr-only"</code>.</li>
+                <li>Add <code>aria-live="assertive"</code>.</li>
+                <li>Add <code>class="sr-only"</code>.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>We’re now going to <b>add accessible markup to an autocomplete widget</b> - keeping in mind the &ldquo;seven non-native widget criteria&rdquo;.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Also note that <b>this example is not &ldquo;operational&rdquo;</b>, we are just focusing on the markup.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic05-005.png" alt="List">
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Review of elements used for the widget</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>First off, <b>let’s look at the basic markup</b> already in place.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The widget is <b>placed inside</b> a <code>&lt;form&gt;</code> component.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true"><span class="codeHighlight">&lt;form action="#"&gt;</span>
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+<span class="codeHighlight">&lt;/form&gt;</span></code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>There is a <code>&lt;label&gt;</code> to <b>provide an accessible name</b> for the <code>&lt;input&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  <span class="codeHighlight">&lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;</span>
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;input&gt;</code> is <b>programatically associated with the</b> <code>&lt;label&gt;</code> via matching <code>for</code> and <code>id</code> values.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  <span class="codeHighlight">&lt;input type="text" id="search"&gt;</span>
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The first <code>&lt;button&gt;</code> is <b>used to clear the</b> <code>&lt;input&gt;</code> field.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  <span class="codeHighlight">&lt;button type="button"&gt;Clear&lt;/button&gt;</span>
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The second <code>&lt;button&gt;</code> is <b>used to clear submit</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  <span class="codeHighlight">&lt;button type="submit"&gt;Search&lt;/button&gt;</span>
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>&lt;ul&gt;</code> <b>displays possible results</b> when triggered.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  <span class="codeHighlight">&lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;</span>
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The first <code>&lt;div&gt;</code> is <b>used to provide instructions in using the widget</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  <span class="codeHighlight">&lt;div id="instructions"&gt;&lt;/div&gt;</span>
+  &lt;div&gt;&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The second <code>&lt;div&gt;</code> is <b>used to provide live updates</b> associated with how many results are displayed in the dropdown at any given time.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;form action="#"&gt;
+  &lt;label for="search"&gt;Search towns in Australia:&lt;/label&gt;
+  &lt;input type="text" id="search"&gt;
+  &lt;button type="button"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit"&gt;Search&lt;/button&gt;
+  &lt;ul id="results"&gt;
+    &lt;li&gt;Aarons Pass&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id="instructions"&gt;&lt;/div&gt;
+  <span class="codeHighlight">&lt;div&gt;&lt;/div&gt;</span>
+&lt;/form&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Adding accessibility</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 1:</b> Add <code>role="searchbox"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will change the input element's <code>role</code> from <code>textbox</code> to <code>searchbox</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  <span class="codeHighlight">role="searchbox"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 2:</b> Add <code>aria-describedby="instructions"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will be used to link up with the instructions content to provide an accessible description for the <code>&lt;input&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  <span class="codeHighlight">aria-describedby="instructions"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 3:</b> Add <code>aria-owns="results"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will be used to provide a relationship between the <code>&lt;input&gt;</code> and <code>&lt;ul&gt;</code> element.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  aria-describedby="instructions"
+  <span class="codeHighlight">aria-owns="results"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 4:</b> Add <code>aria-expanded="false"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>This will change to <code>aria-expanded="true"</code> when the <code>&lt;ul&gt;</code> is triggered and becomes visible.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  aria-describedby="instructions"
+  aria-owns="results"
+  <span class="codeHighlight">aria-expanded="false"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 5:</b> Add <code>aria-autocomplete="both"</code> to <code>&lt;input&gt;</code>.</p>
+              <p>The <code>"both"</code> value means that resulting values may be displayed either as a dropdown list or inline (within the <code>&lt;input&gt;</code>).</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;input
+  type="text"
+  id="search"
+  role="searchbox"
+  aria-describedby="instructions"
+  aria-owns="results"
+  aria-expanded="false"
+  <span class="codeHighlight">aria-autocomplete="both"</span>
+&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 6:</b> Add <code>id="results"</code> to <code>&lt;ul&gt;</code>.</p>
+              <p>This will relate to the <code>aria-owns</code> value associated with the <code>&lt;input&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  <span class="codeHighlight">id="results"</span>
+&gt;
+  &lt;li&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 7:</b> Add <code>role="listbox"</code> to <code>&lt;ul&gt;</code>.</p>
+              <p>This will define the element as a parent for a list of options.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  <span class="codeHighlight">role="listbox"</span>
+&gt;
+  &lt;li&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 8:</b> Add <code>tabindex="-1"</code> to <code>&lt;ul&gt;</code>.</p>
+              <p>This element will initially be hidden, and should not receive focus until it becomes visible.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  role="listbox"
+  <span class="codeHighlight">tabindex="-1"</span>
+&gt;
+  &lt;li&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 9:</b> Add <code>role="option"</code> to each <code>&lt;li&gt;</code>.</p>
+              <p>This will define the elements as options.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  role="listbox"
+  tabindex="-1"
+&gt;
+  &lt;li <span class="codeHighlight">role="option"</span>&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 10:</b> Add <code>aria-selected="false"</code> to each <code>&lt;li&gt;</code>.</p>
+              <p>This will need to change to <code>aria-selected="true"</code> when an individual option is selected.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;ul
+  id="results"
+  role="listbox"
+  tabindex="-1"
+&gt;
+  &lt;li role="option" <span class="codeHighlight">aria-selected="false"</span>&gt;Aarons Pass&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 11:</b> Add <code>class="sr-only"</code> to the first <code>&lt;div&gt;</code> element.</p>
+              <p>This will hide the element off-screen but still make it available to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div id="instructions" <span class="codeHighlight">class="sr-only"</span>&gt;
+&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 12:</b> Add <code>aria-live="assertive"</code> to the second <code>&lt;div&gt;</code> element.</p>
+              <p>This will allow dynamic changes to be announced to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">aria-live="assertive"</span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p><b>Step 13:</b> Add <code>class="sr-only"</code> to the second <code>&lt;div&gt;</code> element.</p>
+              <p>This will hide the element off-screen but still make it available to assistive technologies.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div aria-live="assertive" <span class="codeHighlight">class="sr-only"</span>&gt;&lt;/div&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <b>dynamically announced information</b> could be something like:</p>
+              <p><i>6 options available. Use up and down arrows to review and ENTER to select.</i></p>
             </div>
           </section>
         </section>
