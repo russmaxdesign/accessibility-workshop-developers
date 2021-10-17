@@ -114,8 +114,7 @@
                 <tbody>
                   <tr>
                     <td>1997</td>
-                    <td><a href="https://docs.microsoft.com/en-gb/windows/win32/winauto/microsoft-active-accessibility?redirectedfrom=MSDN
-" target="_blank">Microsoft Active Accessibility (MSAA)</a></td>
+                    <td><a href="https://docs.microsoft.com/en-gb/windows/win32/winauto/microsoft-active-accessibility?redirectedfrom=MSDN" target="_blank">Microsoft Active Accessibility (MSAA)</a></td>
                     <td>Microsoft</td>
                     <td>Windows 95</td>
                   </tr>
@@ -1353,13 +1352,27 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>We’ll also assume that <b>all the required JavaScript in place</b>, and basic keyboard focus is in place via <code>tabindex="0"</code>. </p>
+              <p>As you will see:</p>
+              <ul>
+                <li><b>Some basic JavaScript</b> is already in place.</li>
+                <li><b>Keyboard focus</b> is in place via <code>tabindex="0"</code>.</li>
+              </ul>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>However, this widget is completely inaccessible to screen readers as the elements <b>don't have accessible names, roles or states</b>.</p>
+              <p>However, this widget is completely <b>inaccessible to assistive technologies</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <ul>
+                <li>The elements have <b>no role defined</b>.</li>
+                <li>The elements have <b>no checked state defined</b>.</li>
+                <li>The <code>&lt;h3&gt;</code> heading is <b>not programmatically associated</b> with the checkbox group.</li>
+              </ul>
             </div>
           </section>
 
@@ -1380,11 +1393,46 @@ SUB-SECTION
 &lt;/div&gt;</code></pre>
           </section>
 
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  class="checkbox"
+  tabindex="0"
+  <span class="codeHighlight">role="checkbox"</span>
+&gt;
+  Tomato
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  class="checkbox"
+  tabindex="0"
+  <span class="codeHighlight">role="checkbox"</span>
+&gt;
+  Mustard
+&lt;/div&gt;</code></pre>
+          </section>
+
           <section data-background="#fff">
             <div class="accessibility">
               <h4>Step 2:</h4>
-              <p>Add <code>aria-checked="false"</code> to each of the fake checkboxes.</p>
+              <ul>
+                <li>Add <code>aria-checked="true"</code> to the first fake checkbox.</li>
+                <li>Add <code>aria-checked="false"</code> to other fake checkboxes.</li>
+              </ul>
+              <p></p>
             </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  class="checkbox"
+  tabindex="0"
+  role="checkbox"
+  <span class="codeHighlight">aria-checked="true"</span>
+&gt;
+  Lettuce
+&lt;/div&gt;</code></pre>
           </section>
 
           <section data-background="#222">
@@ -1394,13 +1442,24 @@ SUB-SECTION
   role="checkbox"
   <span class="codeHighlight">aria-checked="false"</span>
 &gt;
-  Lettuce
+  Tomato
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  class="checkbox"
+  tabindex="0"
+  role="checkbox"
+  <span class="codeHighlight">aria-checked="false"</span>
+&gt;
+  Mustard
 &lt;/div&gt;</code></pre>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>If we inspect any of the fake checkboxes in the accessibility tree, <b>they now all have an accessible name, a role and a dynamic state</b>.</p>
+              <p>If we inspect any of the fake checkboxes in the accessibility tree, <b>they now have roles and states</b>.</p>
             </div>
           </section>
 
@@ -1880,94 +1939,6 @@ Close
 &lt;span class="error-message" id="error"&gt;
   Error: Include area code
 &lt;/span&gt;</code></pre>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#592C82">
-            <h2>4.18<br>Using aria-label and aria-labelledby</h2>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>aria-labelledby</code> and <code>aria-label</code> attributes should <b>only be applied to specific types of elements</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>1. <b>Interactive</b> elements:</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Interactive elements 1 --&gt;</span>
-&lt;a href="#"&gt;&lt;/a&gt; (if href present)
-&lt;audio controls&gt;&lt;/audio&gt;
-&lt;button&gt;&lt;/button&gt;
-&lt;details&gt;&lt;/details&gt;
-&lt;embed&gt;&lt;/details&gt;
-&lt;iframe&gt;&lt;/iframe&gt;
-&lt;img usemap="#a"&gt; (if usemap present)</code></pre>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Interactive elements 2 --&gt;</span>
-&lt;input&gt; if the type is not hidden
-&lt;label&gt;&lt;/label&gt;
-&lt;menu type="toolbar"&gt;&lt;/menu&gt; (if toolbar present)
-&lt;object usemap="#a"&gt;&lt;/object&gt; (if usemap present)
-&lt;select&gt;&lt;/select&gt;
-&lt;textarea&gt;&lt;/textarea&gt;
-&lt;video controls&gt;&lt;/video&gt; (if controls present)</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>2. Elements with <b>implicit landmark roles</b>:</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Implicit landmark roles --&gt;</span>
-&lt;header&gt;&lt;/header&gt;
-&lt;footer&gt;&lt;/footer&gt;
-&lt;main&gt;&lt;/main&gt;
-&lt;nav&gt;&lt;/nav&gt;
-&lt;aside&gt;&lt;/aside&gt;
-&lt;section&gt;&lt;/section&gt;
-&lt;form&gt;&lt;/form&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>3. Elements with <b>explicit roles</b> - where any role attribute is applied.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true"><span class="codeComment">&lt;!-- Some explicit roles --&gt;</span>
-&lt;div <span class="codeHighlight">role="dialog"</span>&gt;&lt;/div&gt;
-&lt;div <span class="codeHighlight">role="tab"</span>&gt;&lt;/div&gt;
-&lt;div <span class="codeHighlight">role="tabpanel"</span>&gt;&lt;/div&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>If <code>aria-labelledby</code> or <code>aria-label</code> are applied to any other types of elements, <a href="https://www.w3.org/TR/using-aria/#label-support" target="_blank">they may not be announced</a> by Assistive Technologies.</p>
-            </div>
-          </section>
-
-          <section data-background="#7F1001">
-            <h3>Any questions or comments?</h3>
           </section>
         </section>
 

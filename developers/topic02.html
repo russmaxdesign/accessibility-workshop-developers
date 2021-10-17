@@ -788,49 +788,17 @@ SUB-SECTION
             <h2>2.5<br>Landmarks</h2>
           </section>
 
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>What are landmarks?</h3>
-          </section>
-
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Complex page layouts such as landing pages or dashboard screens often display <b>a lot of information at once</b>.</p>
+              <h4>What's the problem?</h4>
+              <p>Complex page layouts can be overwhelming for users. They may need to spend a lot of additional effort scanning the page to find the content they need.</p>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>These complex layouts can be overwhelming for users. They may need to spend <b>a lot of additional effort</b> scanning the page to find the content they need.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>For this reason, page layouts should be <b>broken into logical regions</b>. These regions allows users to skim the overall page layout and quickly find the content they need.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>These logical regions are important <b>from a visual perspective as well as a markup perspective</b>.</p>
-            </div>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>The importance of visual regions</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Creating <b>clearly defined visual page regions</b> help two different groups of people.</p>
+              <h4>For Designers:</h4>
+              <p>Creating clearly defined visual page regions help two different groups of people.</p>
             </div>
           </section>
 
@@ -848,17 +816,10 @@ SUB-SECTION
             </div>
           </section>
 
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>The importance of marked up regions</h3>
-          </section>
-
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Using <b>well-structured HTML landmarks</b> can be helpful for two different groups of people.</p>
+              <h4>For developers:</h4>
+              <p>Including HTML landmarks as part of your markup can be helpful for two different groups of people.</p>
             </div>
           </section>
 
@@ -914,17 +875,17 @@ SUB-SECTION
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Banner</td>
+                    <td>Header/Banner</td>
                     <td><code>&lt;header&gt;</code></td>
                     <td><code>role="banner"</code></td>
                   </tr>
                   <tr>
-                    <td>Footer</td>
+                    <td>Footer/ContentInfo</td>
                     <td><code>&lt;footer&gt;</code></td>
                     <td><code>role="contentinfo"</code></td>
                   </tr>
                   <tr>
-                    <td>Navigation</td>
+                    <td>Nav/Navigation</td>
                     <td><code>&lt;nav&gt;</code></td>
                     <td><code>role="navigation"</code></td>
                   </tr>
@@ -934,12 +895,12 @@ SUB-SECTION
                     <td><code>role="main"</code></td>
                   </tr>
                   <tr>
-                    <td>Complementary</td>
+                    <td>Aside/Complementary</td>
                     <td><code>&lt;aside&gt;</code></td>
                     <td><code>role="complementary"</code></td>
                   </tr>
                   <tr>
-                    <td>Section</td>
+                    <td>Section/Region</td>
                     <td><code>&lt;section&gt;</code></td>
                     <td><code>role="region"</code></td>
                   </tr>
@@ -1077,7 +1038,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>In order for a <code>&lt;header&gt;</code> to be defined as a banner landmark:</p>
+              <p>In order for a <code>&lt;header&gt;</code> to be defined as a &ldquo;banner&rdquo; landmark:</p>
               <ol>
                 <li>It <b>must not be</b> placed inside any other landmark elements.</li>
                 <li>It <b>must be</b> the only <code>&lt;header&gt;</code> outside of any other landmarks.</li>
@@ -1106,6 +1067,20 @@ SUB-SECTION
             <div class="accessibility">
               <p>This means it will be <b>exposed to assistive technologies</b>.</p>
             </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic03-048.png" alt="Banner landmark in accessibility tree">
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>If it does not meet these two conditions, it <b>will not be seen as a &ldquo;banner&rdquo; landmark</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic03-049.png" alt="Banner">
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -1180,7 +1155,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>In order for a <code>&lt;footer&gt;</code> to be defined as a footer landmark:</p>
+              <p>In order for a <code>&lt;footer&gt;</code> to be defined as a &ldquo;contentinfo&rdquo; landmark:</p>
               <ol>
                 <li>It <b>must not be</b> placed inside any other landmark elements.</li>
                 <li>It <b>must be</b> the only <code>&lt;footer&gt;</code> outside of any other landmarks.</li>
@@ -1200,7 +1175,7 @@ SUB-SECTION
     <span class="codeComment">Complementary information</span>
   &lt;/aside&gt;
   <span class="codeHighlight">&lt;footer&gt;
-    Footer landmark
+    Contentinfo landmark
   &lt;/footer&gt;</span>
 &lt;/body&gt;</code></pre>
           </section>
@@ -1209,6 +1184,10 @@ SUB-SECTION
             <div class="accessibility">
               <p>This means it will be <b>exposed to assistive technologies</b>.</p>
             </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic03-050.png" alt="Banner landmark in accessibility tree">
           </section>
 
 <!--  –––––––––––––––––––––––––
