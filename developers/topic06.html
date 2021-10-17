@@ -56,7 +56,7 @@
 
         <section>
           <section data-background="#592C82">
-            <h2>6.5 Introduction</h2>
+            <h2>6.0 Introduction</h2>
           </section>
 
           <section data-background="#fff">
@@ -82,7 +82,7 @@
 
         <section>
           <section data-background="#592C82">
-            <h2>6.5<br>What are non-native widgets?</h2>
+            <h2>6.1<br>What are non-native widgets?</h2>
           </section>
 
           <section data-background="#fff">
@@ -114,7 +114,7 @@
 
         <section>
           <section data-background="#592C82">
-            <h2>6.5<br>A native example</h2>
+            <h2>6.2<br>A native example</h2>
           </section>
 
           <section data-background="#fff">
@@ -134,11 +134,11 @@
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic05-001.png" alt="Label">
+            <img src="../assets/img/topic06-001.png" alt="Label">
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic05-002.png" alt="Dropdown">
+            <img src="../assets/img/topic06-002.png" alt="Dropdown">
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -300,7 +300,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>6.5<br>A non-native example</h2>
+            <h2>6.3<br>A non-native example</h2>
           </section>
 
           <section data-background="#fff">
@@ -310,11 +310,11 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic05-003.png" alt="Button">
+            <img src="../assets/img/topic06-003.png" alt="Button">
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic05-004.png" alt="List">
+            <img src="../assets/img/topic06-004.png" alt="List">
           </section>
 
           <section data-background="#222">
@@ -442,7 +442,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>6.5<br>Criteria for accessible widgets</h2>
+            <h2>6.4<br>Criteria for accessible widgets</h2>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -455,74 +455,8 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>If an element is being used in a different way to its intended purpose, <b>it should be assigned with an explicit ARIA role</b>.</p>
+              <p>If an element is being used in a different way to its intended purpose, <b>it should be assigned with an explicit ARIA <code>role</code></b>.</p>
             </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>&lt;button&gt;</code> <b>could be set with</b> <code>role="combobox"</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><code>role="combobox"</code> <b>defines an input that controls a listbox</b>, that can dynamically pop up to help the user set the value of the input.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button <span class="codeHighlight">role="combobox"</span>&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul&gt;
-  &lt;li&gt;Apple&lt;/li&gt;
-  &lt;li&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>&lt;ul&gt;</code> <b>could be set with</b> <code>role="listbox"</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><code>role="listbox"</code> <b>defines a widget that allows the user to select one or more item</b>s from a list of choices.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button role="combobox"&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul <span class="codeHighlight">role="listbox"</span>&gt;
-  &lt;li&gt;Apple&lt;/li&gt;
-  &lt;li&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>The <code>&lt;li&gt;</code> elements <b>could be set with</b> <code>role="option"</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p><code>role="option"</code> <b>defines for a selectable item</b> in a listbox.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button role="combobox"&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox"&gt;
-  &lt;li <span class="codeHighlight">role="option"</span>&gt;Apple&lt;/li&gt;
-  &lt;li <span class="codeHighlight">role="option"</span>&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -535,92 +469,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>In the case of the <code>&lt;button&gt;</code>, there is <b>already an accessible name</b> - &ldquo;Favourite fruit&rdquo;.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>However, <b>additional information could be provided</b> as part of the accessible name using <code>aria-labelledby</code> or <code>aria-label</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button
-  role="combobox"
-  <span class="codeHighlight">aria-label="Choose your favourite fruit"</span>
-&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox"&gt;
-  &lt;li role="option"&gt;Apple&lt;/li&gt;
-  &lt;li role="option"&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>3. Can the widget receive focus?</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>If the widget is built using elements that don’t natively accept focus, some of these elements <b>will need to have focus defined</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>In the case of the <code>&lt;button&gt;</code> dropdown, the <code>&lt;ul&gt;</code> <b>may need to be set with</b> <code>tabindex="-1"</code> by default.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button
-  role="combobox"
-  aria-label="Choose your favourite fruit"
-&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox" <span class="codeHighlight">tabindex="-1"</span>&gt;
-  &lt;li role="option"&gt;Apple&lt;/li&gt;
-  &lt;li role="option"&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>This state will need to dynamically change to <code>tabindex="0"</code> <b>when the element becomes visible</b> so that it can receive focus</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button
-  role="combobox"
-  aria-label="Choose your favourite fruit"
-&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox" <span class="codeHighlight">tabindex="0"</span>&gt;
-  &lt;li role="option"&gt;Apple&lt;/li&gt;
-  &lt;li role="option"&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>4. Is the widget keyboard-only accessible?</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>If the non-native widget does not have native keystrokes in place, like the <code>&lt;button&gt;</code> dropdown, these <b>will need to be defined using JavaScript</b>.</p>
+              <p>An element that can receive focus <b>must have an accessible name</b> either directly from the element itself, or via another element</p>
             </div>
           </section>
 
@@ -629,12 +478,12 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>5. Are all visible states defined?</h3>
+            <h3>3. Is the widget keyboard-only accessible?</h3>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;button&gt;</code> element and each list item <b>will need to have each state defined</b>, including: <i>static, hover, focus, active, selected, selected/focussed</i></p>
+              <p>If the non-native widget does not have native keystrokes in place, these <b>will need to be defined using JavaScript</b>.</p>
             </div>
           </section>
 
@@ -643,112 +492,21 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>6. Are all functional states defined?</h3>
+            <h3>4. Are all visible states defined?</h3>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>In cases where non-native widgets have different functional states, <b>these will need to be defined using ARIA</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>In this case, the <code>&lt;button&gt;</code> element will <b>need to be defined as &ldquo;collapsed&rdquo;</b> when it is in the static state, using <code>aria-expanded="false"</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button
-  role="combobox"
-  aria-label="Choose your favourite fruit"
-  <span class="codeHighlight">aria-expanded="false"</span>
-&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox" tabindex="0"&gt;
-  &lt;li role="option"&gt;Apple&lt;/li&gt;
-  &lt;li role="option"&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>It will <b>need to be defined as &ldquo;expanded&rdquo;</b> when it has been triggered using <code>aria-expanded="true"</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button
-  role="combobox"
-  aria-label="Choose your favourite fruit"
-  <span class="codeHighlight">aria-expanded="true"</span>
-&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox" tabindex="0"&gt;
-  &lt;li role="option"&gt;Apple&lt;/li&gt;
-  &lt;li role="option"&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Each of the list items <b>needs to be initially set with</b> <code>aria-selected="false"</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button
-  role="combobox"
-  aria-label="Choose your favourite fruit"
-  aria-expanded="true"
-&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox" tabindex="0"&gt;
-  &lt;li role="option" <span class="codeHighlight">aria-expanded="false"</span>&gt;Apple&lt;/li&gt;
-  &lt;li role="option" <span class="codeHighlight">aria-expanded="false"</span>&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>And when users choose one of the dropdown list items, this item <b>needs to be set with</b> <code>aria-selected="true"</code>.</p>
-            </div>
-          </section>
-
-          <section data-background="#222">
-<pre><code contenteditable="true">&lt;button
-  role="combobox"
-  aria-label="Choose your favourite fruit"
-  aria-expanded="true"
-&gt;
-  Favourite fruit
-&lt;/button&gt;
-&lt;ul role="listbox" tabindex="0"&gt;
-  &lt;li role="option" <span class="codeHighlight">aria-expanded="true"</span>&gt;Apple&lt;/li&gt;
-  &lt;li role="option" aria-expanded="false"&gt;Apricot&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>7. Does the widget have dynamically updating content?</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>In the case of the <code>&lt;button&gt;</code> dropdown, <b>there is no dynamically added content</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>However, in cases where widgets do have dynamically added content, the <code>aria-live</code> attribute <b>may need to be used</b>.</p>
+              <p>All <b>visible states need to be defined</b> including:</p>
+              <ul>
+                <li>Static.</li>
+                <li>Visited (in the case of links only).</li>
+                <li>Hover.</li>
+                <li>Focus.</li>
+                <li>Active.</li>
+                <li>Selected/checked.</li>
+                <li>Selected/checked and focussed.</li>
+              </ul>
             </div>
           </section>
 
@@ -757,25 +515,54 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>A recap</h3>
+            <h3>5. Is the current state of the widget defined?</h3>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>So, if you have to build any non-native widget, <b>you should keep these seven criteria in mind</b>.</p>
+              <p>In cases where non-native widgets have different functional states, <b>these will need to be defined using ARIA</b> including:</p>
+              <ul>
+                <li><code>aria-checked</code>.</li>
+                <li><code>aria-selected</code>.</li>
+                <li><code>aria-expanded</code>.</li>
+                <li><code>aria-disabled</code>.</li>
+                <li><code>aria-pressed</code>.</li>
+              </ul>
             </div>
           </section>
 
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>6. Does the widget have dynamically updating content?</h3>
+          </section>
+
           <section data-background="#fff">
             <div class="accessibility">
+              <p>In cases where widgets do have dynamically added content, the <code>aria-live</code> attribute <b>may need to be used</b>.</p>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>A non-native widget recap</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Does the widget have the following defined:</h4>
               <ol>
-                <li>Does the widget have a <b>role</b>?</li>
-                <li>Does the widget have an <b>accessible name</b>?</li>
-                <li>Can the widget receive <b>focus</b>?</li>
-                <li>Is the widget <b>keyboard-only</b> accessible?</li>
-                <li>Are all <b>visible states</b> defined?</li>
-                <li>Are all <b>functional states</b> defined?</li>
-                <li>Any <b>dynamically updated content</b>?</li>
+                <li>All relevant roles?</li>
+                <li>An accessible name?</li>
+                <li>Keyboard-only accessibility?</li>
+                <li>All visible states?</li>
+                <li>All dynamic states?</li>
+                <li>Dynamical content?</li>
               </ol>
             </div>
           </section>
@@ -795,7 +582,502 @@ SUB-SECTION
 
         <section>
           <section data-background="#592C82">
-            <h2>6.6<br>A basic accessibility testing process</h2>
+            <h2>6.5<br>In-page tabs</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Three roles work together when <b>defining in-page tabs</b>:</p>
+              <ul>
+                <li><code>tablist</code>.</li>
+                <li><code>tab</code>.</li>
+                <li><code>tabpanel</code>.</li>
+              </ul>
+            </div>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>tablist</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>tablist</code> role <b>defines the parent element</b> for a list of tabs.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic06-006.png" alt="Tabpanel">
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div <span class="codeHighlight">role="tablist"</span>&gt;
+  &lt;button role="tab"&gt;One&lt;/button&gt;
+  &lt;button role="tab"&gt;Two&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div role="tabpanel"&gt;&lt;/div&gt;
+&lt;div role="tabpanel"&gt;&lt;/div&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>tab</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>tab</code> role <b>define elements that act as tabs</b>, used to control the visibility of individual tabpanel elements. Each tab must be contained in a tablist.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic06-007.png" alt="Tabs">
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div role="tablist"&gt;
+  &lt;button <span class="codeHighlight">role="tab"</span>&gt;One&lt;/button&gt;
+  &lt;button <span class="codeHighlight">role="tab"</span>&gt;Two&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div role="tabpanel"&gt;&lt;/div&gt;
+&lt;div role="tabpanel"&gt;&lt;/div&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>tabpanel</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>tabpanel</code> is a <b>container for the content associated with a tab</b>. These containers are made visible when tab elements are activated.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <img src="../assets/img/topic06-008.png" alt="Tabpanel">
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div role="tablist"&gt;
+  &lt;button role="tab"&gt;One&lt;/button&gt;
+  &lt;button role="tab"&gt;Two&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div <span class="codeHighlight">role="tabpanel"</span>&gt;&lt;/div&gt;
+&lt;div <span class="codeHighlight">role="tabpanel"</span>&gt;&lt;/div&gt;</code></pre>
+          </section>
+
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>aria-controls</h3>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The <code>aria-controls</code> attribute identifies the element(s) that are <b>controlled by the current element</b>, when that relationship isn’t represented in the DOM.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>This attribute is <b>applied to the controlling element</b>, and is literally saying:</p>
+              <p><i>&ldquo;This element currently controls the [ID] element&rdquo;.</i></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>An example we will see soon is where the <code>tab</code> elements are <b>used to control</b> a series of <code>tabpanel</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div role="tablist"&gt;
+  &lt;button role="tab" <span class="codeHighlight">aria-controls="p1"</span>&gt;One&lt;/button&gt;
+  &lt;button role="tab" <span class="codeHighlight">aria-controls="p2"</span>&gt;Two&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div role="tabpanel" <span class="codeHighlight">id="p1"</span>&gt;&lt;/div&gt;
+&lt;div role="tabpanel" <span class="codeHighlight">id="p2"</span>&gt;&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#7F1001">
+            <h3>Any questions or comments?</h3>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#7F1001">
+            <h2>6.6<br>Exercise: Making accessible in-page tabs</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Files:</h4>
+              <ul>
+                <li>Open <a href="exercises/exercise20-start.html" target="_blank">exercises/exercise20-start.html</a> in a text editor and browser.</li>
+                <li>View <a href="exercises/exercise20-finished.html" target="_blank">exercises/exercise20-finished.html</a> to check your results.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Our aims (part 1):</h4>
+              <ol>
+                <li>The <code>tablist</code> element needs to be given an accessible name.</li>
+                <li>Set <code>aria-selected="true"</code> on the first <code>&lt;button&gt;</code>.</li>
+                <li>Set <code>aria-selected="false"</code> on other <code>&lt;button&gt;</code> elements.</li>
+                <li>Set <code>aria-controls</code> on all <code>&lt;button&gt;</code> elements.</li>
+                <li>Set matching <code>id</code> values on all <code>tabpanel</code> elements.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Our aims (part 2):</h4>
+              <ol start="6">
+                <li>Set all <code>tabpanel</code> elements with <code>tabindex="0"</code>.</li>
+                <li>Set <code>hidden</code> on the second and third <code>tabpanel</code> elements.</li>
+                <li>Set <code>aria-labelledby</code> on all <code>tabpanel</code> elements. </li>
+                <li>Set matching <code>id</code> valuues on the all <code>tab</code> elements.</li>
+                <li>Set <code>tabindex="-1"</code> on the second and third <code>tab</code> elements.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 1: The <code>tablist</code> element needs to be given an accessible name.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div role="tablist" <span class="codeHighlight">aria-label="Animal types"</span>&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 2: Set <code>aria-selected="true"</code> on the first <code>&lt;button&gt;</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  <span class="codeHighlight">aria-selected="true"</span>
+&gt;
+  Mammals
+&lt;/button&gt;
+</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 3: Set <code>aria-selected="false"</code> on other <code>&lt;button&gt;</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  <span class="codeHighlight">aria-selected="false"</span>
+&gt;
+  Birds
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  <span class="codeHighlight">aria-selected="false"</span>
+&gt;
+  Fish
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Note: These states will need to be <b>change dynamically using JavaScript</b> as each <code>&lt;button&gt;</code> is selected.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 4: Set <code>aria-controls</code> on all <code>&lt;button&gt;</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="true"
+  <span class="codeHighlight">aria-controls="tabpanel1"</span>
+&gt;
+  Mammals
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="false"
+  <span class="codeHighlight">aria-controls="tabpanel2"</span>
+&gt;
+  Birds
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="false"
+  <span class="codeHighlight">aria-controls="tabpanel3"</span>
+&gt;
+  Fish
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 5: Set matching <code>id</code> values on all <code>tabpanel</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  <span class="codeHighlight">id="tabpanel1"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  <span class="codeHighlight">id="tabpanel2"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  <span class="codeHighlight">id="tabpanel3"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 6: Set all <code>tabpanel</code> elements with <code>tabindex="0"</code>.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel1"
+  <span class="codeHighlight">tabindex="0"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel2"
+  <span class="codeHighlight">tabindex="0"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel3"
+  <span class="codeHighlight">tabindex="0"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 7: Set <code>hidden</code> on the second and third <code>tabpanel</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel2"
+  tabindex="0"
+  <span class="codeHighlight">hidden</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel3"
+  tabindex="0"
+  <span class="codeHighlight">hidden</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Note: These values will need to be <b>change dynamically using JavaScript</b> as each panel becomes visible.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 8: Set <code>aria-labelledby</code> on all <code>tabpanel</code> elements. </p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel1"
+  tabindex="0"
+  <span class="codeHighlight">aria-labelledby="tab1"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel2"
+  tabindex="0"
+  Hidden
+  <span class="codeHighlight">aria-labelledby="tab2"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;div
+  role="tabpanel"
+  id="tabpanel3"
+  tabindex="0"
+  hidden
+  <span class="codeHighlight">aria-labelledby="tab3"</span>
+&gt;
+&lt;/div&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 9: Set matching <code>id</code> valuues on the all <code>tab</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="true"
+  aria-controls="tabpanel1"
+  <span class="codeHighlight">id="tab1"</span>
+&gt;
+  Mammals
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="false"
+  aria-controls="tabpanel2"
+  <span class="codeHighlight">id="tab2"</span>
+&gt;
+  Birds
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="false"
+  aria-controls="tabpanel3"
+  <span class="codeHighlight">id="tab3"</span>
+&gt;
+  Fish
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>Step 10: Set <code>tabindex="-1"</code> on the second and third <code>tab</code> elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="false"
+  aria-controls="tabpanel2"
+  id="tab2"
+  <span class="codeHighlight">tabindex="-1"</span>
+&gt;
+  Birds
+&lt;/button&gt;</code></pre>
+          </section>
+
+          <section data-background="#222">
+<pre><code contenteditable="true">&lt;button
+  role="tab"
+  aria-selected="false"
+  aria-controls="tabpanel3"
+  id="tab3"
+  <span class="codeHighlight">tabindex="-1"</span>
+&gt;
+  Fish
+&lt;/button&gt;</code></pre>
+          </section>
+        </section>
+
+
+
+<!--  –––––––––––––––––––––––––
+******  SECTION ******
+––––––––––––––––––––––––––  -->
+
+
+
+        <section>
+          <section data-background="#592C82">
+            <h2>6.7<br>A basic accessibility testing process</h2>
           </section>
 
           <section data-background="#fff">
@@ -1304,7 +1586,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>6.7<br>Exercise: Conducting some testing</h2>
+            <h2>6.8<br>Exercise: Conducting some testing</h2>
           </section>
 
           <section data-background="#fff">
@@ -1377,7 +1659,7 @@ SUB-SECTION
 
         <section>
           <section data-background="#7F1001">
-            <h2>6.7<br>Exercise: Making an accessible autocomplete</h2>
+            <h2>6.9<br>Exercise: Making an accessible autocomplete</h2>
           </section>
 
           <section data-background="#fff">
@@ -1432,7 +1714,7 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic05-005.png" alt="List">
+            <img src="../assets/img/topic06-005.png" alt="List">
           </section>
 
 <!--  –––––––––––––––––––––––––
