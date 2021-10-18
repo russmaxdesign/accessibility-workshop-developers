@@ -172,7 +172,13 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;select&gt;</code> element represents a control that provides a menu of options. The element is announced to screen readers as &ldquo;combobox&rdquo;.</p>
+              <p>The <code>&lt;select&gt;</code> element represents a control that <b>provides a menu of options</b> - generally as a dropdown list.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In Chrome, the element is <b>defined in the accessibility tree</b> as a &ldquo;combobox&rdquo;.</p>
             </div>
           </section>
 
@@ -187,7 +193,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;option&gt;</code> element is used to define menu items or options, contained in a dropdown menu.</p>
+              <p>The <code>&lt;option&gt;</code> element is used to <b>define menu items or options</b>, contained in a dropdown menu.</p>
             </div>
           </section>
 
@@ -210,7 +216,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;label&gt;</code> and <code>&lt;select&gt;</code> elements can be set with matching <code>for</code> and <code>id</code> values, <b>to give the widget an accessible name</b>.</p>
+              <p>If the <code>&lt;label&gt;</code> and <code>&lt;select&gt;</code> elements are given matching <code>for</code> and <code>id</code> values, the <code>&lt;select&gt;</code> will then <b>have an accessible name</b>.</p>
             </div>
           </section>
 
@@ -233,7 +239,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The current state of the <code>&lt;select&gt;</code> element will be announced <b>as either &ldquo;Expanded&rdquo; or &ldquo;Collapsed&rdquo;</b> for screen reader users.</p>
+              <p>The current state of the <code>&lt;select&gt;</code> element will be defined in the accessibility tree <b>as either &ldquo;Expanded&rdquo; or &ldquo;Collapsed&rdquo;</b>.</p>
             </div>
           </section>
 
@@ -247,7 +253,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>In the case of the <code>&lt;select&gt;</code> element, the currently selected item from the dropdown <b>will also be announced as a value</b> - i.e. &ldquo;Apple&rdquo;.</p>
+              <p>If an <code>&lt;option&gt;</code> is selected it will be <b>defined in the accessibility tree as the value</b> - i.e. &ldquo;Apple&rdquo;.</p>
             </div>
           </section>
 
@@ -261,7 +267,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>There are also a range of <b>pre-defined keystrokes that can be used to interact with</b> the <code>&lt;select&gt;</code> element.</p>
+              <p>There are also a range of <b>pre-defined keystrokes that can be used to interact with</b> the <code>&lt;select&gt;</code> and <code>&lt;option&gt;</code> elements.</p>
             </div>
           </section>
 
@@ -335,7 +341,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The <code>&lt;button&gt;</code> element <b>will be announced as &ldquo;button&rdquo;</b> which is incorrect in this case.</p>
+              <p>The <code>&lt;button&gt;</code> element <b>will be defined in the accessibility tree as &ldquo;button&rdquo;</b> which is incorrect in this case.</p>
             </div>
           </section>
 
@@ -349,7 +355,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>This widget <b>will be announced as &ldquo;Favourite fruit&rdquo;</b>, which is an acceptable name.</p>
+              <p>This widget <b>will have an accessible name</b> of &ldquo;Favourite fruit&rdquo; in the accessibility tree, which is acceptable.</p>
             </div>
           </section>
 
@@ -391,7 +397,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>The widget <b>will have no keystrokes defined</b>. So, it is not keyboard accessible.</p>
+              <p>The widget <b>will have no native keystrokes defined</b>. So, it is not keyboard accessible.</p>
             </div>
           </section>
 
@@ -417,13 +423,13 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>All of these problems can fixed using ARIA and JavaScript. <b>But it takes work</b>. Where possible, try to use native HTML widgets.</p>
+              <p>All of these problems can fixed using a combination of ARIA and JavaScript. <b>But it takes work</b>.</p>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>So, what are the criteria needed in order <b>to make this and other non-native widgets accessible</b>?</p>
+              <p>The simple message here is that we should <b>always try to use native HTML widgets</b> where possible.</p>
             </div>
           </section>
 
@@ -469,7 +475,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>An element that can receive focus <b>must have an accessible name</b> either directly from the element itself, or via another element</p>
+              <p>Any element that can receive focus <b>must have an accessible name</b> either directly from the element itself, or via another element.</p>
             </div>
           </section>
 
@@ -497,7 +503,13 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>All <b>visible states need to be defined</b> including:</p>
+              <p>If the widget is interactive, it may <b>need to have a range of visible states</b>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>These <b>visible states need to be defined</b> including:</p>
               <ul>
                 <li>Static.</li>
                 <li>Visited (in the case of links only).</li>
@@ -515,7 +527,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>5. Is the current state of the widget defined?</h3>
+            <h3>5. Is the functional state of the widget defined?</h3>
           </section>
 
           <section data-background="#fff">
@@ -541,7 +553,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>In cases where widgets do have dynamically added content, the <code>aria-live</code> attribute <b>may need to be used</b>.</p>
+              <p>In cases where widgets have dynamically added content, the <code>aria-live</code> attribute <b>may be needed</b>.</p>
             </div>
           </section>
 
@@ -561,7 +573,7 @@ SUB-SECTION
                 <li>An accessible name?</li>
                 <li>Keyboard-only accessibility?</li>
                 <li>All visible states?</li>
-                <li>All dynamic states?</li>
+                <li>All functional states?</li>
                 <li>Dynamical content?</li>
               </ol>
             </div>
@@ -765,7 +777,7 @@ SUB-SECTION
                 <li>Set all <code>tabpanel</code> elements with <code>tabindex="0"</code>.</li>
                 <li>Set <code>hidden</code> on the second and third <code>tabpanel</code> elements.</li>
                 <li>Set <code>aria-labelledby</code> on all <code>tabpanel</code> elements. </li>
-                <li>Set matching <code>id</code> valuues on the all <code>tab</code> elements.</li>
+                <li>Set matching <code>id</code> values on the all <code>tab</code> elements.</li>
                 <li>Set <code>tabindex="-1"</code> on the second and third <code>tab</code> elements.</li>
               </ol>
             </div>
@@ -999,7 +1011,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>Step 9: Set matching <code>id</code> valuues on the all <code>tab</code> elements.</p>
+              <p>Step 9: Set matching <code>id</code> values on the all <code>tab</code> elements.</p>
             </div>
           </section>
 
@@ -1080,33 +1092,37 @@ SUB-SECTION
             <h2>6.7<br>A basic accessibility testing process</h2>
           </section>
 
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Accessibility testing falls into <b>two categories</b>:</p>
-              <ul>
-                <li>Unit testing individual widget.</li>
-                <li>Auditing a screen or a series of screens.</li>
-              </ul>
-            </div>
+<!--  –––––––––––––––––––––––––
+SUB-SECTION
+––––––––––––––––––––––––––  -->
+
+          <section data-background="#000">
+            <h3>Two types of accessibility testing</h3>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <h4>Unit testing individual widget</h4>
-              <ul>
-                <li>What: Rigorous testing of individual widgets, especially complex non-native widgets.</li>
-                <li>When: Before the widget is used in any application.</li>
-              </ul>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <h4>Auditing</h4>
-              <ul>
-                <li>What: WCAG compliance audits on one or more screens within a website or application.</li>
-                <li>When: Before going into production, or after the product is live.</li>
-              </ul>
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Unit testing individual widgets</th>
+                    <th>Auditing a screen or series of screens</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>What:</th>
+                    <td>Rigorous testing of individual widgets, especially complex non-native widgets.</td>
+                    <td>WCAG compliance audits on one or more screens within a website or application.</td>
+                  </tr>
+                  <tr>
+                    <th>When:</th>
+                    <td>Before the widget is used in any application.</td>
+                    <td>At any stage in the process. Generally, the earlier the better.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 
@@ -1233,7 +1249,11 @@ SUB-SECTION
           <section data-background="#fff">
             <div class="accessibility">
               <h4>How to test:</h4>
-              <p>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes. Test all actions using <kbd>ENTER</kbd>, <kbd>RETURN</kbd>, <kbd>SPACEBAR</kbd> and <kbd>ESC</kbd> keys as needed. Make sure focus does not get trapped inside a component.</p>
+              <ul>
+                <li>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes.</li>
+                <li>Test all actions using <kbd>ENTER</kbd>, <kbd>RETURN</kbd>, <kbd>SPACEBAR</kbd> and <kbd>ESC</kbd> keys as needed.</li>
+                <li>Make sure focus does not get trapped inside a component.</li>
+              </ul>
             </div>
           </section>
 
@@ -1242,8 +1262,8 @@ SUB-SECTION
               <h4>Who should test:</h4>
               <ul>
                 <li>UX and UI Designers.</li>
-                <li>Developers.</li>
                 <li>Testers.</li>
+                <li>Developers.</li>
               </ul>
             </div>
           </section>
@@ -1322,7 +1342,11 @@ SUB-SECTION
           <section data-background="#fff">
             <div class="accessibility">
               <h4>How to test:</h4>
-              <p>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes. Review focus order for all focusable elements. Make sure focus order does not jump to different areas of the layout non-sequentially.</p>
+              <ul>
+                <li>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes.</li>
+                <li>Review focus order for all focusable elements.</li>
+                <li>Make sure focus order does not jump to different areas of the layout non-sequentially.</li>
+              </ul>
             </div>
           </section>
 
@@ -1331,8 +1355,8 @@ SUB-SECTION
               <h4>Who should test:</h4>
               <ul>
                 <li>UX and UI Designers.</li>
-                <li>Developers.</li>
                 <li>Testers.</li>
+                <li>Developers.</li>
               </ul>
             </div>
           </section>
@@ -1379,8 +1403,8 @@ SUB-SECTION
               <h4>Who should test:</h4>
               <ul>
                 <li>UX and UI Designers.</li>
-                <li>Developers.</li>
                 <li>Testers.</li>
+                <li>Developers.</li>
               </ul>
             </div>
           </section>
@@ -1446,9 +1470,8 @@ SUB-SECTION
             <div class="accessibility">
               <h4>Who should test:</h4>
               <ul>
-                <li>UX and UI Designers.</li>
-                <li>Developers.</li>
                 <li>Testers.</li>
+                <li>Developers.</li>
               </ul>
             </div>
           </section>
@@ -1488,7 +1511,6 @@ SUB-SECTION
               <h4>Who should test:</h4>
               <ul>
                 <li>UX and UI Designers.</li>
-                <li>Developers.</li>
                 <li>Testers.</li>
               </ul>
             </div>
@@ -1532,9 +1554,8 @@ SUB-SECTION
             <div class="accessibility">
               <h4>Who should test:</h4>
               <ul>
-                <li>UX and UI Designers.</li>
-                <li>Developers.</li>
                 <li>Testers.</li>
+                <li>Developers.</li>
               </ul>
             </div>
           </section>
