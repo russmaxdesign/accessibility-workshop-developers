@@ -98,10 +98,102 @@
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>There are a <b>wide range Accessibility APIs</b> in use, depending on the operating system and browser.</p>
+              <p>There have been many Accessibility APIs released over the years, all <b>building on and improving previous versions</b>.</p>
             </div>
           </section>
 
+          <section data-background="#fff">
+            <div class="accessibility">
+              <table class="font-xs">
+                <thead>
+                  <tr>
+                    <th>Year</th>
+                    <th>API</th>
+                    <th>Who</th>
+                    <th>For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1997</td>
+                    <td><a href="https://docs.microsoft.com/en-gb/windows/win32/winauto/microsoft-active-accessibility?redirectedfrom=MSDN" target="_blank">Microsoft Active Accessibility (MSAA)</a></td>
+                    <td>Microsoft</td>
+                    <td>Windows 95</td>
+                  </tr>
+                  <tr>
+                    <td>1998</td>
+                    <td><a href="https://docs.microsoft.com/en-us/dotnet/api/accessibility.iaccessible?view=net-5.0" target="_blank">IAccessible</a></td>
+                    <td>IBM/Sun</td>
+                    <td>Cross platform</td>
+                  </tr>
+                  <tr>
+                    <td>2001</td>
+                    <td><a href="https://en.wikipedia.org/wiki/Assistive_Technology_Service_Provider_Interface" target="_blank">Assistive Technology Service Provider Interface (AT-SPI)</a></td>
+                    <td>Linux</td>
+                    <td>Linux OS</td>
+                  </tr>
+                  <tr>
+                    <td>2002</td>
+                    <td><a href="https://developer.apple.com/documentation/appkit/nsaccessibility" target="_blank">NSAccessibility</a></td>
+                    <td>Apple</td>
+                    <td>Mac OS 10.2</td>
+                  </tr>
+                  <tr>
+                    <td>2007</td>
+                    <td><a href="https://docs.microsoft.com/en-us/windows/win32/winauto/uiauto-msaa" target="_blank">User Interface Automation (UIA)</a></td>
+                    <td>Microsoft</td>
+                    <td>Windows 7</td>
+                  </tr>
+                  <tr>
+                    <td>2007</td>
+                    <td><a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/overview" target="_blank">IAccessible2</a></td>
+                    <td>IBM</td>
+                    <td>Windows and Linux</td>
+                  </tr>
+                  <tr>
+                    <td>2009</td>
+                    <td><a href="https://developer.apple.com/documentation/objectivec/nsobject/uiaccessibility" target="_blank">UI Accessibility API</a></td>
+                    <td>Apple</td>
+                    <td>iOS 3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>In Windows, browsers generally support <b>more than one</b> accessibility API.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Windows:</h4>
+              <ul>
+                <li>Firefox, Chrome and Opera support <i>MSAA/IAccessible</i> and <i>IAccessible2</i>.</li>
+                <li>Internet Explorer supports <i>MSAA/IAccessible</i> and <i>UIAExpress</i>.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>OSX:</h4>
+              <ul>
+                <li>Safari, Firefox and Chrome support <i>NSAccessibility</i>.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>iOS:</h4>
+              <ul>
+                <li>Safari, Firefox and Chrome support <i>UIAccessibility</i>.</li>
+              </ul>
+            </div>
+          </section>
         </section>
 
 
@@ -169,24 +261,12 @@ SUB-SECTION
             <h3>Accessing the Accessibility Tree in Chrome</h3>
           </section>
 
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-005.png" alt="Inspect element in Chrome">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-006.png" alt="Accessibility section in Chrome">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-007.png" alt="Accessibility tree in Chrome">
-          </section>
-
 <!--  –––––––––––––––––––––––––
 SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Breaking down Chrome’s Accessibility Tree</h3>
+            <h3>Breaking down Chrome’s Accessibility Tab</h3>
           </section>
 
           <section data-background="#fff">
@@ -203,58 +283,25 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>As you inspect an element in the DOM, any relevant ARIA information is presented in the <b>Accessibility Tree tab</b>.</p>
+              <p>As you inspect an element in the DOM, it's tree is presented in the <b>Accessibility Tree frame</b>.</p>
             </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-008.png" alt="Accessibility tree tab in Chrome">
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>As you inspect an element in the DOM, any relevant ARIA attributes are presented in the <b>ARIA Attributes tab</b>.</p>
+              <p>And any relevant ARIA attributes are presented in the <b>ARIA Attributes frame</b>.</p>
             </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-009.png" alt="ARIA tab in Chrome">
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>As you inspect an element in the DOM, all the computed properties of that element are presented in the <b>Computed Properties tab</b>.</p>
+              <p>All the computed properties of that element are presented in the <b>Computed Properties frame</b>.</p>
             </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-010.png" alt="Computed Properties tab in Chrome">
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
               <p>The Source order viewer allows you to view the document source order <b>from an accessibility tree perspective</b>.</p>
-            </div>
-          </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#075264">
-            <h2>3. The Accessibility Tree in action</h2>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Let&rsquo;s go to the dummy page now, so we can <b>see the accessibility tree in action</b>.</p>
-              <p><a href="https://bit.ly/allycamp2021" target="_blank">https://bit.ly/allycamp2021</a></p>
             </div>
           </section>
 
@@ -263,7 +310,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Heading role and level</h3>
+            <h3>The Accessibility Tree in action</h3>
           </section>
 
           <section data-background="#fff">
@@ -273,41 +320,9 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic04-011.png" alt="ARIA tab in Chrome">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-012.png" alt="ARIA tab in Chrome">
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>Input role</h3>
-          </section>
-
-          <section data-background="#fff">
             <div class="accessibility">
               <p>Next, let&rsquo;s inspect the <b>&ldquo;Full name&rdquo;</b> <code>&lt;input&gt;</code>. What is this elements <code>role</code> in the Accessibility Tree?</p>
             </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-013.png" alt="Full name input">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-014.png" alt="Role textbox">
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>Required property</h3>
           </section>
 
           <section data-background="#fff">
@@ -317,41 +332,9 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic04-015.png" alt="Email input">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-016.png" alt="Required true">
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>Input value</h3>
-          </section>
-
-          <section data-background="#fff">
             <div class="accessibility">
               <p>If we type some content into the <b>&ldquo;Email&rdquo;</b> <code>&lt;input&gt;</code> field, will it now have a <code>value</code> in the Accessibility Tree?</p>
             </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-017.png" alt="Type aaa into input">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-018.png" alt="AAA showing as value">
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>Select value</h3>
           </section>
 
           <section data-background="#fff">
@@ -361,38 +344,28 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic04-019.png" alt="Choose aardvark from dropdown">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-020.png" alt="Aardvark is now the value">
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>Checked property</h3>
-          </section>
-
-          <section data-background="#fff">
             <div class="accessibility">
               <p>Let&rsquo;s check <b>&ldquo;Yes&rdquo;</b> from the &ldquo;Subscribe to newsletter&rdquo; checkbox group. Does the checkbox now have a <code>checked</code> status in the Accessibility Tree?</p>
             </div>
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic04-021.png" alt="Check yes from Subscription to newsletter">
+            <div class="accessibility">
+              <p>Let's now look at the <code>&lt;fieldset&gt;</code> element and <b>find its accessible name</b>.</p>
+            </div>
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic04-022.png" alt="Yes value is now checked">
+            <div class="accessibility">
+              <p>What about the <code>&lt;main&gt;</code> element? What is its <b>accessible name</b>?</p>
+            </div>
           </section>
 
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>And finally, the <code>&lt;table&gt;</code> element. What is its <b>accessible name</b>?</p>
+            </div>
+          </section>
 
           <section data-background="#000">
             <h3>A wide range of properties</h3>
@@ -400,7 +373,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>As you can see, there are a wide range of possible properties that can be presented as part of the accessibility tree, <b>depending on the element being inspected</b>.</p>
+              <p>As you can see, there are a wide range of possible properties that can be presented within the Computed properties frame, <b>depending on the element being inspected</b>.</p>
             </div>
           </section>
 
@@ -582,35 +555,13 @@ SUB-SECTION
   &lt;h2 id="heading"&gt;<span class="codeHighlight">Content</span>&lt;/h2&gt;
 &lt;/div&gt;</code></pre>
           </section>
-        </section>
-
-
-
-<!--  –––––––––––––––––––––––––
-******  SECTION ******
-––––––––––––––––––––––––––  -->
-
-
-
-        <section>
-          <section data-background="#075264">
-            <h2>5. Accessible names in action</h2>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Let&rsquo;s go <b>back to the dummy page</b> now:</p>
-              <p><a href="https://bit.ly/allycamp2021" target="_blank">https://bit.ly/allycamp2021</a></p>
-            </div>
-          </section>
-
 
 <!--  –––––––––––––––––––––––––
 SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Finding the name</h3>
+            <h3>Accessible names in action</h3>
           </section>
 
           <section data-background="#fff">
@@ -620,43 +571,15 @@ SUB-SECTION
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic04-025.png" alt="Email input">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-026.png" alt="Email accessible name">
-          </section>
-
-          <section data-background="#fff">
             <div class="accessibility">
               <p>In this case, the <b>accessible name</b> is taken from the <code>for</code> attribute of the <code>&lt;label&gt;</code> element.</p>
             </div>
           </section>
 
           <section data-background="#fff">
-            <img src="../assets/img/topic04-027.png" alt="Accessible name breakdown">
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>What happens when there is no name?</h3>
-          </section>
-
-          <section data-background="#fff">
             <div class="accessibility">
               <p>What if we remove <code>for="form-email"</code> from the <b>&ldquo;Email&rdquo;</b> <code>&lt;label&gt;</code> element. Does the element have a name in the Accessibility Tree now?</p>
             </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-028.png" alt="Remove id">
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-029.png" alt="No accessible name">
           </section>
 
           <section data-background="#fff">
