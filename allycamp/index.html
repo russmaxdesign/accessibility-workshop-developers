@@ -26,10 +26,6 @@
     <div class="reveal">
       <div class="slides">
 
-        <div class="menu">
-          <a href="../index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
-        </div>
-
         <section data-background="#042F39">
           <span class="h5">Everything you ever wanted to know about the</span>
           <h1>Accessibility Tree</h1>
@@ -54,13 +50,14 @@
                 <li>Accessible descriptions</li>
                 <li>How names and descriptions are announced</li>
                 <li>ARIA and the accessibility tree</li>
+                <li>Troubleshooting via the Accessibility Tree</li>
               </ul>
             </div>
           </section>
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>During the presentation, we&rsquo;re going to use a dummy page, to <b>see the accessibility tree in action</b>:</p>
+              <p>Throughout the session I'm doing to be doing exercises on a dummy page. <b>You can play along if you want</b>. The address is:</p>
               <p><a href="https://bit.ly/allycamp2021" target="_blank">https://bit.ly/allycamp2021</a></p>
             </div>
           </section>
@@ -183,7 +180,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Accessing the Accessibility Tree in Chrome</h3>
+            <h3>Activity:<br>Accessing the Accessibility Tree in Chrome</h3>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -191,7 +188,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Breaking down Chrome’s Accessibility Tab</h3>
+            <h3>Activity:<br>Breaking down Chrome’s Accessibility Tab</h3>
           </section>
 
 <!--  –––––––––––––––––––––––––
@@ -199,7 +196,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>The Accessibility Tree in action</h3>
+            <h3>Activity:<br>The Accessibility Tree in action</h3>
           </section>
 
           <section data-background="#fff">
@@ -444,7 +441,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Accessible names in action</h3>
+            <h3>Activity:<br>Accessible names in action</h3>
           </section>
 
           <section data-background="#fff">
@@ -455,73 +452,7 @@ SUB-SECTION
 
           <section data-background="#fff">
             <div class="accessibility">
-              <p>In this case, the <b>accessible name</b> is taken from the <code>for</code> attribute of the <code>&lt;label&gt;</code> element.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>What if we remove <code>for="form-email"</code> from the <b>&ldquo;Email&rdquo;</b> <code>&lt;label&gt;</code> element. Does the element have a name in the Accessibility Tree now?</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>This form field now has no accessible name, so there is <b>no way for Assistive Technologies to understand its purpose</b>.</p>
-            </div>
-          </section>
-
-<!--  –––––––––––––––––––––––––
-SUB-SECTION
-––––––––––––––––––––––––––  -->
-
-          <section data-background="#000">
-            <h3>What if there is more than one possible accessible name?</h3>
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
               <p>Let&rsquo;s look at the first <b>&ldquo;Find out more&rdquo;</b> link on the page. In theory, the accessible name for this element should be <b>&ldquo;Find out more&rdquo;</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-030.png" alt="Find out more link">
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>However, the element has also been given an <code>aria-label</code>, which provides a different accessible name of <b>&ldquo;Find out more about mammals&rdquo;</b>.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-031.png" alt="Aria-label">
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>So, there are two possible accessible names - the <code>aria-label</code> and the link content. <b>Which one wins</b>? The answer is displayed in the accessibility tree.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-032.png" alt="Winner name is displayed in accessibility tree">
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>Notice how the accessibility tree interface <b>displays the link contents as crossed out</b>, while the <code>aria-label</code> content is highlighted.</p>
-            </div>
-          </section>
-
-          <section data-background="#fff">
-            <img src="../assets/img/topic04-033.png" alt="Winner highlighted">
-          </section>
-
-          <section data-background="#fff">
-            <div class="accessibility">
-              <p>This means the <code>aria-label</code> content <b>will be used as the accessible name</b> for this element.</p>
             </div>
           </section>
 
@@ -625,7 +556,7 @@ SUB-SECTION
 ––––––––––––––––––––––––––  -->
 
           <section data-background="#000">
-            <h3>Accessible descriptions in action</h3>
+            <h3>Activity:<br>Accessible descriptions in action</h3>
           </section>
 
           <section data-background="#fff">
@@ -890,6 +821,10 @@ SUB-SECTION
             <div class="accessibility">
               <p>We will now look at some common problems that can be identified <b>directly via the Accessibility Tree</b>.</p>
             </div>
+          </section>
+
+          <section data-background="#000">
+            <h3>Activity:<br>Troubleshooting in action</h3>
           </section>
 
           <section data-background="#fff">
