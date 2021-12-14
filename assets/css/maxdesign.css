@@ -13,7 +13,7 @@ body {
 .reveal {
   color: #222;
   font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
-  font-size: 3.3em;
+  font-size: 2.475em;
   font-weight: normal;
 }
 
@@ -22,7 +22,6 @@ body {
   font-weight: inherit;
   line-height: 1.3;
 }
-
 
 /* ---------------------
 headings
@@ -36,8 +35,8 @@ h5,
 h6 {
   margin: 0 0 20px 0;
   color: #222;
-  font-family: 'Paytone One', 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
-  font-weight: normal;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
+  font-weight: 700;
   line-height: 1;
   text-shadow: none;
   letter-spacing: normal;
@@ -46,26 +45,31 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3.3333333em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.66em;
 }
 
 h3 {
-  font-size: 1.6em;
+  font-size: 1.8675em;
 }
 
 h4 {
+  margin: 0 0 .7em;
+  color: #568312;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
   font-size: 1em;
+  line-height: 1.2;
 }
 
-h5 {
+h5,
+.h5 {
   margin: 0;
-  color: #759a3e;
+  color: #ddd;
   font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
-  font-size: .8em;
+  font-size: 1.06062em;
   line-height: 1;
 }
 
@@ -91,13 +95,21 @@ paragraphs
 
 p {
   margin: 0 0 1.2em;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
+s {
+  color: #FF4040;
+}
 
 /* ---------------------
 lists
 -----------------------*/
+
+ul,
+ol {
+  margin: 0 0 1em;
+}
 
 ul li,
 ol li {
@@ -115,7 +127,6 @@ ol ul {
 image, video, iframe
 -----------------------*/
 
-
 img,
 video,
 iframe {
@@ -127,7 +138,6 @@ img {
   max-width: 100%;
   margin: 0;
 }
-
 
 /* ---------------------
 strong, bold, em
@@ -152,7 +162,7 @@ pre, code
   display: block;
   padding: 1em;
   font-family: consolas, courier, monospace;
-  font-size: .7em;
+  font-size: .8em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -184,7 +194,6 @@ pre, code
   font-size: .6em;
 }
 
-
 /* ---------------------
 kbd
 -----------------------*/
@@ -199,7 +208,6 @@ kbd
   font-family: consolas, courier, monospace;
 }
 
-
 /* ---------------------
 table
 -----------------------*/
@@ -209,17 +217,21 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
   font-size: .7em;
-}
-
-table th {
-  font-weight: bold;
+  border-bottom: 2px solid #777;
 }
 
 table th,
 table td {
-  border-bottom: 1px solid #555;
-  padding: .2em .5em .2em .5em;
+  border-bottom: 1px solid #999;
+  padding: .3em .5em;
   text-align: left;
+}
+
+table th {
+  border-top: 2px solid #777;
+  border-bottom: 2px solid #777;
+  color: #568312;
+  font-weight: bold;
 }
 
 table th.right,
@@ -227,11 +239,9 @@ table td.right {
   text-align: right;
 }
 
-
 table tr:last-child td {
   border-bottom: none;
 }
-
 
 /* ---------------------
 links
@@ -251,17 +261,19 @@ a:visited {
 }
 
 a:focus {
-  color: #000;
+  color: #fff;
+  background: #000;
+  outline: none;
 }
 
 a:hover {
-  color: #44680e;
+  color: #000;
 }
 
 a:active {
   color: #a00;
+  background: #fff;
 }
-
 
 /* ---------------------
 selection
@@ -269,16 +281,15 @@ selection
 
 ::selection {
   color: #fff;
-  background: #568312;
+  background: #000;
   text-shadow: none;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #568312;
+  background: #000;
   text-shadow: none;
 }
-
 
 /* ---------------------
 controls
@@ -300,6 +311,26 @@ controls
   border-top-color: #568312;
 }
 
+.reveal .controls .navigate-left:focus {
+  border-right-color: #000;
+  outline: none;
+}
+
+.reveal .controls .navigate-right:focus {
+  border-left-color: #000;
+  outline: none;
+}
+
+.reveal .controls .navigate-up:focus {
+  border-bottom-color: #000;
+  outline: none;
+}
+
+.reveal .controls .navigate-down:focus {
+  border-top-color: #000;
+  outline: none;
+}
+
 .has-dark-background .controls .navigate-left {
   border-right-color: #fff;
 }
@@ -315,7 +346,6 @@ controls
 .has-dark-background .controls .navigate-down {
   border-top-color: #fff;
 }
-
 
 /* ---------------------
 progress
@@ -337,7 +367,6 @@ progress
   background: #fff;
 }
 
-
 /* ---------------------
 menu
 -----------------------*/
@@ -358,36 +387,41 @@ menu
   text-decoration: none;
 }
 
-
 /* ---------------------
 credits
 -----------------------*/
 
-.credits,
-.credits-next {
-  font-size: 60%;
+.credit-links {
+  margin: 2em 0 .5em;
 }
 
-.credits {
-  margin-bottom: 3em;
-}
-
-a.credit-link {
-  display: inline-block;
-  border: none;;
-  margin: 0 .5em 0 0;
-  color: #999;
-}
-
-a.credit-link:hover {
-  color: #ccc;
-}
-
-a.credit-link:focus,
-a.credit-link:active {
+.credit-links a:link {
   color: #fff;
 }
 
+.credit-links a:visited {
+  color: #fff;
+}
+
+.credit-links a:focus {
+  color: #000;
+  background: #fff;
+  outline: none;
+}
+
+.credit-links a:hover {
+  color: #fff;
+  background: #000;
+}
+
+.credit-links a:active {
+  color: #fff;
+  background: #a00;
+}
+
+.credit-copyright {
+  font-size: 60%;
+}
 
 /* ---------------------
 classes
@@ -425,10 +459,11 @@ classes
 }
 
 .instructions {
-  font-size: 65%;
+  font-size: .859em;
 }
 
 .instructions-heading {
+  font-size: 1.412em;
   margin: 0 0 .7em;
 }
 
@@ -436,6 +471,20 @@ classes
   margin: 0 0 .7em;
 }
 
-.accessibility {
-  font-size: 75%;
+.success {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.intro-instructions {
+  margin: 2.5em 0 0;
+  font-size: .6566em;
+}
+
+.intro-instructions kbd {
+  display: inline-block;
+  margin: 0 .3em;
 }
