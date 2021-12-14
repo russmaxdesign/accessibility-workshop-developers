@@ -13,7 +13,7 @@ body {
 .reveal {
   color: #222;
   font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
-  font-size: 3.3em;
+  font-size: 2.475em;
   font-weight: normal;
 }
 
@@ -22,7 +22,6 @@ body {
   font-weight: inherit;
   line-height: 1.3;
 }
-
 
 /* ---------------------
 headings
@@ -46,20 +45,20 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3.3333333em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.66em;
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 1.8675em;
 }
 
 h4 {
   margin: 0 0 .7em;
-  color: #592C82;
+  color: #568312;
   font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
   font-size: 1em;
   line-height: 1.2;
@@ -70,7 +69,7 @@ h5,
   margin: 0;
   color: #ddd;
   font-family: 'Helvetica Neue', Helvetica, Arial, Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, sans-serif;
-  font-size: .8em;
+  font-size: 1.06062em;
   line-height: 1;
 }
 
@@ -112,7 +111,6 @@ ol {
   margin: 0 0 1em;
 }
 
-
 ul li,
 ol li {
   margin: 0 0 .3em 1.5em;
@@ -129,7 +127,6 @@ ol ul {
 image, video, iframe
 -----------------------*/
 
-
 img,
 video,
 iframe {
@@ -142,14 +139,13 @@ img {
   margin: 0;
 }
 
-
 /* ---------------------
 strong, bold, em
 -----------------------*/
 
 strong,
 b {
-  color: #592C82;
+  color: #568312;
   font-weight: bold;
 }
 
@@ -166,7 +162,7 @@ pre, code
   display: block;
   padding: 1em;
   font-family: consolas, courier, monospace;
-  font-size: .6em;
+  font-size: .8em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -198,7 +194,6 @@ pre, code
   font-size: .6em;
 }
 
-
 /* ---------------------
 kbd
 -----------------------*/
@@ -212,7 +207,6 @@ kbd
   box-shadow: .05em .05em .1em #aaa;
   font-family: consolas, courier, monospace;
 }
-
 
 /* ---------------------
 table
@@ -236,7 +230,7 @@ table td {
 table th {
   border-top: 2px solid #777;
   border-bottom: 2px solid #777;
-  color: #592C82;
+  color: #568312;
   font-weight: bold;
 }
 
@@ -245,11 +239,9 @@ table td.right {
   text-align: right;
 }
 
-
 table tr:last-child td {
   border-bottom: none;
 }
-
 
 /* ---------------------
 links
@@ -261,11 +253,11 @@ a {
 }
 
 a:link {
-  color: #592C82;
+  color: #568312;
 }
 
 a:visited {
-  color: #592C82;
+  color: #568312;
 }
 
 a:focus {
@@ -283,7 +275,6 @@ a:active {
   background: #fff;
 }
 
-
 /* ---------------------
 selection
 -----------------------*/
@@ -300,25 +291,24 @@ selection
   text-shadow: none;
 }
 
-
 /* ---------------------
 controls
 -----------------------*/
 
 .reveal .controls .navigate-left {
-  border-right-color: #592C82;
+  border-right-color: #568312;
 }
 
 .reveal .controls .navigate-right {
-  border-left-color: #592C82;
+  border-left-color: #568312;
 }
 
 .reveal .controls .navigate-up {
-  border-bottom-color: #592C82;
+  border-bottom-color: #568312;
 }
 
 .reveal .controls .navigate-down {
-  border-top-color: #592C82;
+  border-top-color: #568312;
 }
 
 .reveal .controls .navigate-left:focus {
@@ -357,7 +347,6 @@ controls
   border-top-color: #fff;
 }
 
-
 /* ---------------------
 progress
 -----------------------*/
@@ -377,7 +366,6 @@ progress
 .has-dark-background .progress span {
   background: #fff;
 }
-
 
 /* ---------------------
 menu
@@ -399,36 +387,41 @@ menu
   text-decoration: none;
 }
 
-
 /* ---------------------
 credits
 -----------------------*/
 
-.credits,
-.credits-next {
-  font-size: 60%;
+.credit-links {
+  margin: 2em 0 .5em;
 }
 
-.credits {
-  margin-bottom: 3em;
-}
-
-a.credit-link {
-  display: inline-block;
-  border: none;;
-  margin: 0 .5em 0 0;
-  color: #999;
-}
-
-a.credit-link:hover {
-  color: #ccc;
-}
-
-a.credit-link:focus,
-a.credit-link:active {
+.credit-links a:link {
   color: #fff;
 }
 
+.credit-links a:visited {
+  color: #fff;
+}
+
+.credit-links a:focus {
+  color: #000;
+  background: #fff;
+  outline: none;
+}
+
+.credit-links a:hover {
+  color: #fff;
+  background: #000;
+}
+
+.credit-links a:active {
+  color: #fff;
+  background: #a00;
+}
+
+.credit-copyright {
+  font-size: 60%;
+}
 
 /* ---------------------
 classes
@@ -466,19 +459,16 @@ classes
 }
 
 .instructions {
-  font-size: 65%;
+  font-size: .859em;
 }
 
 .instructions-heading {
+  font-size: 1.412em;
   margin: 0 0 .7em;
 }
 
 .instructions p {
   margin: 0 0 .7em;
-}
-
-.accessibility {
-  font-size: 75%;
 }
 
 .success {
@@ -491,43 +481,10 @@ classes
 
 .intro-instructions {
   margin: 2.5em 0 0;
-  font-size: 50%;
+  font-size: .6566em;
 }
 
 .intro-instructions kbd {
   display: inline-block;
   margin: 0 .3em;
-}
-
-.credit-links {
-  font-size: 60%;
-  margin: 2em 0 .5em;
-}
-
-.credit-links a:link {
-  color: #fff;
-}
-
-.credit-links a:visited {
-  color: #fff;
-}
-
-.credit-links a:focus {
-  color: #000;
-  background: #fff;
-  outline: none;
-}
-
-.credit-links a:hover {
-  color: #fff;
-  background: #000;
-}
-
-.credit-links a:active {
-  color: #fff;
-  background: #a00;
-}
-
-.credit-copyright {
-  font-size: 60%;
 }
