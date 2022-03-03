@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A basic accessibility review process</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reveal.css">
+    <link rel="stylesheet" href="assets/css/maxdesign.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'assets/css/print/pdf.css' : 'assets/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <div class="menu">
+          <a href="index.html">Home<span class="hidden"> - list of all slide decks</span></a> | <a href="#/">Start<span class="hidden"> of slide deck</span></a>
+        </div>
+
+        <section data-background="#222">
+          <h1>A basic accessibility review process</h1>
+          <div class="intro-instructions">
+            <p>Use <kbd>SPACEBAR</kbd> to move forward through slides.</p>
+          </div>
+        </section>
+
+        <section data-background="#fff">
+          <div class="instructions">
+            <h3 class="instructions-heading">Slide instructions</h3>
+            <p><kbd>SPACEBAR</kbd> to <b>move forward</b> through slides.</p>
+            <p><kbd>SHIFT</kbd> &amp; <kbd>SPACEBAR</kbd> to <b>move backwards</b> through slides.</p>
+            <p><kbd>LEFT ARROW</kbd> &amp; <kbd>RIGHT ARROW</kbd> to <b>move through sections</b>.</p>
+            <p><kbd>ESC</kbd> to <b>see overview</b> and <kbd>ESC</kbd> again to exit.</p>
+            <p><kbd>F</kbd> to <b>enter presentation mode</b> and <kbd>ESC</kbd> to exit.</p>
+          </div>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Introduction</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <p>The following is a simple auditing process that can be used to <b>conduct a basic accessibility review</b> of any website or web application.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Each step in the process includes:</h4>
+              <ul>
+                <li>What to test.</li>
+                <li>How to test.</li>
+                <li>Who should test.</li>
+                <li>Relevant WCAG criteria.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <ul>
+                <li><a href="#/3">Step 1: Valid markup</a>.</li>
+                <li><a href="#/4">Step 2: Text resize</a>.</li>
+                <li><a href="#/5">Step 3: Keyboard access</a>.</li>
+                <li><a href="#/6">Step 4: Focus state visibility</a>.</li>
+                <li><a href="#/7">Step 5: Focus order</a>.</li>
+                <li><a href="#/8">Step 6: WAVE testing</a>.</li>
+                <li><a href="#/9">Step 7: Screen reader testing</a>.</li>
+                <li><a href="#/10">Step 8: Mobile text size (optional)</a>.</li>
+                <li><a href="#/11">Step 9: Mobile screen reader testing (optional)</a>.</li>
+              </ul>
+            </div>
+          </section>
+
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 1: Valid markup</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Check that all HTML markup is valid HTML5 markup as defined by the W3C.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Markup validity can re checked via <a href="https://validator.w3.org/" target="_blank">W3C Validator tool</a>.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>Testers.</li>
+                <li>Developers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#parsing" target="_blank">4.1.1 Parsing (Level A)</a></p>
+              <p class="accessibility">In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 2: Resize</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <ul>
+                <li>Check that the layout can increase to 400% without loss of functionality.</li>
+                <li>Check that text can increase to 200% without loss of functionality.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <ul>
+                <li>Increase overall layout size in browser up to 400%.</li>
+                <li>Use <a href="https://chrome.google.com/webstore/detail/zoom-page-we/bcdjhkphgmiapajkphennjfgoehpodpk" target="_blank">Zoom Page WE</a> or equivalent to increase text size to 200%.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers.</li>
+                <li>Testers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#resize-text" target="_blank">1.4.4 Resize text (Level AA)</a></p>
+              <p class="accessibility">Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 3: Keyboard access</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test</h4>
+              <ul>
+                <li>All functionality is operable via a keyboard interface, without the need for a mouse or touchpad.</li>
+                <li>Focus can be moved away from any component using only a keyboard interface.</li>
+              </ul>
+              <p></p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <ul>
+                <li>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes.</li>
+                <li>Test all actions using <kbd>ENTER</kbd>, <kbd>RETURN</kbd>, <kbd>SPACEBAR</kbd> and <kbd>ESC</kbd> keys as needed.</li>
+                <li>Make sure focus does not get trapped inside a component.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers.</li>
+                <li>Testers.</li>
+                <li>Developers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria - part 1:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#keyboard" target="_blank">2.1.1 Keyboard (Level A)</a></p>
+              <p class="accessibility">All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes, except where the underlying function requires input that depends on the path of the user's movement and not just the endpoints.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria - part 2:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#no-keyboard-trap" target="_blank">2.1.2 No Keyboard Trap (Level A)</a></p>
+              <p class="accessibility">If keyboard focus can be moved to a component of the page using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 4: Focus state visibility</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Check that focus states are clearly visible for all focusable elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes. Review focus states for all focusable elements.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UI Designers</li>
+                <li>Testers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#focus-visible" target="_blank">2.4.7 Focus Visible (Level AA)</a></p>
+              <p class="accessibility">Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 5: Focus order</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Check that focus order is intuitive and consistent across all screens.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <ul>
+                <li>Navigate through the site or app using <kbd>TAB</kbd> and <kbd>SHIFT + TAB</kbd> keystrokes.</li>
+                <li>Review focus order for all focusable elements.</li>
+                <li>Make sure focus order does not jump to different areas of the layout non-sequentially.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers.</li>
+                <li>Testers.</li>
+                <li>Developers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#focus-order" target="_blank">2.4.3 Focus Order (Level A)</a></p>
+              <p class="accessibility">If a Web page can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 6: WAVE / AXE / Other testing</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Basic accessibility review of each screen:</p>
+              <ul>
+                <li>WCAG Errors and warnings.</li>
+                <li>WCAG Colour contrast issues.</li>
+                <li>Use of headings.</li>
+                <li>Use of <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>.</li>
+                <li>Use of landmarks.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test using browser extensions:</h4>
+              <ul>
+                <li><a href="https://www.deque.com/axe/" target="_blank">Axe</a></li>
+                <li><a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh" target="_blank">WAVE</a></li>
+                <li><a href="https://www.tpgi.com/arc-platform/arc-toolkit/" target="_blank">Arc Toolkit</a></li>
+                <li><a href="https://accessibilityinsights.io/docs/en/web/overview/" target="_blank">Accessibility Insights for Web</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers.</li>
+                <li>Testers.</li>
+                <li>Developers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p>The WAVE testing tool can be used to pick up a wide range of errors across multiple WCAG Success Criteria.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 7: Screen reader testing</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Basic screen reader review of each screen.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test as part of an audit:</h4>
+              <p>Check each screen to make sure all components of the layout are clearly described and meaningful to screen reader users. Using one or both:</p>
+              <ul>
+                <li>Voiceover: Chrome (Comes with OSX).</li>
+                <li><a href="https://www.nvaccess.org/download/" target="_blank">NVDA</a>: Chrome.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test as part of unit testing:</h4>
+              <ul>
+                <li>Is there an accessible name, description, role?</li>
+                <li>Are states clearly announced?</li>
+                <li>Are all features of the widget announced?</li>
+                <li>Is dynamically added content announced?</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test as part of unit testing: (continued)</h4>
+              <p>This more complex testing may include a wider range of screen reader and browser combinations.</p>
+              <ul>
+                <li>Windows/JAWS: Chrome, Firefox, Edge.</li>
+                <li>Windows/NVDA: Chrome, Firefox, Edge.</li>
+                <li>OSX/VoiceOver: Chrome, Firefox, Safari.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>Testers.</li>
+                <li>Developers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#info-and-relationships" target="_blank">1.3.1 Info and Relationships (Level A)</a></p>
+              <p class="accessibility">Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 8: Mobile text size (Optional)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>This test should also be conducted using mobile devices to determine how increasing the text size affects the layout.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Use the phone's settings to increase text size to at least 200% to determine if any functionality is lost.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>UX and UI Designers.</li>
+                <li>Testers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#resize-text" target="_blank">1.4.4 Resize text (Level AA)</a></p>
+              <p class="accessibility">Except for captions and images of text, text can be resized without assistive technology up to 200 percent without loss of content or functionality.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#568312">
+            <h2>Step 9: Mobile screen reader testing (Optional)</h2>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>What to test:</h4>
+              <p>Basic screen reader review of each screen. Make sure all components of the layout are clearly described and meaningful to screen reader users.</p>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>How to test:</h4>
+              <p>Check each screen with either or both:</p>
+              <ul>
+                <li>iPhone: Voiceover.</li>
+                <li>Android: Talkback.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Who should test:</h4>
+              <ul>
+                <li>Testers.</li>
+                <li>Developers.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section data-background="#fff">
+            <div class="accessibility">
+              <h4>Relevant WCAG Success Criteria:</h4>
+              <p class="accessibility"><a href="https://www.w3.org/TR/WCAG21/#info-and-relationships" target="_blank">1.3.1 Info and Relationships (Level A)</a></p>
+              <p class="accessibility">Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.</p>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script src="assets/js/head.min.js"></script>
+    <script src="assets/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
